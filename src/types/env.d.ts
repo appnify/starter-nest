@@ -16,5 +16,9 @@ declare namespace NodeJS {
      * 环境变量
      */
     NODE_ENV: 'development' | 'production' | 'test';
+    /**
+     * 上传文件夹
+     */
+    UPLOAD_DIR: string;
   }
 }

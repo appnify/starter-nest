@@ -1,23 +1,21 @@
 import { ClassSerializerInterceptor, Global, Module } from '@nestjs/common';
-import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
-import {
-  AllExecptionFilter,
-  BaseModule,
-  ConfigModule,
-  HttpExecptionFilter,
-  LoggerInterceptor,
-  LoggerModule,
-  MulterModule,
-  ResponseInterceptor,
-  ServeStaticModule,
-  TypeormModule,
-  ValidationExecptionFilter,
-  validationPipeFactory,
-} from './features';
-import { AuthModule, UserModule } from './modules';
-import { PostModule } from './modules/post/post.module';
-import { RoleModule } from './modules/role/role.module';
-import { UploadModule } from './modules/upload/upload.module';
+import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
+import { PostModule } from '@/modules/post';
+import { RoleModule } from '@/modules/role';
+import { UploadModule } from '@/modules/upload';
+import { PermissionModule } from '@/modules/permission';
+import { PermissionGuard } from '@/features/permission/permission.guard';
+import { ConfigModule } from '@/config';
+import { LoggerInterceptor, LoggerModule } from '@/features/logger';
+import { ServeStaticModule } from '@/features/static';
+import { BaseModule } from '@/features/base';
+import { AllExecptionFilter, HttpExecptionFilter } from '@/features/exception';
+import { ResponseInterceptor } from '@/features/response';
+import { TypeormModule } from '@/features/typeorm';
+import { validationPipeFactory, ValidationExecptionFilter } from '@/features/validation';
+import { JwtModule } from '@nestjs/jwt';
+import { AuthModule, JwtGuard } from '@/modules/auth';
+import { UserModule } from '@/modules/user';
 
 @Global()
 @Module({
@@ -39,10 +37,6 @@ import { UploadModule } from './modules/upload/upload.module';
      */
     BaseModule,
     /**
-     * 文件上传配置模块(全局)
-     */
-    MulterModule,
-    /**
      * 数据库ORM
      */
     TypeormModule,
@@ -55,6 +49,10 @@ import { UploadModule } from './modules/upload/upload.module';
      */
     AuthModule,
     /**
+     * JWT模块
+     */
+    JwtModule,
+    /**
      * 角色模块
      */
     RoleModule,
@@ -66,6 +64,10 @@ import { UploadModule } from './modules/upload/upload.module';
      * 文章模块
      */
     PostModule,
+    /**
+     * 权限模块
+     */
+    PermissionModule,
   ],
   providers: [
     /**
@@ -123,6 +125,20 @@ import { UploadModule } from './modules/upload/upload.module';
     {
       provide: APP_FILTER,
       useClass: ValidationExecptionFilter,
+    },
+    /**
+     * 全局JWT守卫(校验是否登陆)
+     */
+    {
+      provide: APP_GUARD,
+      useClass: JwtGuard,
+    },
+    /**
+     * 全局权限守卫(校验是否有权限)
+     */
+    {
+      provide: APP_GUARD,
+      useClass: PermissionGuard,
     },
   ],
 })

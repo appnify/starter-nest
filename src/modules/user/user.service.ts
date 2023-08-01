@@ -1,21 +1,25 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Pagination } from 'src/features';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { CreateUserDto, UpdateUserDto } from './dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { User } from './entities';
+import { BaseService } from '@/features/base';
 
 @Injectable()
-export class UserService {
-  constructor(@InjectRepository(User) private userRepository: Repository<User>) {}
+export class UserService extends BaseService {
+  constructor(@InjectRepository(User) private userRepository: Repository<User>) {
+    super();
+  }
 
   /**
    * 创建用户
    */
   async create(createUserDto: CreateUserDto) {
-    console.log(createUserDto);
     const user = this.userRepository.create(createUserDto);
+    if (createUserDto.roles) {
+      user.roles = createUserDto.roles.map((id) => ({ id })) as any;
+    }
     await this.userRepository.save(user);
     return user.id;
   }
@@ -23,9 +27,17 @@ export class UserService {
   /**
    * 查找所有用户
    */
-  async findAll(dto: FindUserDto) {
-    const options = Pagination.optionize(dto);
-    return this.userRepository.findAndCount({ ...options, order: { createdAt: 'DESC' } });
+  async findMany(findUserdto: FindUserDto) {
+    const { nickname, page, size } = findUserdto;
+    const { skip, take } = this.formatPagination(page, size);
+    return this.userRepository.findAndCount({
+      skip,
+      take,
+      where: {
+        nickname: nickname && Like(`%${nickname}%`),
+      },
+      relations: ['roles'],
+    });
   }
 
   /**
@@ -53,7 +65,22 @@ export class UserService {
   /**
    * 根据用户名查找用户
    */
-  find(username: string) {
-    return this.userRepository.findOne({ where: { username } });
+  findByUsername(username: string) {
+    return this.userRepository.findOneOrFail({ where: { username } });
+  }
+
+  /**
+   * 根据用户id查找用户权限
+   */
+  async findUserPermissions(id: number) {
+    const user = await this.userRepository.findOne({
+      where: { id },
+      relations: ['roles', 'roles.permissions'],
+    });
+    if (user) {
+      const permissions = user.roles.flatMap((role) => role.permissions);
+      return [...new Set(permissions.map((i) => i.slug))];
+    }
+    return [];
   }
 }

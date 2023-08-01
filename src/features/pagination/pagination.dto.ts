@@ -1,7 +1,7 @@
 import { Transform } from 'class-transformer';
 import { IsNumber, IsOptional, Min } from 'class-validator';
 
-export class paginationDto {
+export class PaginationDto {
   /**
    * 页码
    */
@@ -11,6 +11,7 @@ export class paginationDto {
   @Min(1)
   @Transform(({ value }) => Number(value))
   page: number;
+
   /**
    * 每页条数
    */

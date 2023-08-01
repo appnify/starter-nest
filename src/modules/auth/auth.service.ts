@@ -1,22 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user';
+import { AuthUserDto } from './dto/auth-user.dto';
 
 @Injectable()
 export class AuthService {
   constructor(private userService: UserService, private jwtService: JwtService) {}
 
-  // 验证用户
-  async auth(username: string, password: string): Promise<any> {
-    const user = await this.userService.findOne({ username });
-    if (!user) return null;
-    if (user.password !== password) return null;
-    return user;
-  }
-
-  // 令牌签名
-  async sign(user: any) {
-    const payload = { id: user.id, username: user.username };
-    return this.jwtService.sign(payload);
+  async signIn(authUserDto: AuthUserDto) {
+    const user = await this.userService.findByUsername(authUserDto.username);
+    const { password, ...result } = user;
+    if (!user) {
+      throw new UnauthorizedException('用户名不存在');
+    }
+    if (password !== authUserDto.password) {
+      throw new UnauthorizedException('密码错误');
+    }
+    return this.jwtService.signAsync(result);
   }
 }

@@ -1,30 +1,41 @@
-import { ExecutionContext, Injectable } from '@nestjs/common';
-import { APP_GUARD, Reflector } from '@nestjs/core';
-import { AuthGuard } from '@nestjs/passport';
+import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
-import { Observable } from 'rxjs';
 import { PUBLICK_KEY } from './jwt-decorator';
+import { JwtService } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {
-  constructor(private reflector: Reflector) {
-    super();
-  }
+export class JwtGuard implements CanActivate {
+  constructor(private reflector: Reflector, private jwtService: JwtService, private configService: ConfigService) {}
 
-  canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest<Request>();
+    const token = this.extractTokenFromHeader(request);
+    if (token) {
+      const secret = this.configService.get('JWT_SECRET');
+      const user = await this.jwtService.verifyAsync(token, { secret });
+      request['user'] = user;
+    }
     const metadata = [context.getClass(), context.getHandler()];
     const isPublic = this.reflector.getAllAndOverride(PUBLICK_KEY, metadata);
+    if (isPublic === undefined || isPublic) {
+      return true;
+    }
+    if (isPublic !== false && request.method.toLowerCase() === 'GET') {
+      return true;
+    }
+    if (!token) {
+      throw new UnauthorizedException('请先登录');
+    }
+    return true;
+  }
 
-    const routeMethod = context.switchToHttp().getRequest<Request>().method;
-
-    if (routeMethod === 'GET' && isPublic !== false) return true;
-
-    if (isPublic) return true;
-    return super.canActivate(context);
+  extractTokenFromHeader(request: Request): string {
+    const [type, token] = request.headers.authorization?.split(' ') ?? [];
+    if (type === 'Bearer') {
+      return token;
+    }
+    return undefined;
   }
 }
-
-export const AppJwtGuard = {
-  provide: APP_GUARD,
-  useClass: JwtAuthGuard,
-};

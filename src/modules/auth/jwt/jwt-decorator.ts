@@ -6,6 +6,8 @@ import { SetMetadata } from '@nestjs/common';
 export const PUBLICK_KEY = 'isPublic';
 
 /**
- * 公开当前控制器或路由
+ * 是否需要登陆才能访问
  */
-export const Public = (idPublic = true) => SetMetadata(PUBLICK_KEY, idPublic);
+export function Public(isPublic = true) {
+  return SetMetadata(PUBLICK_KEY, isPublic);
+}

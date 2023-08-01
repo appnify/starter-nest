@@ -1,25 +1,12 @@
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { BaseEntity } from 'src/features';
-import { Post } from 'src/modules/post/entities/post.entity';
-import { Role } from 'src/modules/role/entities/role.entity';
-import { Column, Entity, ManyToMany } from 'typeorm';
+import { BaseEntity } from '@/features/typeorm';
+import { Post } from '@/modules/post';
+import { Role } from '@/modules/role';
+import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
 
-@Entity()
+@Entity({ orderBy: { id: 'DESC' } })
 export class User extends BaseEntity {
-  /**
-   * 用户文章
-   */
-  @ApiHideProperty()
-  @ManyToMany(() => Post, (post) => post.author)
-  posts: Post[];
-
-  /**
-   * 用户角色
-   */
-  @ManyToMany(() => Role, (role) => role.user)
-  roles: Role[];
-
   /**
    * 登录账号
    * @example 'juetan'
@@ -55,4 +42,26 @@ export class User extends BaseEntity {
   @Exclude()
   @Column({ length: 64 })
   password: string;
+
+  /**
+   * 用户邮箱
+   * @example 'example@mail.com'
+   */
+  @Column({ length: 64, nullable: true })
+  email: string;
+
+  /**
+   * 用户文章
+   */
+  @ApiHideProperty()
+  @ManyToMany(() => Post, (post) => post.author)
+  @JoinTable()
+  posts: Post[];
+
+  /**
+   * 用户角色
+   */
+  @ManyToMany(() => Role, (role) => role.user)
+  @JoinTable()
+  roles: Role[];
 }

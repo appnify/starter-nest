@@ -1,6 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class LocalAuthDto {
+export class AuthUserDto {
   /**
    * 用户名
    * @example admin
@@ -11,5 +11,6 @@ export class LocalAuthDto {
    * 用户密码
    * @example 123456
    */
+  @IsString()
   password: string;
 }

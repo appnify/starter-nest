@@ -1,27 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUploadDto } from './dto/create-upload.dto';
-import { UpdateUploadDto } from './dto/update-upload.dto';
+import { Upload } from './entities/upload.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class UploadService {
-  constructor() {
-    console;
-  }
+  constructor(@InjectRepository(Upload) private readonly uploadRepository: Repository<Upload>) {}
 
-  create(createUploadDto: CreateUploadDto) {
-    return 'This action adds a new upload';
+  async create(file: Express.Multer.File) {
+    const upload = this.uploadRepository.create({
+      name: file.originalname,
+      mimetype: file.mimetype,
+      size: file.size,
+      hash: file.filename,
+      path: file.path,
+    });
+    await this.uploadRepository.save(upload);
+    return upload.id;
   }
 
   findAll() {
-    return `This action returns all upload`;
+    return this.uploadRepository.findAndCount();
   }
 
   findOne(id: number) {
     return `This action returns a #${id} upload`;
   }
 
-  update(id: number, updateUploadDto: UpdateUploadDto) {
-    return `This action updates a #${id} upload`;
+  update() {
+    return `This action updates a #${1} upload`;
   }
 
   remove(id: number) {

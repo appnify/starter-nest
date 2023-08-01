@@ -3,41 +3,33 @@ import { SetMetadata } from '@nestjs/common';
 /**
  * 元数据的KEY
  */
-export const RESPONSE_KEY = 'resultor';
+export const RESPONSE_KEY = 'APP:RESPONSE';
 
-/**
- * 响应结果的类型
- */
-export enum ResponseType {
+type RespondFn = {
+  (type: 'raw' | 'wrap' | 'pagination'): any;
   /**
-   * 包装类型，返回的数据会被包装成统一的格式
+   * 原始，返回的数据不会被包装
    */
-  WRAP = 'wrap',
+  RAW: 'raw';
   /**
-   * 原始类型，返回的数据不会被包装
+   * 包装，返回的数据会被包装成统一的格式
    */
-  RAW = 'raw',
+  WRAP: 'wrap';
   /**
-   * 分页类型，返回的数据会被包装成统一的格式，并且会包含分页信息
+   * 分页，需返回 `[data, total]` 格式的数据
    */
-  PAGINATION = 'pagination',
-}
-
-/**
- * 响应结果装饰器的参数
- */
-export class ResponseOptions {
-  /**
-   * 类型，默认为wrap
-   */
-  type?: ResponseType = ResponseType.WRAP;
-}
+  PAGINATION: 'pagination';
+};
 
 /**
  * 响应结果装饰器
- * @param options 参数
+ * @param type 类型
  * @returns
  */
-export const Responsing = (options: ResponseOptions) => {
-  return SetMetadata(RESPONSE_KEY, { ...ResponseOptions, ...options });
-};
+export const Respond = <RespondFn>((type = 'wrap') => {
+  return SetMetadata(RESPONSE_KEY, type);
+});
+
+Respond.RAW = 'raw';
+Respond.WRAP = 'wrap';
+Respond.PAGINATION = 'pagination';

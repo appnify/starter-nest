@@ -1,6 +1,7 @@
 import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { initSwagger, LoggerService } from 'src/features';
+import { initSwagger } from '@/features/swagger';
+import { LoggerService } from '@/features/logger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {

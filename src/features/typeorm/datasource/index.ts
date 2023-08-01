@@ -9,7 +9,7 @@ import { MockPosts1685026010848 } from '../migrations/1685026010848-MockPosts';
  */
 export const baseConfig: DataSourceOptions = {
   type: 'sqlite',
-  database: 'content/database/database.sqlite',
+  database: 'database/db.sqlite',
   logging: false,
   namingStrategy: new SnakeNamingStrategy(),
 };
@@ -21,7 +21,7 @@ export const ormConfig: TypeOrmModuleOptions = {
   ...baseConfig,
   synchronize: true,
   autoLoadEntities: true,
-  logging: true,
+  logging: false,
 };
 
 /**

@@ -16,6 +16,9 @@ declare module 'dayjs' {
    */
   export let TIME: 'HH:mm:ss';
 
+  /**
+   * 保存原始的format方法
+   */
   interface Dayjs {
     _format: (format?: string) => string;
   }

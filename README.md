@@ -39,6 +39,15 @@ SwaggerModule.setup('openapi', app, document);
 }
 ```
 
+## 权限认证
+
+1. 依赖
+```bash
+pnpm i @nestjs/passport passport passport-local passport-jwt
+```
+
+路径：/auth/login - localguard - localService.validate - jwtService.sign
+
 ## 配置文件
 
 1. 安装依赖

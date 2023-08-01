@@ -1,5 +1,5 @@
 /**
- * 响应码枚举，开头与HTTP状态码保持一致
+ * 响应码枚举，首位与HTTP状态码保持一致
  */
 export enum ResponseCode {
   /**
