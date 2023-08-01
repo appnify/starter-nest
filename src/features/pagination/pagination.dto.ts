@@ -10,7 +10,7 @@ export class PaginationDto {
   @IsNumber()
   @Min(1)
   @Transform(({ value }) => Number(value))
-  page: number;
+  page?: number;
 
   /**
    * 每页条数
@@ -19,5 +19,5 @@ export class PaginationDto {
   @IsNumber()
   @Min(1)
   @Transform(({ value }) => Number(value))
-  size: number;
+  size?: number;
 }

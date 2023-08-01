@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CreateRoleDto } from './dto/create-role.dto';
-import { UpdateRoleDto } from './dto/update-role.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { CreateRoleDto } from './dto/create-role.dto';
+import { UpdateRoleDto } from './dto/update-role.dto';
 import { Role } from './entities/role.entity';
 
 @Injectable()
@@ -19,17 +19,18 @@ export class RoleService {
   }
 
   findAll() {
-    return this.roleRepository.findAndCount({
-      relations: ['permissions'],
-    });
+    return this.roleRepository.findAndCount({ relations: ['permissions'] });
   }
 
   findOne(id: number) {
     return `This action returns a #${id} role`;
   }
 
-  update(id: number, updateRoleDto: UpdateRoleDto) {
-    return `This action updates a #${id} role`;
+  async update(id: number, updateRoleDto: UpdateRoleDto) {
+    if (updateRoleDto.permissions) {
+      delete updateRoleDto.permissions;
+    }
+    await this.roleRepository.update(id, updateRoleDto);
   }
 
   remove(id: number) {
