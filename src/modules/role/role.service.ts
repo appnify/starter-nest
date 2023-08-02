@@ -26,11 +26,16 @@ export class RoleService {
     return `This action returns a #${id} role`;
   }
 
+<<<<<<< HEAD
   async update(id: number, updateRoleDto: UpdateRoleDto) {
     if (updateRoleDto.permissions) {
       delete updateRoleDto.permissions;
     }
     await this.roleRepository.update(id, updateRoleDto);
+=======
+  update(id: number, updateRoleDto: UpdateRoleDto) {
+    return this.roleRepository.update(id, updateRoleDto);
+>>>>>>> 1a32173fc73bbb94906f9ffde5874d47f6dfdad8
   }
 
   remove(id: number) {

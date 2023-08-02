@@ -1,4 +1,4 @@
-import { BaseEntity } from '@/features/typeorm';
+import { BaseEntity } from '@/database';
 import { Column, Entity } from 'typeorm';
 
 @Entity()

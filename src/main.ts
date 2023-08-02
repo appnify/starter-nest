@@ -1,17 +1,21 @@
 import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { initSwagger } from '@/features/swagger';
-import { LoggerService } from '@/features/logger';
+import { initSwagger } from '@/common/swagger';
+import { LoggerService } from '@/common/logger';
+import { ConfigService } from '@/config';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const { SERVER_HOST, SERVER_PORT } = process.env;
   /**
    * 创建应用
    */
   const app = await NestFactory.create(AppModule, { bufferLogs: false });
   /**
-   * 使用全局日志
+   * 获取配置服务
+   */
+  const config = app.get(ConfigService);
+  /**
+   * 获取日志服务
    */
   const logger = app.get(LoggerService);
   /**
@@ -25,11 +29,11 @@ async function bootstrap() {
   /**
    * API前缀
    */
-  app.setGlobalPrefix('/api');
+  app.setGlobalPrefix(config.apiPrefix);
   /**
    * 接口版本
    */
-  app.enableVersioning({ type: VersioningType.URI, defaultVersion: '1' });
+  app.enableVersioning({ type: VersioningType.URI, defaultVersion: config.apiVersion });
   /**
    * 接口文档(swagger)
    */
@@ -37,7 +41,7 @@ async function bootstrap() {
   /**
    * 监听端口
    */
-  await app.listen(SERVER_PORT, SERVER_HOST);
+  await app.listen(config.port, config.host);
   /**
    * 输出项目运行URL
    */
@@ -45,7 +49,7 @@ async function bootstrap() {
   /**
    * 输出接口文档URL
    */
-  logger.log(`OpenapiDocs is running at ${await app.getUrl()}/openapi`, 'NestApplication');
+  logger.log(`OpenapiDocs is running at ${await app.getUrl()}${config.apiDocPrefix}`, 'NestApplication');
 }
 
 bootstrap();

@@ -1,6 +1,6 @@
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { BaseEntity } from '@/features/typeorm';
+import { BaseEntity } from '@/database';
 import { Post } from '@/modules/post';
 import { Role } from '@/modules/role';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
@@ -61,6 +61,7 @@ export class User extends BaseEntity {
   /**
    * 用户角色
    */
+  @ApiHideProperty()
   @ManyToMany(() => Role, (role) => role.user)
   @JoinTable()
   roles: Role[];

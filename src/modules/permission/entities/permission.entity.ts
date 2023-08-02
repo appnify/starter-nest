@@ -1,4 +1,4 @@
-import { BaseEntity } from '@/features/typeorm';
+import { BaseEntity } from '@/database';
 import { Role } from '@/modules/role/entities/role.entity';
 import { Column, Entity, ManyToMany } from 'typeorm';
 
