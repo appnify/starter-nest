@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Like, Repository } from 'typeorm';
-import { CreateUserDto, UpdateUserDto } from './dto';
 import { FindUserDto } from './dto/find-user.dto';
-import { User } from './entities';
-import { BaseService } from '@/features/base';
+import { User } from './entities/user.entity';
+import { BaseService } from '@/common/base';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UserService extends BaseService {
@@ -36,7 +37,6 @@ export class UserService extends BaseService {
       where: {
         nickname: nickname && Like(`%${nickname}%`),
       },
-      relations: ['roles'],
     });
   }
 

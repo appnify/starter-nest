@@ -2,7 +2,7 @@ import { Controller, Delete, Get, Param, Patch, Post, UploadedFile, UseIntercept
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { UploadService } from './upload.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { Respond } from '@/features/response';
+import { Respond } from '@/common/response';
 
 @ApiTags('upload')
 @Controller('upload')

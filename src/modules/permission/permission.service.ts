@@ -24,7 +24,7 @@ export class PermissionService {
   }
 
   update(id: number, updatePermissionDto: UpdatePermissionDto) {
-    return `This action updates a #${id} permission`;
+    return this.permissionRepository.update(id, updatePermissionDto);
   }
 
   remove(id: number) {

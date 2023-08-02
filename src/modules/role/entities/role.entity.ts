@@ -1,4 +1,4 @@
-import { BaseEntity } from '@/features/typeorm';
+import { BaseEntity } from '@/database';
 import { Permission } from '@/modules/permission/entities/permission.entity';
 import { User } from 'src/modules/user';
 import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';

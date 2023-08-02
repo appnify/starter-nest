@@ -29,7 +29,7 @@ export class RoleService {
   }
 
   update(id: number, updateRoleDto: UpdateRoleDto) {
-    return `This action updates a #${id} role`;
+    return this.roleRepository.update(id, updateRoleDto);
   }
 
   remove(id: number) {
