@@ -22,7 +22,7 @@ export class PaginationDto {
    */
   @IsOptional()
   @IsNumber()
-  @Min(1)
+  @Min(0)
   @Transform(({ value }) => Number(value))
   size?: number;
 }

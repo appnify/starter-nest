@@ -1,21 +1,12 @@
-import { BaseController } from '@/features/base';
-import { Respond } from '@/features/response';
+import { BaseController } from '@/common/base';
+import { Respond } from '@/common/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Version } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-<<<<<<< HEAD
-import { CreateUserDto, UpdateUserDto } from './dto';
-=======
-import { Respond } from '@/common/response';
-import { BaseController } from '@/common/base';
 import { CreateUserDto } from './dto/create-user.dto';
->>>>>>> 1a32173fc73bbb94906f9ffde5874d47f6dfdad8
 import { FindUserDto } from './dto/find-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { UserService } from './user.service';
-<<<<<<< HEAD
-=======
-import { UpdateUserDto } from './dto/update-user.dto';
->>>>>>> 1a32173fc73bbb94906f9ffde5874d47f6dfdad8
 
 @ApiTags('user')
 @Controller('users')

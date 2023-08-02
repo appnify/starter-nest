@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Upload } from './entities/upload.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { parse } from 'path';
 import { Repository } from 'typeorm';
+import { Upload } from './entities/upload.entity';
 
 @Injectable()
 export class UploadService {
@@ -14,6 +15,7 @@ export class UploadService {
       size: file.size,
       hash: file.filename,
       path: file.path,
+      extension: parse(file.originalname).ext,
     });
     await this.uploadRepository.save(upload);
     return upload.id;

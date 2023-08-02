@@ -1,10 +1,6 @@
-import { PaginationDto } from '@/features/pagination';
+import { PaginationDto } from '@/common/response';
 import { IntersectionType } from '@nestjs/swagger';
 import { IsOptional, IsString } from 'class-validator';
-<<<<<<< HEAD
-=======
-import { PaginationDto } from '@/common/response';
->>>>>>> 1a32173fc73bbb94906f9ffde5874d47f6dfdad8
 
 export class FindUserDto extends IntersectionType(PaginationDto) {
   /**

@@ -23,13 +23,8 @@ export class PermissionService {
     return `This action returns a #${id} permission`;
   }
 
-<<<<<<< HEAD
-  async update(id: number, updatePermissionDto: UpdatePermissionDto) {
-    await this.permissionRepository.update(id, updatePermissionDto);
-=======
   update(id: number, updatePermissionDto: UpdatePermissionDto) {
     return this.permissionRepository.update(id, updatePermissionDto);
->>>>>>> 1a32173fc73bbb94906f9ffde5874d47f6dfdad8
   }
 
   remove(id: number) {

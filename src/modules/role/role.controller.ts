@@ -1,9 +1,9 @@
+import { Respond } from '@/common/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
 import { RoleService } from './role.service';
-import { Respond } from '@/common/response';
 
 @ApiTags('role')
 @Controller('roles')
@@ -11,32 +11,32 @@ export class RoleController {
   constructor(private readonly roleService: RoleService) {}
 
   @Post()
-  @ApiOperation({ summary: '创建角色', operationId: 'addRole' })
+  @ApiOperation({ description: '创建角色', operationId: 'addRole' })
   create(@Body() createRoleDto: CreateRoleDto) {
     return this.roleService.create(createRoleDto);
   }
 
   @Get()
   @Respond(Respond.PAGINATION)
-  @ApiOperation({ summary: '批量查询角色', operationId: 'getRoles' })
+  @ApiOperation({ description: '批量查询角色', operationId: 'getRoles' })
   findAll() {
     return this.roleService.findAll();
   }
 
   @Get(':id')
-  @ApiOperation({ summary: '查询角色', operationId: 'getRole' })
+  @ApiOperation({ description: '查询角色', operationId: 'getRole' })
   findOne(@Param('id') id: string) {
     return this.roleService.findOne(+id);
   }
 
   @Patch(':id')
-  @ApiOperation({ summary: '更新角色', operationId: 'updateRole' })
+  @ApiOperation({ description: '更新角色', operationId: 'updateRole' })
   update(@Param('id') id: string, @Body() updateRoleDto: UpdateRoleDto) {
     return this.roleService.update(+id, updateRoleDto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: '删除角色', operationId: 'delRole' })
+  @ApiOperation({ description: '删除角色', operationId: 'delRole' })
   remove(@Param('id') id: string) {
     return this.roleService.remove(+id);
   }
