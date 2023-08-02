@@ -16,7 +16,7 @@ export class UserController extends BaseController {
   }
 
   @Post()
-  @ApiOperation({ summary: '创建用户', operationId: 'addUser' })
+  @ApiOperation({ description: '创建用户', operationId: 'addUser' })
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
@@ -24,26 +24,26 @@ export class UserController extends BaseController {
   @Get()
   @Respond(Respond.PAGINATION)
   @ApiOkResponse({ isArray: true, type: User })
-  @ApiOperation({ summary: '批量查询用户', operationId: 'getUsers' })
+  @ApiOperation({ description: '批量查询用户', operationId: 'getUsers' })
   async findMany(@Query() query: FindUserDto) {
     return this.userService.findMany(query);
   }
 
   @Get(':id')
   @Version('2')
-  @ApiOperation({ summary: '查询用户', operationId: 'getUserv2' })
+  @ApiOperation({ description: '查询用户', operationId: 'getUserv2' })
   findOne(@Param('id') id: number) {
     return this.userService.findOne(+id);
   }
 
   @Patch(':id')
-  @ApiOperation({ summary: '更新用户', operationId: 'updateUser' })
+  @ApiOperation({ description: '更新用户', operationId: 'updateUser' })
   update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
-  @ApiOperation({ summary: '删除用户', operationId: 'deleteUser' })
+  @ApiOperation({ description: '删除用户', operationId: 'deleteUser' })
   remove(@Param('id') id: number) {
     return this.userService.remove(+id);
   }

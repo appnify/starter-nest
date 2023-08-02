@@ -9,5 +9,5 @@ export class FindUserDto extends IntersectionType(PaginationDto) {
    */
   @IsOptional()
   @IsString()
-  nickname: string;
+  nickname?: string;
 }

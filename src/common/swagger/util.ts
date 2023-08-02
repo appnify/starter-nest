@@ -37,7 +37,6 @@ export function addResponseWrapper(doc: OpenAPIObject) {
             },
             {
               type: 'object',
-              description: '返回数据',
               properties: {
                 data: schema,
               },
