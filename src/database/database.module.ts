@@ -4,6 +4,7 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 /**
  * 数据库模块
+ * @description 基于 `typeorm` 封装
  */
 export const DatabaseModule = TypeOrmModule.forRootAsync({
   useFactory: (config: ConfigService) => {

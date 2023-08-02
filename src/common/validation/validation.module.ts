@@ -3,6 +3,10 @@ import { APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { validationPipeFactory } from './validation.pipe';
 import { ValidationExecptionFilter } from './validation.filter';
 
+/**
+ * 校验模块
+ * @description 包含全局验证管道和全局验证异常过滤器
+ */
 @Module({
   providers: [
     /**

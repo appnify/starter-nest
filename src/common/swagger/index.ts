@@ -1,7 +1,12 @@
 import { INestApplication } from '@nestjs/common';
 import { ConfigService } from '@/config';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { DocumentBuilder, SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
+import { addResponseWrapper } from './util';
 
+/**
+ * 初始化Swagger
+ * @param app 应用实例
+ */
 export const initSwagger = (app: INestApplication) => {
   const config = app.get(ConfigService);
   const docConfig = new DocumentBuilder()
@@ -16,7 +21,12 @@ export const initSwagger = (app: INestApplication) => {
     .addTag('post', '文章管理')
     .addTag('upload', '文件上传')
     .build();
-  const document = SwaggerModule.createDocument(app, docConfig);
+  const options: SwaggerDocumentOptions = {
+    operationIdFactory(controllerKey, methodKey) {
+      return `${controllerKey}_${methodKey}`;
+    },
+  };
+  const document = addResponseWrapper(SwaggerModule.createDocument(app, docConfig, options));
   SwaggerModule.setup(config.apiDocPrefix, app, document, {
     jsonDocumentUrl: `${config.apiDocPrefix}.json`,
     yamlDocumentUrl: `${config.apiDocPrefix}.yaml`,

@@ -3,7 +3,12 @@ import { ConfigService as _ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class ConfigService {
-  constructor(public config: _ConfigService) {}
+  constructor(
+    /**
+     * `@nestjs/config` 的 ConfigService实例
+     */
+    public config: _ConfigService,
+  ) {}
 
   /**
    * 保留原有的get方法

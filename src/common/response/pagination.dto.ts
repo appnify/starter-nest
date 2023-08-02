@@ -1,11 +1,15 @@
 import { Transform } from 'class-transformer';
 import { IsNumber, IsOptional, Min } from 'class-validator';
 
+/**
+ * 分页 DTO
+ * @example { page: 1, size: 10 }
+ */
 export class PaginationDto {
   /**
    * 页码
+   * @example 1
    */
-  // @IsNumber()
   @IsOptional()
   @IsNumber()
   @Min(1)
@@ -14,6 +18,7 @@ export class PaginationDto {
 
   /**
    * 每页条数
+   * @example 10
    */
   @IsOptional()
   @IsNumber()

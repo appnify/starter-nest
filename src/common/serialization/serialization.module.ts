@@ -1,6 +1,10 @@
 import { ClassSerializerInterceptor, Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 
+/**
+ * 序列化模块
+ * @description 包含全局序列化拦截器
+ */
 @Module({
   providers: [
     /**

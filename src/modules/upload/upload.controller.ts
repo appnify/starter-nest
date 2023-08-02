@@ -1,8 +1,9 @@
 import { Controller, Delete, Get, Param, Patch, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { UploadService } from './upload.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Respond } from '@/common/response';
+import { CreateUploadDto } from './dto/create-upload.dto';
 
 @ApiTags('upload')
 @Controller('upload')
@@ -12,6 +13,8 @@ export class UploadController {
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   @ApiOperation({ summary: '上传文件', operationId: 'upload' })
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({ description: '文件', type: CreateUploadDto })
   create(@UploadedFile() file: Express.Multer.File) {
     return this.uploadService.create(file);
   }

@@ -10,8 +10,8 @@ import { DatabaseModule } from '@/database';
 import { ValidationModule } from '@/common/validation';
 import { AuthModule } from '@/modules/auth';
 import { UserModule } from '@/modules/user';
-import { ResponseModule } from './common/response';
-import { SerializationModule } from './common/serialization';
+import { ResponseModule } from '@/common/response';
+import { SerializationModule } from '@/common/serialization';
 
 @Module({
   imports: [
