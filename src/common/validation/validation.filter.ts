@@ -1,11 +1,11 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpStatus } from '@nestjs/common';
 import { Response } from 'express';
 import { ResponseCode } from '../response';
-import { AppValidationError } from './validation.error';
+import { ValidationError } from './validation.error';
 
-@Catch(AppValidationError)
+@Catch(ValidationError)
 export class ValidationExecptionFilter implements ExceptionFilter {
-  catch(exception: AppValidationError, host: ArgumentsHost) {
+  catch(exception: ValidationError, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const code = ResponseCode.PARAM_ERROR;

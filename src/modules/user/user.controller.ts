@@ -31,7 +31,7 @@ export class UserController extends BaseController {
 
   @Get(':id')
   @Version('2')
-  @ApiOperation({ description: '查询用户', operationId: 'getUserv2' })
+  @ApiOperation({ deprecated: true, description: '查询用户', operationId: 'getUserv2' })
   findOne(@Param('id') id: number) {
     return this.userService.findOne(+id);
   }

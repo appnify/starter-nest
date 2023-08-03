@@ -1,12 +1,5 @@
-export class AppValidationError extends Error {
-  messages: string[] = [];
-
-  constructor(message: string) {
-    super(message);
-    this.name = 'ValidationError';
-  }
-
-  setMessages(errors: string[]) {
-    this.messages = errors;
+export class ValidationError extends Error {
+  constructor(public messages: string[]) {
+    super('参数错误');
   }
 }

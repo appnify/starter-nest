@@ -12,6 +12,7 @@ import { AuthModule } from '@/modules/auth';
 import { UserModule } from '@/modules/user';
 import { ResponseModule } from '@/common/response';
 import { SerializationModule } from '@/common/serialization';
+import { CacheModule } from './common/cache';
 
 @Module({
   imports: [
@@ -25,6 +26,11 @@ import { SerializationModule } from '@/common/serialization';
      * @description 用于记录日志
      */
     LoggerModule,
+    /**
+     * 缓存模块
+     * @description 用于缓存数据
+     */
+    CacheModule,
     /**
      * 静态资源(全局)
      * @description 为静态页面/上传文件提供服务

@@ -15,14 +15,14 @@ export class JwtGuard implements CanActivate {
     if (token) {
       const secret = this.config.jwtSecret;
       const user = await this.jwtService.verifyAsync(token, { secret });
-      request['user'] = user;
+      request.user = user;
     }
-    const metadata = [context.getClass(), context.getHandler()];
-    const isPublic = this.reflector.getAllAndOverride(PUBLICK_KEY, metadata);
-    if (isPublic === undefined || isPublic) {
+    const targets = [context.getClass(), context.getHandler()];
+    const isPublic = this.reflector.getAllAndOverride(PUBLICK_KEY, targets);
+    if (isPublic) {
       return true;
     }
-    if (isPublic !== false && request.method.toLowerCase() === 'GET') {
+    if (isPublic === undefined && request.method.toUpperCase() === 'GET') {
       return true;
     }
     if (!token) {

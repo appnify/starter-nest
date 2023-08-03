@@ -13,7 +13,7 @@ export enum ResponseCode {
   /**
    * 参数错误
    */
-  PARAM_ERROR = 4001,
+  PARAM_ERROR = 4005,
   /**
    * 服务端未知错误
    */
@@ -21,5 +21,5 @@ export enum ResponseCode {
   /**
    * 未授权
    */
-  UNAUTHORIZED = 4003,
+  UNAUTHORIZED = 4001,
 }

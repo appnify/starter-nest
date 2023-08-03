@@ -3,7 +3,7 @@ import { Exclude } from 'class-transformer';
 import { BaseEntity } from '@/database';
 import { Post } from '@/modules/post';
 import { Role } from '@/modules/role';
-import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, RelationId } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
 export class User extends BaseEntity {
@@ -65,4 +65,7 @@ export class User extends BaseEntity {
   @ManyToMany(() => Role, (role) => role.user)
   @JoinTable()
   roles: Role[];
+
+  @RelationId('roles')
+  roleIds: number[];
 }

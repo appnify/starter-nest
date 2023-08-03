@@ -31,7 +31,7 @@ export class UserService extends BaseService {
   async findMany(findUserdto: FindUserDto) {
     const { nickname: _nickname, page, size } = findUserdto;
     const nickname = _nickname && Like(`%${_nickname}%`);
-    const { skip, take } = this.formatPagination(page, size);
+    const { skip, take } = this.formatPagination(page, size, true);
     return this.userRepository.findAndCount({ skip, take, where: { nickname } });
   }
 
@@ -39,7 +39,7 @@ export class UserService extends BaseService {
    * 根据id查找用户
    */
   findOne(idOrOptions: number | Partial<User>) {
-    const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : idOrOptions;
+    const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : (idOrOptions as any);
     return this.userRepository.findOne({ where });
   }
 

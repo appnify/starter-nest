@@ -1,7 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
-import { AppValidationError } from './validation.error';
+import { ValidationError } from './validation.error';
 
-const MessageMap = {
+const map = {
   isString: '必须为字符串',
   isNumber: '必须为数字',
   isBoolean: '必须为布尔值',
@@ -27,16 +27,14 @@ export const validationPipeFactory = () => {
     transform: true,
     whitelist: true,
     exceptionFactory: (errors) => {
-      const error = new AppValidationError('参数错误');
       const messages: string[] = [];
       for (const error of errors) {
         const { property, constraints } = error;
-        Object.keys(constraints).forEach((key) => {
-          messages.push(MessageMap[key] ? `参数(${property})${MessageMap[key]}` : constraints[key]);
-        });
+        for (const [key, val] of Object.entries(constraints)) {
+          messages.push(map[key] ? `参数(${property})${map[key]}` : val);
+        }
       }
-      error.setMessages(messages);
-      return error;
+      return new ValidationError(messages);
     },
   });
 };

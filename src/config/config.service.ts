@@ -100,10 +100,10 @@ export class ConfigService {
 
   /**
    * 上传文件目录
-   * @default './content/uploads'
+   * @default './content/upload'
    */
   get uploadDir(): string {
-    return this.config.get('UPLOAD_DIR', './content/uploads');
+    return this.config.get('UPLOAD_DIR', './content/upload');
   }
 
   /**
@@ -152,5 +152,26 @@ export class ConfigService {
    */
   get logDir(): string {
     return this.config.get('LOG_DIR', './content/logs');
+  }
+
+  /**
+   * SMTP配置
+   */
+  get smtp() {
+    const host: string = this.config.get('SMTP_HOST');
+    const port = Number(this.config.get('SMTP_PORT'));
+    const user: string = this.config.get('SMTP_USER');
+    const pass: string = this.config.get('SMTP_PASS');
+    return { host, port, user, pass };
+  }
+
+  /**
+   * Redis配置
+   */
+  get redis() {
+    const host: string = this.config.get('REDIS_HOST', 'localhost');
+    const port = Number(this.config.get('REDIS_PORT', 6379));
+    const pass: string = this.config.get('REDIS_PASS', '');
+    return { host, port, pass };
   }
 }

@@ -20,6 +20,7 @@ export const initSwagger = (app: INestApplication) => {
     .addTag('permission', '权限管理')
     .addTag('post', '文章管理')
     .addTag('upload', '文件上传')
+    .addBearerAuth()
     .build();
   const options: SwaggerDocumentOptions = {
     operationIdFactory(controllerKey, methodKey) {

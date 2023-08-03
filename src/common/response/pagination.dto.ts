@@ -3,7 +3,13 @@ import { IsNumber, IsOptional, Min } from 'class-validator';
 
 /**
  * 分页 DTO
- * @example { page: 1, size: 10 }
+ * @example
+ * ```
+ * {
+ *    page: 1,
+ *    size: 10
+ * }
+ * ```
  */
 export class PaginationDto {
   /**

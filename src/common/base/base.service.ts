@@ -14,13 +14,13 @@ export class BaseService {
   /**
    * 格式化分页参数
    */
-  formatPagination(page = this.config.defaultPage, size = this.config.defaultPageSize) {
-    if (size == 0) {
+  formatPagination(page = this.config.defaultPage, size = this.config.defaultPageSize, supportFull = false) {
+    if (size == 0 && supportFull) {
       return {};
     }
     return {
       skip: (page - 1) * size,
-      take: size,
+      take: size == 0 ? this.config.defaultPageSize : size,
     };
   }
 }

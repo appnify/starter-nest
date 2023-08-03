@@ -27,11 +27,7 @@ export class ResponseInterceptor implements NestInterceptor {
             const size = Number(request.query.size || this.config.defaultPageSize);
             return Response.success({
               data: list,
-              meta: {
-                page,
-                size,
-                total,
-              },
+              meta: { page, size, total },
             });
           }
           return Response.success({ data: list, total });

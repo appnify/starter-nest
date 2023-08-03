@@ -1,21 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { parse } from 'path';
+import { extname, posix, sep, relative } from 'path';
 import { Repository } from 'typeorm';
 import { Upload } from './entities/upload.entity';
+import { BaseService } from '@/common/base';
 
 @Injectable()
-export class UploadService {
-  constructor(@InjectRepository(Upload) private readonly uploadRepository: Repository<Upload>) {}
+export class UploadService extends BaseService {
+  constructor(@InjectRepository(Upload) private readonly uploadRepository: Repository<Upload>) {
+    super();
+  }
 
+  /**
+   * 保存文件信息
+   * @param file 文件信息
+   * @returns
+   */
   async create(file: Express.Multer.File) {
+    const path = relative(this.config.uploadDir, file.path).split(sep).join(posix.sep);
+    const uploadPrefix = this.config.uploadPrefix;
+    const uploadUrl = `${uploadPrefix}/${path}`;
     const upload = this.uploadRepository.create({
       name: file.originalname,
       mimetype: file.mimetype,
       size: file.size,
       hash: file.filename,
-      path: file.path,
-      extension: parse(file.originalname).ext,
+      path: uploadUrl,
+      extension: extname(file.originalname),
     });
     await this.uploadRepository.save(upload);
     return upload.id;
@@ -26,7 +37,7 @@ export class UploadService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} upload`;
+    return this.uploadRepository.findOne({ where: { id } });
   }
 
   update() {
@@ -34,6 +45,6 @@ export class UploadService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} upload`;
+    return this.uploadRepository.softDelete(id);
   }
 }
