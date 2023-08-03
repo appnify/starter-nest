@@ -11,12 +11,16 @@ import { redisStore } from 'cache-manager-redis-store';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
         const { host, port } = config.redis;
+        // TODO
+        let store: any;
+        if (store) {
+          store = () =>
+            redisStore({
+              commandsQueueMaxLength: 1000,
+              socket: { host, port },
+            }) as any;
+        }
         return {
-          // store: () =>
-          //   redisStore({
-          //     commandsQueueMaxLength: 1000,
-          //     socket: { host, port },
-          //   }) as any,
           db: 0,
           ttl: 600,
         };

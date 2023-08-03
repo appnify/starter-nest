@@ -1,4 +1,4 @@
-import { Respond } from '@/common/response';
+import { Respond, RespondType } from '@/common/response';
 import { Controller, Delete, Get, Ip, Param, Patch, Post, Req, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -22,7 +22,7 @@ export class UploadController {
   }
 
   @Get()
-  @Respond(Respond.PAGINATION)
+  @Respond(RespondType.PAGINATION)
   @ApiOperation({ description: '批量查询', operationId: 'getUploads' })
   findAll() {
     return this.uploadService.findAll();

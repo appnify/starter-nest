@@ -14,6 +14,7 @@ export class AllExecptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<_Response>();
     const message = exception.message;
     const code = ResponseCode.UNKNOWN_ERROR;
+    console.trace(exception);
     this.logger.error(exception, `${request.method} ${request.url}`);
     response.status(HttpStatus.INTERNAL_SERVER_ERROR).json(Response.create({ code, message, data: null }));
   }

@@ -1,5 +1,5 @@
 import { BaseController } from '@/common/base';
-import { Respond } from '@/common/response';
+import { Respond, RespondType } from '@/common/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Version } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -22,7 +22,7 @@ export class UserController extends BaseController {
   }
 
   @Get()
-  @Respond(Respond.PAGINATION)
+  @Respond(RespondType.PAGINATION)
   @ApiOkResponse({ isArray: true, type: User })
   @ApiOperation({ description: '批量查询用户', operationId: 'getUsers' })
   async findMany(@Query() query: FindUserDto) {

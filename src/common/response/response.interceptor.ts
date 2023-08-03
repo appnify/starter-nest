@@ -2,7 +2,7 @@ import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nes
 import { Reflector } from '@nestjs/core';
 import { Observable, map } from 'rxjs';
 import { Response } from './response';
-import { RESPONSE_KEY, Respond } from './response.decorator';
+import { RESPONSE_KEY, RespondType } from './response.decorator';
 import { Request } from 'express';
 import { ConfigService } from '@/config';
 
@@ -16,10 +16,10 @@ export class ResponseInterceptor implements NestInterceptor {
     const type = this.reflector.getAllAndOverride(RESPONSE_KEY, [controller, handler]);
     return next.handle().pipe(
       map((data: any) => {
-        if (type === Respond.RAW) {
+        if (type === RespondType.RAW) {
           return data;
         }
-        if (type === Respond.PAGINATION) {
+        if (type === RespondType.PAGINATION) {
           const request = context.switchToHttp().getRequest<Request>();
           const [list, total] = data;
           if (request.query.meta) {
