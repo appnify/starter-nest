@@ -1,0 +1,59 @@
+import { BaseService } from '@/common/base';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Like, Repository } from 'typeorm';
+import { CreateUserDto } from './dto/create-{{fileName name}}.dto';
+import { FindUserDto } from './dto/find-{{fileName name}}.dto';
+import { UpdateUserDto } from './dto/update-{{fileName name}}.dto';
+import { User } from './entities/{{fileName name}}.entity';
+
+@Injectable()
+export class UserService extends BaseService {
+  constructor(@InjectRepository(User) private userRepository: Repository<User>) {
+    super();
+  }
+
+  /**
+   * 创建用户
+   */
+  async create(createUserDto: CreateUserDto) {
+    const user = this.userRepository.create(createUserDto);
+    if (createUserDto.roles) {
+      user.roles = createUserDto.roles.map((id) => ({ id })) as any;
+    }
+    await this.userRepository.save(user);
+    return user.id;
+  }
+
+  /**
+   * 查找所有用户
+   */
+  async findMany(findUserdto: FindUserDto) {
+    const { nickname: _nickname, page, size } = findUserdto;
+    const nickname = _nickname && Like(`%${_nickname}%`);
+    const { skip, take } = this.formatPagination(page, size, true);
+    return this.userRepository.findAndCount({ skip, take, where: { nickname } });
+  }
+
+  /**
+   * 根据id查找用户
+   */
+  findOne(idOrOptions: number | Partial<User>) {
+    const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : (idOrOptions as any);
+    return this.userRepository.findOne({ where });
+  }
+
+  /**
+   * 根据用户id
+   */
+  update(id: number, updateUserDto: UpdateUserDto) {
+    return this.userRepository.update(id, updateUserDto);
+  }
+
+  /**
+   * 根据id删除用户
+   */
+  remove(id: number) {
+    return this.userRepository.softDelete(id);
+  }
+}
