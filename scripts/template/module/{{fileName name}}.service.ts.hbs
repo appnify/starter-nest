@@ -2,58 +2,54 @@ import { BaseService } from '@/common/base';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Like, Repository } from 'typeorm';
-import { CreateUserDto } from './dto/create-{{fileName name}}.dto';
-import { FindUserDto } from './dto/find-{{fileName name}}.dto';
-import { UpdateUserDto } from './dto/update-{{fileName name}}.dto';
-import { User } from './entities/{{fileName name}}.entity';
+import { Create{{upcaseName name}}Dto } from './dto/create-{{fileName name}}.dto';
+import { Find{{upcaseName name}}Dto } from './dto/find-{{fileName name}}.dto';
+import { Update{{upcaseName name}}Dto } from './dto/update-{{fileName name}}.dto';
+import { {{upcaseName name}} } from './entities/{{fileName name}}.entity';
 
 @Injectable()
-export class UserService extends BaseService {
-  constructor(@InjectRepository(User) private userRepository: Repository<User>) {
+export class {{upcaseName name}}Service extends BaseService {
+  constructor(@InjectRepository({{upcaseName name}}) private {{lowcaseName name}}Repository: Repository<{{upcaseName name}}>) {
     super();
   }
 
   /**
-   * 创建用户
+   * 新增{{cnName}}
    */
-  async create(createUserDto: CreateUserDto) {
-    const user = this.userRepository.create(createUserDto);
-    if (createUserDto.roles) {
-      user.roles = createUserDto.roles.map((id) => ({ id })) as any;
-    }
-    await this.userRepository.save(user);
-    return user.id;
+  async create(create{{upcaseName name}}Dto: Create{{upcaseName name}}Dto) {
+    const {{lowcaseName name}} = this.{{lowcaseName name}}Repository.create(create{{upcaseName name}}Dto);
+    await this.{{lowcaseName name}}Repository.save({{lowcaseName name}});
+    return {{lowcaseName name}}.id;
   }
 
   /**
-   * 查找所有用户
+   * 条件/分页查询
    */
-  async findMany(findUserdto: FindUserDto) {
-    const { nickname: _nickname, page, size } = findUserdto;
-    const nickname = _nickname && Like(`%${_nickname}%`);
+  async findMany(find{{upcaseName name}}dto: Find{{upcaseName name}}Dto) {
+    const { page, size } = find{{upcaseName name}}dto;
     const { skip, take } = this.formatPagination(page, size, true);
-    return this.userRepository.findAndCount({ skip, take, where: { nickname } });
+    return this.{{lowcaseName name}}Repository.findAndCount({ skip, take });
   }
 
   /**
-   * 根据id查找用户
+   * 根据ID查询
    */
-  findOne(idOrOptions: number | Partial<User>) {
+  findOne(idOrOptions: number | Partial<{{upcaseName name}}>) {
     const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : (idOrOptions as any);
-    return this.userRepository.findOne({ where });
+    return this.{{lowcaseName name}}Repository.findOne({ where });
   }
 
   /**
-   * 根据用户id
+   * 根据ID更新
    */
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return this.userRepository.update(id, updateUserDto);
+  update(id: number, update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
+    return this.{{lowcaseName name}}Repository.update(id, update{{upcaseName name}}Dto);
   }
 
   /**
-   * 根据id删除用户
+   * 根据ID删除(软删除)
    */
   remove(id: number) {
-    return this.userRepository.softDelete(id);
+    return this.{{lowcaseName name}}Repository.softDelete(id);
   }
 }

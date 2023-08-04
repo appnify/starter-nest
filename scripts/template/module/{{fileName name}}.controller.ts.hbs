@@ -2,49 +2,42 @@ import { BaseController } from '@/common/base';
 import { Respond, RespondType } from '@/common/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Version } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { CreateUserDto } from './dto/create-{{fileName name}}.dto';
-import { FindUserDto } from './dto/find-{{fileName name}}.dto';
-import { UpdateUserDto } from './dto/update-{{fileName name}}.dto';
-import { User } from './entities/{{fileName name}}.entity';
-import { UserService } from './{{fileName name}}.service';
+import { Create{{upcaseName name}}Dto } from './dto/create-{{fileName name}}.dto';
+import { Find{{upcaseName name}}Dto } from './dto/find-{{fileName name}}.dto';
+import { Update{{upcaseName name}}Dto } from './dto/update-{{fileName name}}.dto';
+import { {{upcaseName name}} } from './entities/{{fileName name}}.entity';
+import { {{upcaseName name}}Service } from './{{fileName name}}.service';
 
 @ApiTags('{{fileName name}}')
-@Controller('users')
-export class UserController extends BaseController {
-  constructor(private userService: UserService) {
+@Controller('{{lowcaseName name}}s')
+export class {{upcaseName name}}Controller extends BaseController {
+  constructor(private {{lowcaseName name}}Service: {{upcaseName name}}Service) {
     super();
   }
 
   @Post()
-  @ApiOperation({ description: '创建{{fileName cnName}}', operationId: 'addUser' })
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+  @ApiOperation({ description: '创建{{cnName}}', operationId: 'add{{upcaseName name}}' })
+  create(@Body() create{{upcaseName name}}Dto: Create{{upcaseName name}}Dto) {
+    return this.{{lowcaseName name}}Service.create(create{{upcaseName name}}Dto);
   }
 
   @Get()
   @Respond(RespondType.PAGINATION)
-  @ApiOkResponse({ isArray: true, type: User })
-  @ApiOperation({ description: '批量查询{{fileName cnName}}', operationId: 'getUsers' })
-  async findMany(@Query() query: FindUserDto) {
-    return this.userService.findMany(query);
-  }
-
-  @Get(':id')
-  @Version('2')
-  @ApiOperation({ deprecated: true, description: '查询{{fileName cnName}}', operationId: 'getUserv2' })
-  findOne(@Param('id') id: number) {
-    return this.userService.findOne(+id);
+  @ApiOkResponse({ isArray: true, type: {{upcaseName name}} })
+  @ApiOperation({ description: '批量查询{{cnName}}', operationId: 'get{{upcaseName name}}s' })
+  async findMany(@Query() query: Find{{upcaseName name}}Dto) {
+    return this.{{lowcaseName name}}Service.findMany(query);
   }
 
   @Patch(':id')
-  @ApiOperation({ description: '更新{{fileName cnName}}', operationId: 'updateUser' })
-  update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
+  @ApiOperation({ description: '更新{{cnName}}', operationId: 'update{{upcaseName name}}' })
+  update(@Param('id') id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
+    return this.{{lowcaseName name}}Service.update(+id, update{{upcaseName name}}Dto);
   }
 
   @Delete(':id')
-  @ApiOperation({ description: '删除{{fileName cnName}}', operationId: 'deleteUser' })
+  @ApiOperation({ description: '删除{{cnName}}', operationId: 'delete{{upcaseName name}}' })
   remove(@Param('id') id: number) {
-    return this.userService.remove(+id);
+    return this.{{lowcaseName name}}Service.remove(+id);
   }
 }
