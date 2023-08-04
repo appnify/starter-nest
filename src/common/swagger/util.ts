@@ -47,6 +47,7 @@ export function addResponseWrapper(doc: OpenAPIObject) {
               properties: {
                 data: schema,
               },
+              required: ['data'],
             },
           ],
         };

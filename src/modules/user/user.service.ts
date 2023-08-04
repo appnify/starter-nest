@@ -61,7 +61,7 @@ export class UserService extends BaseService {
    * 根据用户名查找用户
    */
   findByUsername(username: string) {
-    return this.userRepository.findOneOrFail({ where: { username } });
+    return this.userRepository.findOne({ where: { username } });
   }
 
   /**
