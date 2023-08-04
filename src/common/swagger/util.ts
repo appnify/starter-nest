@@ -27,6 +27,13 @@ export function addResponseWrapper(doc: OpenAPIObject) {
       for (const status of Object.keys(responses)) {
         const json = responses[status].content?.['application/json'];
         if (!json) {
+          responses[status].content = {
+            'application/json': {
+              schema: {
+                $ref: '#/components/schemas/Response',
+              },
+            },
+          };
           continue;
         }
         const schema = json.schema;

@@ -24,7 +24,7 @@ export class Response<T = any> {
    * @example 1
    */
   @ApiProperty({})
-  data: T;
+  data?: T;
 
   /**
    * 响应元数据

@@ -11,9 +11,16 @@ export const ServeStaticModule = _ServeStaticModule.forRootAsync({
       {
         rootPath: config.uploadDir,
         serveRoot: config.uploadPrefix,
+        serveStaticOptions: {
+          fallthrough: false,
+        },
       },
       {
         rootPath: config.staticDir,
+        serveRoot: config.staticPrefix,
+        serveStaticOptions: {
+          fallthrough: false,
+        },
       },
     ];
   },

@@ -123,6 +123,14 @@ export class ConfigService {
   }
 
   /**
+   * 静态文件URL前缀
+   * @default '/''
+   */
+  get staticPrefix(): string {
+    return this.config.get('STATIC_PREFIX', '/');
+  }
+
+  /**
    * 默认页码
    * @default 1
    */

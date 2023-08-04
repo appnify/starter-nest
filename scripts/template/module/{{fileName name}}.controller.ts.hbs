@@ -1,7 +1,7 @@
 import { BaseController } from '@/common/base';
 import { Respond, RespondType } from '@/common/response';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Version } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, ParseIntPipe } from '@nestjs/common';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Create{{upcaseName name}}Dto } from './dto/create-{{fileName name}}.dto';
 import { Find{{upcaseName name}}Dto } from './dto/find-{{fileName name}}.dto';
 import { Update{{upcaseName name}}Dto } from './dto/update-{{fileName name}}.dto';
@@ -15,29 +15,45 @@ export class {{upcaseName name}}Controller extends BaseController {
     super();
   }
 
+  /**
+   * 新增{{cnName}}
+   */
   @Post()
-  @ApiOperation({ description: '创建{{cnName}}', operationId: 'add{{upcaseName name}}' })
-  create(@Body() create{{upcaseName name}}Dto: Create{{upcaseName name}}Dto) {
+  add{{upcaseName name}}(@Body() create{{upcaseName name}}Dto: Create{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.create(create{{upcaseName name}}Dto);
   }
 
+  /**
+   * 根据分页/过滤参数查询{{cnName}}
+   */
   @Get()
   @Respond(RespondType.PAGINATION)
   @ApiOkResponse({ isArray: true, type: {{upcaseName name}} })
-  @ApiOperation({ description: '批量查询{{cnName}}', operationId: 'get{{upcaseName name}}s' })
-  async findMany(@Query() query: Find{{upcaseName name}}Dto) {
+  get{{upcaseName name}}s(@Query() query: Find{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.findMany(query);
   }
 
+  /**
+   * 根据ID查询{{cnName}}
+   */
+  @Get(':id')
+  get{{upcaseName name}}(@Param('id', ParseIntPipe) id: number): Promise<{{upcaseName name}}> {
+    return this.{{lowcaseName name}}Service.findOne(id);
+  }
+
+  /**
+   * 根据ID更新{{cnName}}
+   */
   @Patch(':id')
-  @ApiOperation({ description: '更新{{cnName}}', operationId: 'update{{upcaseName name}}' })
-  update(@Param('id') id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
+  update{{upcaseName name}}(@Param('id', ParseIntPipe) id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.update(+id, update{{upcaseName name}}Dto);
   }
 
+  /**
+   * 根据ID删除{{cnName}}
+   */
   @Delete(':id')
-  @ApiOperation({ description: '删除{{cnName}}', operationId: 'delete{{upcaseName name}}' })
-  remove(@Param('id') id: number) {
+  del{{upcaseName name}}(@Param('id', ParseIntPipe) id: number) {
     return this.{{lowcaseName name}}Service.remove(+id);
   }
 }

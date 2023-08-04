@@ -24,7 +24,7 @@ export const initSwagger = (app: INestApplication) => {
     .build();
   const options: SwaggerDocumentOptions = {
     operationIdFactory(controllerKey, methodKey) {
-      return `${controllerKey}_${methodKey}`;
+      return `${methodKey}`;
     },
   };
   const document = addResponseWrapper(SwaggerModule.createDocument(app, docConfig, options));

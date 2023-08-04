@@ -1,12 +1,12 @@
 import { BaseController } from '@/common/base';
 import { Respond, RespondType } from '@/common/response';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, Version } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
 import { UserService } from './user.service';
+import { User } from './entities/user.entity';
 
 @ApiTags('user')
 @Controller('users')
@@ -15,36 +15,45 @@ export class UserController extends BaseController {
     super();
   }
 
+  /**
+   * 新增用户
+   */
   @Post()
-  @ApiOperation({ description: '创建用户', operationId: 'addUser' })
-  create(@Body() createUserDto: CreateUserDto) {
+  addUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
+  /**
+   * 分页/条件查询用户
+   */
   @Get()
   @Respond(RespondType.PAGINATION)
-  @ApiOkResponse({ isArray: true, type: User })
-  @ApiOperation({ description: '批量查询用户', operationId: 'getUsers' })
-  async findMany(@Query() query: FindUserDto) {
+  @ApiOkResponse({ type: User, isArray: true })
+  async getUsers(@Query() query: FindUserDto) {
     return this.userService.findMany(query);
   }
 
+  /**
+   * 根据ID查询用户
+   */
   @Get(':id')
-  @Version('2')
-  @ApiOperation({ deprecated: true, description: '查询用户', operationId: 'getUserv2' })
-  findOne(@Param('id') id: number) {
-    return this.userService.findOne(+id);
+  getUser(@Param('id', ParseIntPipe) id: number): Promise<User> {
+    return this.userService.findOne(id);
   }
 
+  /**
+   * 根据ID更新用户
+   */
   @Patch(':id')
-  @ApiOperation({ description: '更新用户', operationId: 'updateUser' })
-  update(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
+  updateUser(@Param('id') id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
   }
 
+  /**
+   * 根据ID删除用户
+   */
   @Delete(':id')
-  @ApiOperation({ description: '删除用户', operationId: 'deleteUser' })
-  remove(@Param('id') id: number) {
+  delUser(@Param('id', ParseIntPipe) id: number) {
     return this.userService.remove(+id);
   }
 }
