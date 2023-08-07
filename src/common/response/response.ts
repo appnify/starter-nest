@@ -16,7 +16,7 @@ export class Response<T = any> {
    * 响应消息
    * @example '请求成功'
    */
-  @ApiProperty({ type: 'string', example: '请求成功' })
+  @ApiProperty({ type: 'string', example: '操作成功' })
   message?: string;
 
   /**
@@ -41,14 +41,14 @@ export class Response<T = any> {
   /**
    * 创建成功响应结果
    */
-  static success({ code = ResponseCode.SUCESS, message = '请求成功', ...rest }: Response = {} as any) {
+  static success({ code = ResponseCode.SUCESS, message = '操作成功', ...rest }: Response = {} as any) {
     return this.create({ code, message, ...rest });
   }
 
   /**
    * 创建失败响应结果
    */
-  static error(data = null, message = '请求失败') {
+  static error(data = null, message = '操作失败') {
     return this.create({ code: ResponseCode.ERROR, message, data });
   }
 

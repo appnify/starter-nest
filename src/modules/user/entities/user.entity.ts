@@ -1,8 +1,8 @@
-import { ApiHideProperty } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
 import { BaseEntity } from '@/database';
 import { Post } from '@/modules/post';
 import { Role } from '@/modules/role';
+import { ApiHideProperty } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
 import { Column, Entity, JoinTable, ManyToMany, RelationId } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
@@ -66,6 +66,9 @@ export class User extends BaseEntity {
   @JoinTable()
   roles: Role[];
 
+  /**
+   * 用户角色ID
+   */
   @RelationId('roles')
   roleIds: number[];
 }
