@@ -27,6 +27,26 @@ export class AllExecptionFilter implements ExceptionFilter {
       );
     }
 
+    // 令牌过期
+    if(exception.name === 'TokenExpiredError') {
+      return response.status(HttpStatus.UNAUTHORIZED).json(
+        Response.create({
+          code: ResponseCode.TOKEN_EXPIRED,
+          message: '登陆已过期'
+        })
+      )
+    }
+
+    // 令牌错误
+    if(exception.name === 'JsonWebTokenError') {
+      return response.status(HttpStatus.UNAUTHORIZED).json(
+        Response.create({
+          code: ResponseCode.TOKEN_ERORR,
+          message: '登陆令牌错误'
+        })
+      )
+    }
+
     // 其他异常
     response.status(HttpStatus.INTERNAL_SERVER_ERROR).json(
       Response.create({

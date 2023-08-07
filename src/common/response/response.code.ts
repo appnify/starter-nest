@@ -11,6 +11,14 @@ export enum ResponseCode {
    */
   ERROR = 4000,
   /**
+   * 令牌错误
+   */
+  TOKEN_ERORR = 4050,
+  /**
+   * 登陆过期
+   */
+  TOKEN_EXPIRED = 4051,
+  /**
    * 参数错误
    */
   PARAM_ERROR = 4005,
