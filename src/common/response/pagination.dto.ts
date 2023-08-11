@@ -1,5 +1,5 @@
 import { Transform } from 'class-transformer';
-import { IsNumber, IsOptional, Min } from 'class-validator';
+import { IsNumber, IsOptional, IsString, Matches, Min } from 'class-validator';
 
 /**
  * 分页 DTO
@@ -12,6 +12,14 @@ import { IsNumber, IsOptional, Min } from 'class-validator';
  * ```
  */
 export class PaginationDto {
+  /**
+   * 排序规则
+   * @example 'id:desc'
+   */
+  @IsOptional()
+  @Matches(/^(\w+:\w+,)*\w+:\w+$/)
+  sort?: string = 'id:desc';
+
   /**
    * 页码
    * @example 1

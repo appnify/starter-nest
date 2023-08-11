@@ -29,9 +29,9 @@ export class UserService extends BaseService {
    * 查找所有用户
    */
   async findMany(findUserdto: FindUserDto) {
-    const { nickname: _nickname, page, size } = findUserdto;
+    const { nickname: _nickname, } = findUserdto;
     const nickname = _nickname && Like(`%${_nickname}%`);
-    const { skip, take } = this.formatPagination(page, size, true);
+    const { skip, take } = this.paginizate(findUserdto, { full: true });
     return this.userRepository.findAndCount({ skip, take, where: { nickname } });
   }
 

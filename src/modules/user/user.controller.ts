@@ -1,6 +1,6 @@
 import { BaseController } from '@/common/base';
 import { Respond, RespondType } from '@/common/response';
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
@@ -37,7 +37,7 @@ export class UserController extends BaseController {
    * 根据ID查询用户
    */
   @Get(':id')
-  getUser(@Param('id', ParseIntPipe) id: number): Promise<User> {
+  getUser(@Param('id') id: number): Promise<User> {
     return this.userService.findOne(id);
   }
 
@@ -53,7 +53,7 @@ export class UserController extends BaseController {
    * 根据ID删除用户
    */
   @Delete(':id')
-  delUser(@Param('id', ParseIntPipe) id: number) {
+  delUser(@Param('id') id: number) {
     return this.userService.remove(+id);
   }
 }

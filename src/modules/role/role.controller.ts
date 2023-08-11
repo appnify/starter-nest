@@ -25,19 +25,19 @@ export class RoleController {
 
   @Get(':id')
   @ApiOperation({ description: '查询角色', operationId: 'getRole' })
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.roleService.findOne(+id);
   }
 
   @Patch(':id')
   @ApiOperation({ description: '更新角色', operationId: 'updateRole' })
-  update(@Param('id') id: string, @Body() updateRoleDto: UpdateRoleDto) {
+  update(@Param('id') id: number, @Body() updateRoleDto: UpdateRoleDto) {
     return this.roleService.update(+id, updateRoleDto);
   }
 
   @Delete(':id')
   @ApiOperation({ description: '删除角色', operationId: 'delRole' })
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.roleService.remove(+id);
   }
 }

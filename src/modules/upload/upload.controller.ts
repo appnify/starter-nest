@@ -17,7 +17,6 @@ export class UploadController {
   @ApiBody({ description: '要上传的文件', type: CreateUploadDto })
   @ApiOperation({ description: '上传文件', operationId: 'addFile' })
   create(@UploadedFile() file: Express.Multer.File, @Req() req: Request, @Ip() ip: string) {
-    console.log(`ip: ${ip}, req: ${JSON.stringify(req.user)}`);
     return this.uploadService.create(file);
   }
 
@@ -30,7 +29,7 @@ export class UploadController {
 
   @Get(':id')
   @ApiOperation({ description: '查询', operationId: 'getFile' })
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.uploadService.findOne(+id);
   }
 
@@ -42,7 +41,7 @@ export class UploadController {
 
   @Delete(':id')
   @ApiOperation({ description: '删除', operationId: 'delFile' })
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.uploadService.remove(+id);
   }
 }
