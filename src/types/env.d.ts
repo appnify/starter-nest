@@ -11,6 +11,7 @@ declare module 'express' {
     user?: {
       id: number;
       username: string;
+      nickname: string;
     };
   }
 }

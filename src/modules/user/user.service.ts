@@ -1,7 +1,7 @@
 import { BaseService } from '@/common/base';
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Like, Repository } from 'typeorm';
+import { In, Like, Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -18,8 +18,9 @@ export class UserService extends BaseService {
    */
   async create(createUserDto: CreateUserDto) {
     const user = this.userRepository.create(createUserDto);
-    if (createUserDto.roles) {
-      user.roles = createUserDto.roles.map((id) => ({ id })) as any;
+    if (createUserDto.roleIds) {
+      user.roles = createUserDto.roleIds.map((id) => ({ id })) as any;
+      delete createUserDto.roleIds;
     }
     await this.userRepository.save(user);
     return user.id;
@@ -29,7 +30,7 @@ export class UserService extends BaseService {
    * 查找所有用户
    */
   async findMany(findUserdto: FindUserDto) {
-    const { nickname: _nickname, } = findUserdto;
+    const { nickname: _nickname } = findUserdto;
     const nickname = _nickname && Like(`%${_nickname}%`);
     const { skip, take } = this.paginizate(findUserdto, { full: true });
     return this.userRepository.findAndCount({ skip, take, where: { nickname } });
@@ -46,7 +47,16 @@ export class UserService extends BaseService {
   /**
    * 根据用户id
    */
-  update(id: number, updateUserDto: UpdateUserDto) {
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const user = await this.userRepository.findOne({ where: { id } });
+    if (!user) {
+      throw new NotFoundException('用户不存在');
+    }
+    if (updateUserDto.roleIds) {
+      const roles = updateUserDto.roleIds.map((id) => ({ id }));
+      await this.userRepository.save({ id, roles });
+      delete updateUserDto.roleIds;
+    }
     return this.userRepository.update(id, updateUserDto);
   }
 

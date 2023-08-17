@@ -1,7 +1,7 @@
 import { BaseEntity } from '@/database';
 import { Permission } from '@/modules/permission/entities/permission.entity';
 import { User } from 'src/modules/user';
-import { Column, Entity, JoinTable, ManyToMany } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, RelationId } from 'typeorm';
 
 @Entity()
 export class Role extends BaseEntity {
@@ -11,18 +11,21 @@ export class Role extends BaseEntity {
    */
   @Column({ comment: '角色名称' })
   name: string;
+
   /**
    * 角色标识
    * @example 'admin'
    */
   @Column({ comment: '角色标识' })
   slug: string;
+
   /**
    * 角色描述
    * @example '拥有所有权限'
    */
   @Column({ comment: '角色描述', nullable: true })
   description: string;
+
   /**
    * 角色权限
    * @example [1, 2, 3]
@@ -30,6 +33,14 @@ export class Role extends BaseEntity {
   @JoinTable()
   @ManyToMany(() => Permission, (permission) => permission.roles)
   permissions: Permission[];
+
+  /**
+   * 角色权限ID
+   * @example [1, 2, 3]
+   */
+  @RelationId('permissions')
+  permissionIds: number[];
+
   /**
    * 角色用户
    * @example [1, 2, 3]

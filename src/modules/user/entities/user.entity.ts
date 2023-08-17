@@ -62,7 +62,7 @@ export class User extends BaseEntity {
    * 用户角色
    */
   @ApiHideProperty()
-  @ManyToMany(() => Role, (role) => role.user)
+  @ManyToMany(() => Role, (role) => role.user, { cascade: true })
   @JoinTable()
   roles: Role[];
 

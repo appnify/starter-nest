@@ -13,42 +13,48 @@ export class BaseEntity {
    */
   @PrimaryGeneratedColumn({ comment: '自增ID' })
   id: number;
+
   /**
    * 创建时间
    * @example "2022-01-01 10:10:10"
    */
   @CreateDateColumn({ comment: '创建时间' })
   createdAt: Date;
+
   /**
-   * 创建人ID
-   * @example 1
+   * 创建人
+   * @example '绝弹(1)'
    */
   @Column({ comment: '创建人', nullable: true })
-  createdBy: number;
+  createdBy: string;
+
   /**
    * 更新时间
    * @example "2022-01-02 11:11:11"
    */
   @UpdateDateColumn({ comment: '更新时间' })
   updatedAt: Date;
+
   /**
-   * 更新人ID
-   * @example 1
+   * 更新人
+   * @example '绝弹(1)'
    */
   @Column({ comment: '更新人', nullable: true })
-  updatedBy: number;
+  updatedBy: string;
+
   /**
    * 删除时间
    * @example "2022-01-03 12:12:12"
    */
   @Exclude()
-  @DeleteDateColumn({ comment: '删除时间' })
+  @DeleteDateColumn({ comment: '删除时间', select: false })
   deleteddAt: Date;
+
   /**
    * 删除人ID
    * @example 1
    */
   @Exclude()
-  @Column({ comment: '删除人', nullable: true })
-  deletedBy: number;
+  @Column({ comment: '删除人', nullable: true, select: false })
+  deletedBy: string;
 }

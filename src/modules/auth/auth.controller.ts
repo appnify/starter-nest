@@ -1,9 +1,10 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post, UseInterceptors } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { AuthUserDto } from './dto/auth-user.dto';
 import { Public } from './jwt';
 import { LoginedUserVo } from './vo/logined-user.vo';
+import { AuthLogInterceptor } from '@/monitor/log';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -16,6 +17,7 @@ export class AuthController {
   @Post('login')
   @Public()
   @HttpCode(HttpStatus.OK)
+  @UseInterceptors(AuthLogInterceptor)
   login(@Body() user: AuthUserDto): Promise<LoginedUserVo> {
     return this.authService.signIn(user);
   }

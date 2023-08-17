@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateRoleDto } from './dto/create-role.dto';
@@ -26,7 +26,16 @@ export class RoleService {
     return `This action returns a #${id} role`;
   }
 
-  update(id: number, updateRoleDto: UpdateRoleDto) {
+  async update(id: number, updateRoleDto: UpdateRoleDto) {
+    const role = this.roleRepository.findOne({ where: { id } });
+    if (!role) {
+      throw new NotFoundException('角色不存在');
+    }
+    if (updateRoleDto.permissionIds) {
+      const permissions = updateRoleDto.permissionIds.map((id) => ({ id }));
+      await this.roleRepository.save({ id, permissions });
+      delete updateRoleDto.permissionIds;
+    }
     return this.roleRepository.update(id, updateRoleDto);
   }
 

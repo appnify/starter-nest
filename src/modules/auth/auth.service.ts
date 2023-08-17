@@ -17,7 +17,8 @@ export class AuthService {
       throw new UnauthorizedException('密码错误');
     }
     const loginedUser = Object.assign(new LoginedUserVo(), user);
-    loginedUser.token = await this.jwtService.signAsync({ id: user.id, username: user.username });
+    const { id, username, nickname } = loginedUser;
+    loginedUser.token = await this.jwtService.signAsync({ id, username, nickname });
     return loginedUser;
   }
 }
