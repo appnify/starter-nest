@@ -2,7 +2,7 @@ import { BaseEntity } from '@/database';
 import { Column, Entity } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
-export class AuthLog extends BaseEntity {
+export class LoginLog extends BaseEntity {
   /**
    * 用户昵称
    * @example '绝弹'
@@ -16,6 +16,13 @@ export class AuthLog extends BaseEntity {
    */
   @Column()
   description: string;
+
+  /**
+   * 操作状态
+   * @example true
+   */
+  @Column({ nullable: true })
+  status: boolean;
 
   /**
    * 登陆IP

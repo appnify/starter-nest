@@ -5,7 +5,7 @@ import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CreateLogDto } from './dto/create-log.dto';
 import { FindLogDto } from './dto/find-log.dto';
 import { UpdateLogDto } from './dto/update-log.dto';
-import { AuthLog } from './entities/authLog.entity';
+import { LoginLog } from './entities/loginLog.entity';
 import { LogService } from './log.service';
 
 @ApiTags('log')
@@ -28,8 +28,15 @@ export class LogController extends BaseController {
    */
   @Get()
   @Respond(RespondType.PAGINATION)
-  @ApiOkResponse({ isArray: true, type: AuthLog })
+  @ApiOkResponse({ isArray: true, type: LoginLog })
   getLogs(@Query() query: FindLogDto) {
+    return this.logService.findMany(query);
+  }
+
+  @Get('login')
+  @Respond(RespondType.PAGINATION)
+  @ApiOkResponse({ isArray: true, type: LoginLog })
+  getLoginLogs(@Query() query: FindLogDto) {
     return this.logService.findMany(query);
   }
 
@@ -37,7 +44,7 @@ export class LogController extends BaseController {
    * 根据ID查询日志管理
    */
   @Get(':id')
-  getLog(@Param('id', ParseIntPipe) id: number): Promise<AuthLog> {
+  getLog(@Param('id', ParseIntPipe) id: number): Promise<LoginLog> {
     return this.logService.findOne(id);
   }
 

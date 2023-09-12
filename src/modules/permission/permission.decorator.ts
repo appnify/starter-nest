@@ -1,6 +1,6 @@
 import { SetMetadata } from '@nestjs/common';
 
-export const PERMISSION_KEY = 'permission';
+export const PERMISSION_KEY = 'APP:PERMISSION';
 
 /**
  * 权限枚举
@@ -25,10 +25,10 @@ export const enum PermissionEnum {
 }
 
 /**
- * 权限装饰器
+ * 指定所需的权限
  * @param permissions
  * @returns
  */
-export function NeedPermission(...permissions: PermissionEnum[]) {
+export function PermissionWith(...permissions: string[]) {
   return SetMetadata(PERMISSION_KEY, permissions);
 }

@@ -9,14 +9,15 @@ export class AuthService {
   constructor(private userService: UserService, private jwtService: JwtService) {}
 
   async signIn(authUserDto: AuthUserDto) {
-    const { password, ...user } = await this.userService.findByUsername(authUserDto.username);
+    const user = await this.userService.findByUsername(authUserDto.username);
     if (!user) {
       throw new UnauthorizedException('用户名不存在');
     }
-    if (password !== authUserDto.password) {
+    if (user.password !== authUserDto.password) {
       throw new UnauthorizedException('密码错误');
     }
-    const loginedUser = Object.assign(new LoginedUserVo(), user);
+    const { password, ...rest } = user;
+    const loginedUser = Object.assign(new LoginedUserVo(), rest);
     const { id, username, nickname } = loginedUser;
     loginedUser.token = await this.jwtService.signAsync({ id, username, nickname });
     return loginedUser;

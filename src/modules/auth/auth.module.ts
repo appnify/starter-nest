@@ -4,10 +4,11 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtGuard, JwtModule } from './jwt';
 import { APP_GUARD } from '@nestjs/core';
+import { LogModule } from '@/monitor/log';
 
 @Module({
+  imports: [UserModule, JwtModule, LogModule],
   controllers: [AuthController],
-  imports: [UserModule, JwtModule],
   providers: [
     AuthService,
     {

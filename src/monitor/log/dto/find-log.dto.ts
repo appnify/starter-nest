@@ -1,13 +1,15 @@
 import { PaginationDto } from '@/common/response';
 import { IntersectionType } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
 import { IsOptional, IsString } from 'class-validator';
 
 export class FindLogDto extends IntersectionType(PaginationDto) {
   /**
-   * 字段描述(Swagger用途)
-   * @example '示例值'
+   * 用户名
+   * @example '绝弹'
    */
   @IsOptional()
   @IsString()
-  demo?: string;
+  @Transform(({ value }) => value && value.trim())
+  nickname?: string;
 }

@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { AuthUserDto } from './dto/auth-user.dto';
 import { Public } from './jwt';
 import { LoginedUserVo } from './vo/logined-user.vo';
-import { AuthLogInterceptor } from '@/monitor/log';
+import { LoginLogInterceptor } from '@/monitor/log';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -17,7 +17,7 @@ export class AuthController {
   @Post('login')
   @Public()
   @HttpCode(HttpStatus.OK)
-  @UseInterceptors(AuthLogInterceptor)
+  @UseInterceptors(LoginLogInterceptor)
   login(@Body() user: AuthUserDto): Promise<LoginedUserVo> {
     return this.authService.signIn(user);
   }

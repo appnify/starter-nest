@@ -5,11 +5,13 @@ import { Like, Repository } from 'typeorm';
 import { CreateLogDto } from './dto/create-log.dto';
 import { FindLogDto } from './dto/find-log.dto';
 import { UpdateLogDto } from './dto/update-log.dto';
-import { AuthLog } from './entities/authLog.entity';
+import { LoginLog } from './entities/loginLog.entity';
+import uaParser from 'ua-parser-js';
+import axios from 'axios';
 
 @Injectable()
 export class LogService extends BaseService {
-  constructor(@InjectRepository(AuthLog) private logRepository: Repository<AuthLog>) {
+  constructor(@InjectRepository(LoginLog) private loginLogRepository: Repository<LoginLog>) {
     super();
   }
 
@@ -17,39 +19,97 @@ export class LogService extends BaseService {
    * 新增日志管理
    */
   async create(createLogDto: CreateLogDto) {
-    const log = this.logRepository.create();
-    await this.logRepository.save(log);
+    const log = this.loginLogRepository.create();
+    await this.loginLogRepository.save(log);
     return log.id;
+  }
+
+  /**
+   * 添加登陆日志
+   */
+  async addLoginLog(log: { nickname: string; status: boolean, description: string; ip: string; userAgent: string }) {
+    const { nickname, status, description, ip, userAgent } = log;
+    const { browser, os } = this.parseUserAgent(userAgent);
+    const { addr } = await this.parseUserIp(ip);
+    const loginLog = this.loginLogRepository.create({
+      nickname,
+      status,
+      description,
+      ip,
+      addr,
+      browser,
+      os,
+    });
+    await this.loginLogRepository.save(loginLog);
+    return loginLog.id;
+  }
+
+  /**
+   * 解析浏览器信息
+   */
+  parseUserAgent(userAgent: string) {
+    const ua = uaParser(userAgent);
+    const { browser, os } = ua;
+    return {
+      browser: `${browser.name} ${browser.version}`,
+      os: `${os.name} ${os.version}`,
+    };
+  }
+
+  /**
+   * 解析IP地址
+   */
+  async parseUserIp(ip: string) {
+    const result = {
+      addr: '',
+    };
+    try {
+      const url = 'https://whois.pconline.com.cn/ipJson.jsp';
+      const params = { ip, json: true };
+      const { data } = await axios.get(url, { params, responseType: 'arraybuffer' });
+      const dataStr = new TextDecoder('gbk').decode(data);
+      const parased = JSON.parse(dataStr);
+      result.addr = parased.addr;
+    } catch {
+      result.addr = '未知';
+    }
+    return result;
   }
 
   /**
    * 条件/分页查询
    */
   async findMany(findLogdto: FindLogDto) {
-    const { page, size } = findLogdto;
+    const { page, size, nickname  } = findLogdto;
     const { skip, take } = this.formatPagination(page, size, true);
-    return this.logRepository.findAndCount({ skip, take });
+    return this.loginLogRepository.findAndCount({
+      skip,
+      take,
+      where: {
+        nickname: nickname ? Like(`%${nickname}%`) : undefined,
+      }
+    });
   }
 
   /**
    * 根据ID查询
    */
-  findOne(idOrOptions: number | Partial<AuthLog>) {
+  findOne(idOrOptions: number | Partial<LoginLog>) {
     const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : (idOrOptions as any);
-    return this.logRepository.findOne({ where });
+    return this.loginLogRepository.findOne({ where });
   }
 
   /**
    * 根据ID更新
    */
   update(id: number, updateLogDto: UpdateLogDto) {
-    // return this.logRepository.update();
+    // return this.loginLogRepository.update();
   }
 
   /**
    * 根据ID删除(软删除)
    */
   remove(id: number) {
-    return this.logRepository.softDelete(id);
+    return this.loginLogRepository.softDelete(id);
   }
 }
