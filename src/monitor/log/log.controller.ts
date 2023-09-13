@@ -1,7 +1,7 @@
 import { BaseController } from '@/common/base';
 import { Respond, RespondType } from '@/common/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, ParseIntPipe } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateLogDto } from './dto/create-log.dto';
 import { FindLogDto } from './dto/find-log.dto';
 import { UpdateLogDto } from './dto/update-log.dto';
@@ -36,6 +36,7 @@ export class LogController extends BaseController {
   @Get('login')
   @Respond(RespondType.PAGINATION)
   @ApiOkResponse({ isArray: true, type: LoginLog })
+  @ApiOperation({ description: '分页查询登陆日志', operationId: 'getLoginLogs' })
   getLoginLogs(@Query() query: FindLogDto) {
     return this.logService.findMany(query);
   }

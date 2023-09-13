@@ -16,11 +16,12 @@ module.exports = function main(/** @type { import('plop').NodePlopAPI } */ plop)
   });
 
   plop.setGenerator('module', {
+    description: '创建一个新的模块',
     prompts: [
       {
         name: 'name',
-        message: '请输入模块名称',
         type: 'input',
+        message: '请输入模块名称(支持嵌套，如: x/y)',
         validate: (input) => {
           if (/^(\w+\/)*(\w+)$/.test(input)) {
             return true;
@@ -30,8 +31,8 @@ module.exports = function main(/** @type { import('plop').NodePlopAPI } */ plop)
       },
       {
         name: 'cnName',
-        message: '请输入模块中文名称',
         type: 'input',
+        message: '请输入模块中文名称',
       },
     ],
     actions: [

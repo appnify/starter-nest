@@ -1,0 +1,5777 @@
+{
+  "nodes": {
+    "4751697": {
+      "id": "4751697",
+      "label": "UploadRepository",
+      "parent": "545846245",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UploadRepository",
+        "initTime": 124.48459994792938
+      }
+    },
+    "90964321": {
+      "id": "90964321",
+      "label": "RequestMiddleware",
+      "parent": "1528017428",
+      "metadata": {
+        "type": "middleware",
+        "internal": false,
+        "sourceModuleName": "DatabaseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 0.12419998645782471
+      }
+    },
+    "95355232": {
+      "id": "95355232",
+      "label": "JwtModule",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.452399969100952
+      }
+    },
+    "141991374": {
+      "id": "141991374",
+      "label": "ApplicationConfig",
+      "parent": "938844585",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LoggerModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "144428720": {
+      "id": "144428720",
+      "label": "ModuleRef",
+      "parent": "166481974",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "MulterModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "166481974": {
+      "id": "166481974",
+      "label": "MulterModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "203550704": {
+      "id": "203550704",
+      "label": "ExternalContextCreator",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true
+      }
+    },
+    "211572259": {
+      "id": "211572259",
+      "label": "ConfigHostModule",
+      "metadata": { "type": "module", "global": true, "dynamic": false, "internal": false }
+    },
+    "225063248": {
+      "id": "225063248",
+      "label": "InternalCoreModule",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 10.90369999408722
+      }
+    },
+    "256260345": {
+      "id": "256260345",
+      "label": "ApplicationConfig",
+      "parent": "1528017428",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DatabaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "261308225": {
+      "id": "261308225",
+      "label": "UploadService",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 129.24790000915527
+      }
+    },
+    "266839889": {
+      "id": "266839889",
+      "label": "EntityManager",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 124.68449997901917
+      }
+    },
+    "271190106": {
+      "id": "271190106",
+      "label": "ResponseModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "303302557": {
+      "id": "303302557",
+      "label": "ModuleRef",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "350824509": {
+      "id": "350824509",
+      "label": "SERVE_STATIC_MODULE_OPTIONS",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "SERVE_STATIC_MODULE_OPTIONS",
+        "initTime": 46.46060001850128
+      }
+    },
+    "381125673": {
+      "id": "381125673",
+      "label": "ModuleRef",
+      "parent": "433315939",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "394363029": {
+      "id": "394363029",
+      "label": "ModuleRef",
+      "parent": "-743744433",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SerializationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "400681591": {
+      "id": "400681591",
+      "label": "DiscoveryService",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 8.198199987411499
+      }
+    },
+    "410228892": {
+      "id": "410228892",
+      "label": "ApplicationConfig",
+      "parent": "-949539487",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "411075377": {
+      "id": "411075377",
+      "label": "PermissionGuard",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_GUARD (UUID: 1201125561)",
+        "subtype": "guard",
+        "initTime": 130.53289997577667,
+        "global": true
+      }
+    },
+    "433315939": {
+      "id": "433315939",
+      "label": "LogModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "435222439": {
+      "id": "435222439",
+      "label": "ModuleRef",
+      "parent": "-949539487",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "479536350": {
+      "id": "479536350",
+      "label": "dbe1ce7b12202d5d9eae8",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "subtype": "interceptor",
+        "initTime": 1.9164999723434448
+      }
+    },
+    "518151306": {
+      "id": "518151306",
+      "label": "ApplicationConfig",
+      "parent": "-743744433",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SerializationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "545846241": {
+      "id": "545846241",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "545846242": {
+      "id": "545846242",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "545846243": {
+      "id": "545846243",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "545846244": {
+      "id": "545846244",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "545846245": {
+      "id": "545846245",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "545846246": {
+      "id": "545846246",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "552849492": {
+      "id": "552849492",
+      "label": "ModuleRef",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "555176277": {
+      "id": "555176277",
+      "label": "InternalCoreModule",
+      "metadata": { "type": "module", "global": true, "dynamic": true, "internal": true }
+    },
+    "656974807": {
+      "id": "656974807",
+      "label": "AllExecptionFilter",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_FILTER (UUID: -277730442)",
+        "subtype": "filter",
+        "initTime": 69.84270000457764,
+        "global": true
+      }
+    },
+    "671882984": {
+      "id": "671882984",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 10.742999911308289
+      }
+    },
+    "687352615": {
+      "id": "687352615",
+      "label": "ModuleRef",
+      "parent": "545846241",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "687352616": {
+      "id": "687352616",
+      "label": "ModuleRef",
+      "parent": "545846242",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "687352617": {
+      "id": "687352617",
+      "label": "ModuleRef",
+      "parent": "545846243",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "687352618": {
+      "id": "687352618",
+      "label": "ModuleRef",
+      "parent": "545846244",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "687352619": {
+      "id": "687352619",
+      "label": "ModuleRef",
+      "parent": "545846245",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "687352620": {
+      "id": "687352620",
+      "label": "ModuleRef",
+      "parent": "545846246",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "699718093": {
+      "id": "699718093",
+      "label": "ApplicationConfig",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "731684192": {
+      "id": "731684192",
+      "label": "TypeOrmCoreModule",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 69.28219997882843
+      }
+    },
+    "772659425": {
+      "id": "772659425",
+      "label": "ConfigService",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 14.94949996471405
+      }
+    },
+    "805229344": {
+      "id": "805229344",
+      "label": "ServeStaticModule",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 70.23129999637604
+      }
+    },
+    "826085184": {
+      "id": "826085184",
+      "label": "CacheModule",
+      "parent": "-949539487",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.991999983787537
+      }
+    },
+    "851305207": {
+      "id": "851305207",
+      "label": "LoginLogRepository",
+      "parent": "545846242",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "LoginLogRepository",
+        "initTime": 124.82910001277924
+      }
+    },
+    "863216333": {
+      "id": "863216333",
+      "label": "ConfigModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "915774976": {
+      "id": "915774976",
+      "label": "ApplicationConfig",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "916791331": {
+      "id": "916791331",
+      "label": "ModuleRef",
+      "parent": "938844585",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LoggerModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "930519593": {
+      "id": "930519593",
+      "label": "ConfigService",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 12.00820004940033
+      }
+    },
+    "938844585": {
+      "id": "938844585",
+      "label": "LoggerModule",
+      "metadata": { "type": "module", "global": true, "dynamic": false, "internal": false }
+    },
+    "955569866": {
+      "id": "955569866",
+      "label": "ValidationModule",
+      "parent": "-360459438",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ValidationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.055299997329712
+      }
+    },
+    "1014874916": {
+      "id": "1014874916",
+      "label": "TypeOrmModuleId",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModuleId"
+      }
+    },
+    "1031519305": {
+      "id": "1031519305",
+      "label": "ModuleRef",
+      "parent": "-1645549745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RoleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1063746662": {
+      "id": "1063746662",
+      "label": "CONFIGURATION_TOKEN",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CONFIGURATION_TOKEN",
+        "initTime": 9.246599912643433
+      }
+    },
+    "1064464280": {
+      "id": "1064464280",
+      "label": "PostModule",
+      "parent": "-1510098951",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 6.96150004863739
+      }
+    },
+    "1070370213": {
+      "id": "1070370213",
+      "label": "JwtService",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 68.72969996929169
+      }
+    },
+    "1094521382": {
+      "id": "1094521382",
+      "label": "PermissionController",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 0.43129992485046387
+      }
+    },
+    "1139971038": {
+      "id": "1139971038",
+      "label": "ModuleRef",
+      "parent": "-1537098012",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UserModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1144875719": {
+      "id": "1144875719",
+      "label": "ModuleRef",
+      "parent": "863216333",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1166970099": {
+      "id": "1166970099",
+      "label": "ModuleRef",
+      "parent": "-1510098951",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1206855554": {
+      "id": "1206855554",
+      "label": "ModuleRef",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1285423550": {
+      "id": "1285423550",
+      "label": "LoginLogInterceptor",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "subtype": "interceptor",
+        "initTime": 1.8930000066757202
+      }
+    },
+    "1299116483": {
+      "id": "1299116483",
+      "label": "PermissionRepository",
+      "parent": "545846244",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "PermissionRepository",
+        "initTime": 124.64600002765656
+      }
+    },
+    "1357421246": {
+      "id": "1357421246",
+      "label": "CACHE_MANAGER",
+      "parent": "-1974377261",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CACHE_MANAGER",
+        "initTime": 70.47640001773834
+      }
+    },
+    "1359826331": {
+      "id": "1359826331",
+      "label": "CacheService",
+      "parent": "-949539487",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 76.4219000339508
+      }
+    },
+    "1404752088": {
+      "id": "1404752088",
+      "label": "AuthController",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 0.6298999786376953,
+        "enhancers": [{ "id": "1285423550", "methodKey": "login", "subtype": "interceptor" }]
+      }
+    },
+    "1424687304": {
+      "id": "1424687304",
+      "label": "PostController",
+      "parent": "-1510098951",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "PostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 2.172600030899048
+      }
+    },
+    "1431282625": {
+      "id": "1431282625",
+      "label": "ClassSerializerInterceptor",
+      "parent": "-743744433",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SerializationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_INTERCEPTOR (UUID: 1780085433)",
+        "subtype": "interceptor",
+        "initTime": 12.353100061416626,
+        "global": true
+      }
+    },
+    "1434456218": {
+      "id": "1434456218",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "Reflector",
+        "initTime": 13.376299977302551
+      }
+    },
+    "1462674704": {
+      "id": "1462674704",
+      "label": "CacheController",
+      "parent": "-949539487",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 0.11989998817443848
+      }
+    },
+    "1466641936": {
+      "id": "1466641936",
+      "label": "HttpExecptionFilter",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_FILTER (UUID: -610979416)",
+        "subtype": "filter",
+        "initTime": 8.2846999168396,
+        "global": true
+      }
+    },
+    "1475573941": {
+      "id": "1475573941",
+      "label": "ModuleRef",
+      "parent": "-2135742481",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1528017428": {
+      "id": "1528017428",
+      "label": "DatabaseModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "1529900285": {
+      "id": "1529900285",
+      "label": "Connection",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "initTime": 124.63940000534058
+      }
+    },
+    "1542581243": {
+      "id": "1542581243",
+      "label": "ModuleRef",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1546663159": {
+      "id": "1546663159",
+      "label": "ApplicationConfig",
+      "parent": "-360459438",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ValidationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1603023137": {
+      "id": "1603023137",
+      "label": "RoleService",
+      "parent": "-1645549745",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "RoleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 129.13039994239807
+      }
+    },
+    "1636939161": {
+      "id": "1636939161",
+      "label": "ModuleRef",
+      "parent": "-1974377261",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1649441975": {
+      "id": "1649441975",
+      "label": "ApplicationConfig",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1690574933": {
+      "id": "1690574933",
+      "label": "ModuleRef",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1712628187": {
+      "id": "1712628187",
+      "label": "ConfigModule",
+      "metadata": { "type": "module", "global": true, "dynamic": false, "internal": false }
+    },
+    "1712941473": {
+      "id": "1712941473",
+      "label": "ApplicationConfig",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1769319388": {
+      "id": "1769319388",
+      "label": "ConfigModule",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 9.774400115013123
+      }
+    },
+    "1787828844": {
+      "id": "1787828844",
+      "label": "ConfigHostModule",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 9.175100088119507
+      }
+    },
+    "1809676814": {
+      "id": "1809676814",
+      "label": "ModuleRef",
+      "parent": "1528017428",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DatabaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1817334964": {
+      "id": "1817334964",
+      "label": "ModuleRef",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "1852200970": {
+      "id": "1852200970",
+      "label": "EntitySubscripber",
+      "parent": "1528017428",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DatabaseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 125.57129991054535
+      }
+    },
+    "1919157847": {
+      "id": "1919157847",
+      "label": "REQUEST",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": false,
+        "scope": 2,
+        "transient": false,
+        "exported": true,
+        "token": "REQUEST",
+        "initTime": 9.098000049591064
+      }
+    },
+    "1923220193": {
+      "id": "1923220193",
+      "label": "PostService",
+      "parent": "-1510098951",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "PostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 129.09999990463257
+      }
+    },
+    "2075644217": {
+      "id": "2075644217",
+      "label": "TypeOrmModuleOptions",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModuleOptions",
+        "initTime": 45.630499958992004
+      }
+    },
+    "2107856914": {
+      "id": "2107856914",
+      "label": "MulterModule",
+      "parent": "166481974",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "MulterModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.005299925804138
+      }
+    },
+    "2118694856": {
+      "id": "2118694856",
+      "label": "ApplicationConfig",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "2141638038": {
+      "id": "2141638038",
+      "label": "MULTER_MODULE_OPTIONS",
+      "parent": "166481974",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "MulterModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "MULTER_MODULE_OPTIONS",
+        "initTime": 44.71740007400513
+      }
+    },
+    "2143056138": {
+      "id": "2143056138",
+      "label": "UploadController",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 1.299399971961975,
+        "enhancers": [{ "id": "479536350", "methodKey": "create", "subtype": "interceptor" }]
+      }
+    },
+    "-1486320561": {
+      "id": "-1486320561",
+      "label": "ModuleRef",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-651043398": {
+      "id": "-651043398",
+      "label": "ApplicationConfig",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-255469305": {
+      "id": "-255469305",
+      "label": "INQUIRER",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 1,
+        "transient": true,
+        "exported": true,
+        "token": "INQUIRER",
+        "initTime": 9.084699988365173
+      }
+    },
+    "-26938366": {
+      "id": "-26938366",
+      "label": "ModulesContainer",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true
+      }
+    },
+    "-326832201": {
+      "id": "-326832201",
+      "label": "HttpAdapterHost",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true
+      }
+    },
+    "-553129559": {
+      "id": "-553129559",
+      "label": "HttpAdapterHost",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "HttpAdapterHost",
+        "initTime": 11.109599947929382
+      }
+    },
+    "-702581189": {
+      "id": "-702581189",
+      "label": "LazyModuleLoader",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 9.985400080680847
+      }
+    },
+    "-1904419534": {
+      "id": "-1904419534",
+      "label": "SerializedGraph",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true
+      }
+    },
+    "-19112576": {
+      "id": "-19112576",
+      "label": "AppModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-2139588960": {
+      "id": "-2139588960",
+      "label": "AppModule",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 9.9617999792099
+      }
+    },
+    "-71302842": {
+      "id": "-71302842",
+      "label": "ModuleRef",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-2064622725": {
+      "id": "-2064622725",
+      "label": "ApplicationConfig",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-491114354": {
+      "id": "-491114354",
+      "label": "ConfigModule",
+      "parent": "863216333",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 9.205399990081787
+      }
+    },
+    "-408540750": {
+      "id": "-408540750",
+      "label": "ApplicationConfig",
+      "parent": "863216333",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-503631788": {
+      "id": "-503631788",
+      "label": "ConfigService",
+      "parent": "863216333",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 13.534199953079224
+      }
+    },
+    "-1373608328": {
+      "id": "-1373608328",
+      "label": "LoggerModule",
+      "parent": "938844585",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LoggerModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 9.23549997806549
+      }
+    },
+    "-430147679": {
+      "id": "-430147679",
+      "label": "LoggerService",
+      "parent": "938844585",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "LoggerModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 46.999500036239624
+      }
+    },
+    "-1056671983": {
+      "id": "-1056671983",
+      "label": "LoggerInterceptor",
+      "parent": "938844585",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "LoggerModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_INTERCEPTOR (UUID: -1146749753)",
+        "subtype": "interceptor",
+        "initTime": 68.07219994068146,
+        "global": true
+      }
+    },
+    "-949539487": {
+      "id": "-949539487",
+      "label": "CacheModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1974377261": {
+      "id": "-1974377261",
+      "label": "CacheModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "-701084942": {
+      "id": "-701084942",
+      "label": "CacheModule",
+      "parent": "-1974377261",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.896100044250488
+      }
+    },
+    "-907023026": {
+      "id": "-907023026",
+      "label": "ApplicationConfig",
+      "parent": "-1974377261",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1871582906": {
+      "id": "-1871582906",
+      "label": "CACHE_MODULE_OPTIONS",
+      "parent": "-1974377261",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "CacheModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "CACHE_MODULE_OPTIONS",
+        "initTime": 46.77929997444153
+      }
+    },
+    "-1636783684": {
+      "id": "-1636783684",
+      "label": "ServeStaticModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "-1088720716": {
+      "id": "-1088720716",
+      "label": "AbstractLoader",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 10.241400003433228
+      }
+    },
+    "-743744433": {
+      "id": "-743744433",
+      "label": "SerializationModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1502885248": {
+      "id": "-1502885248",
+      "label": "SerializationModule",
+      "parent": "-743744433",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SerializationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.431899905204773
+      }
+    },
+    "-773445222": {
+      "id": "-773445222",
+      "label": "ResponseModule",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.333899974822998
+      }
+    },
+    "-1000566977": {
+      "id": "-1000566977",
+      "label": "ApplicationConfig",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1245985231": {
+      "id": "-1245985231",
+      "label": "ResponseInterceptor",
+      "parent": "271190106",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ResponseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_INTERCEPTOR (UUID: 1780085434)",
+        "subtype": "interceptor",
+        "initTime": 46.151999950408936,
+        "global": true
+      }
+    },
+    "-360459438": {
+      "id": "-360459438",
+      "label": "ValidationModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-268729140": {
+      "id": "-268729140",
+      "label": "ModuleRef",
+      "parent": "-360459438",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ValidationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-110719625": {
+      "id": "-110719625",
+      "label": "APP_PIPE (UUID: 1979895084)",
+      "parent": "-360459438",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ValidationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_PIPE (UUID: 1979895084)",
+        "subtype": "pipe",
+        "initTime": 8.039399981498718,
+        "global": true
+      }
+    },
+    "-1638728329": {
+      "id": "-1638728329",
+      "label": "ValidationExecptionFilter",
+      "parent": "-360459438",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ValidationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_FILTER (UUID: -610979415)",
+        "subtype": "filter",
+        "initTime": 8.030900001525879,
+        "global": true
+      }
+    },
+    "-1098322034": {
+      "id": "-1098322034",
+      "label": "DatabaseModule",
+      "parent": "1528017428",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DatabaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 8.016900062561035
+      }
+    },
+    "-2135742481": {
+      "id": "-2135742481",
+      "label": "TypeOrmModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "-1872891520": {
+      "id": "-1872891520",
+      "label": "TypeOrmModule",
+      "parent": "-2135742481",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.955399990081787
+      }
+    },
+    "-1068388246": {
+      "id": "-1068388246",
+      "label": "ApplicationConfig",
+      "parent": "-2135742481",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1026304274": {
+      "id": "-1026304274",
+      "label": "TypeOrmCoreModule",
+      "metadata": { "type": "module", "global": true, "dynamic": true, "internal": false }
+    },
+    "-2035045911": {
+      "id": "-2035045911",
+      "label": "ApplicationConfig",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-2103415210": {
+      "id": "-2103415210",
+      "label": "DataSource",
+      "parent": "-1026304274",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 124.42379999160767
+      }
+    },
+    "-1537098012": {
+      "id": "-1537098012",
+      "label": "UserModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1722084434": {
+      "id": "-1722084434",
+      "label": "UserModule",
+      "parent": "-1537098012",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UserModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.664999961853027
+      }
+    },
+    "-523403191": {
+      "id": "-523403191",
+      "label": "ApplicationConfig",
+      "parent": "-1537098012",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UserModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-2045439487": {
+      "id": "-2045439487",
+      "label": "UserService",
+      "parent": "-1537098012",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "UserModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 129.87779998779297
+      }
+    },
+    "-207939746": {
+      "id": "-207939746",
+      "label": "UserController",
+      "parent": "-1537098012",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "UserModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 2.2175999879837036
+      }
+    },
+    "-257450702": {
+      "id": "-257450702",
+      "label": "TypeOrmModule",
+      "parent": "545846241",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.586599946022034
+      }
+    },
+    "-223917668": {
+      "id": "-223917668",
+      "label": "ApplicationConfig",
+      "parent": "545846241",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1488832441": {
+      "id": "-1488832441",
+      "label": "UserRepository",
+      "parent": "545846241",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRepository",
+        "initTime": 125.13289999961853
+      }
+    },
+    "-1134487807": {
+      "id": "-1134487807",
+      "label": "AuthModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1846279256": {
+      "id": "-1846279256",
+      "label": "AuthModule",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.567400097846985
+      }
+    },
+    "-120792986": {
+      "id": "-120792986",
+      "label": "ApplicationConfig",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-793915935": {
+      "id": "-793915935",
+      "label": "AuthService",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 130.9773999452591
+      }
+    },
+    "-2034887918": {
+      "id": "-2034887918",
+      "label": "JwtGuard",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "APP_GUARD (UUID: 1239237319)",
+        "subtype": "guard",
+        "initTime": 74.79260003566742,
+        "global": true
+      }
+    },
+    "-536515674": {
+      "id": "-536515674",
+      "label": "JwtModule",
+      "metadata": { "type": "module", "global": false, "dynamic": true, "internal": false }
+    },
+    "-588705940": {
+      "id": "-588705940",
+      "label": "ModuleRef",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1900804336": {
+      "id": "-1900804336",
+      "label": "JWT_MODULE_OPTIONS",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "JWT_MODULE_OPTIONS",
+        "initTime": 45.209100008010864
+      }
+    },
+    "-823523840": {
+      "id": "-823523840",
+      "label": "LogModule",
+      "parent": "433315939",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.379500031471252
+      }
+    },
+    "-1612194210": {
+      "id": "-1612194210",
+      "label": "ApplicationConfig",
+      "parent": "433315939",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-675254561": {
+      "id": "-675254561",
+      "label": "LogService",
+      "parent": "433315939",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 129.55809998512268
+      }
+    },
+    "-922259002": {
+      "id": "-922259002",
+      "label": "ParseIntPipe",
+      "parent": "433315939",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "subtype": "pipe",
+        "initTime": 1.7276999950408936
+      }
+    },
+    "-1084317488": {
+      "id": "-1084317488",
+      "label": "LogController",
+      "parent": "433315939",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "LogModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 2.211199998855591,
+        "enhancers": [
+          { "id": "-922259002", "methodKey": "getLog", "subtype": "pipe" },
+          { "id": "-922259002", "methodKey": "updateLog", "subtype": "pipe" },
+          { "id": "-922259002", "methodKey": "delLog", "subtype": "pipe" }
+        ]
+      }
+    },
+    "-257450701": {
+      "id": "-257450701",
+      "label": "TypeOrmModule",
+      "parent": "545846242",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.325399994850159
+      }
+    },
+    "-223917667": {
+      "id": "-223917667",
+      "label": "ApplicationConfig",
+      "parent": "545846242",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1645549745": {
+      "id": "-1645549745",
+      "label": "RoleModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-323872060": {
+      "id": "-323872060",
+      "label": "RoleModule",
+      "parent": "-1645549745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RoleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.307099938392639
+      }
+    },
+    "-631854924": {
+      "id": "-631854924",
+      "label": "ApplicationConfig",
+      "parent": "-1645549745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RoleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-633548556": {
+      "id": "-633548556",
+      "label": "RoleController",
+      "parent": "-1645549745",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "RoleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 0.4134000539779663
+      }
+    },
+    "-257450700": {
+      "id": "-257450700",
+      "label": "TypeOrmModule",
+      "parent": "545846243",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.251700043678284
+      }
+    },
+    "-223917666": {
+      "id": "-223917666",
+      "label": "ApplicationConfig",
+      "parent": "545846243",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-987262148": {
+      "id": "-987262148",
+      "label": "RoleRepository",
+      "parent": "545846243",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RoleRepository",
+        "initTime": 124.74140000343323
+      }
+    },
+    "-1207404504": {
+      "id": "-1207404504",
+      "label": "PermissionModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1942637450": {
+      "id": "-1942637450",
+      "label": "PermissionModule",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.230499982833862
+      }
+    },
+    "-1115674206": {
+      "id": "-1115674206",
+      "label": "ModuleRef",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1863124223": {
+      "id": "-1863124223",
+      "label": "PermissionService",
+      "parent": "-1207404504",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "PermissionModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "initTime": 129.03890001773834
+      }
+    },
+    "-257450699": {
+      "id": "-257450699",
+      "label": "TypeOrmModule",
+      "parent": "545846244",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.0971999168396
+      }
+    },
+    "-223917665": {
+      "id": "-223917665",
+      "label": "ApplicationConfig",
+      "parent": "545846244",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-175120038": {
+      "id": "-175120038",
+      "label": "UploadModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1182407590": {
+      "id": "-1182407590",
+      "label": "UploadModule",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.077600002288818
+      }
+    },
+    "-197173292": {
+      "id": "-197173292",
+      "label": "ModuleRef",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-971973249": {
+      "id": "-971973249",
+      "label": "ApplicationConfig",
+      "parent": "-175120038",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "UploadModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-257450698": {
+      "id": "-257450698",
+      "label": "TypeOrmModule",
+      "parent": "545846245",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 7.023499965667725
+      }
+    },
+    "-223917664": {
+      "id": "-223917664",
+      "label": "ApplicationConfig",
+      "parent": "545846245",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-630371237": {
+      "id": "-630371237",
+      "label": "ApplicationConfig",
+      "parent": "166481974",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "MulterModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1292691275": {
+      "id": "-1292691275",
+      "label": "MULTER_MODULE_ID",
+      "parent": "166481974",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "MulterModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "MULTER_MODULE_ID"
+      }
+    },
+    "-1510098951": {
+      "id": "-1510098951",
+      "label": "PostModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-496404130": {
+      "id": "-496404130",
+      "label": "ApplicationConfig",
+      "parent": "-1510098951",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "PostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-257450697": {
+      "id": "-257450697",
+      "label": "TypeOrmModule",
+      "parent": "545846246",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 6.905900001525879
+      }
+    },
+    "-223917663": {
+      "id": "-223917663",
+      "label": "ApplicationConfig",
+      "parent": "545846246",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1276187694": {
+      "id": "-1276187694",
+      "label": "PostRepository",
+      "parent": "545846246",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "PostRepository",
+        "initTime": 124.34759998321533
+      }
+    },
+    "-643397745": {
+      "id": "-643397745",
+      "label": "DiscoveryModule",
+      "metadata": { "type": "module", "global": false, "dynamic": false, "internal": false }
+    },
+    "-1048394624": {
+      "id": "-1048394624",
+      "label": "DiscoveryModule",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "initTime": 6.888000011444092
+      }
+    },
+    "-501891371": {
+      "id": "-501891371",
+      "label": "ModuleRef",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-1413161654": {
+      "id": "-1413161654",
+      "label": "ApplicationConfig",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false
+      }
+    },
+    "-438112115": {
+      "id": "-438112115",
+      "label": "MetadataScanner",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "initTime": 6.876100063323975
+      }
+    }
+  },
+  "edges": {
+    "5864122": {
+      "source": "-536515674",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "JwtModule", "targetModuleName": "LoggerModule" },
+      "id": "5864122"
+    },
+    "11117387": {
+      "source": "-1537098012",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UserModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "11117387"
+    },
+    "18960113": {
+      "source": "-1084317488",
+      "target": "-922259002",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "ParseIntPipe",
+        "targetModuleName": "LogModule",
+        "injectionType": "decorator"
+      },
+      "id": "18960113"
+    },
+    "18960114": {
+      "source": "-1084317488",
+      "target": "-922259002",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "ParseIntPipe",
+        "targetModuleName": "LogModule",
+        "injectionType": "decorator"
+      },
+      "id": "18960114"
+    },
+    "52576689": {
+      "source": "-1207404504",
+      "target": "545846244",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "52576689"
+    },
+    "154009473": {
+      "source": "-2034887918",
+      "target": "1070370213",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "JwtGuard",
+        "targetClassName": "JwtService",
+        "sourceClassToken": "APP_GUARD (UUID: 1239237319)",
+        "targetModuleName": "JwtModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "154009473"
+    },
+    "156562393": {
+      "source": "-1636783684",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "156562393"
+    },
+    "165556991": {
+      "source": "-1026304274",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "165556991"
+    },
+    "175763745": {
+      "source": "545846241",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "175763745"
+    },
+    "184060730": {
+      "source": "-643397745",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "184060730"
+    },
+    "189694679": {
+      "source": "1434456218",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "InternalCoreModule",
+        "sourceClassName": "Reflector",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "Reflector",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "189694679"
+    },
+    "195338826": {
+      "source": "4751697",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "UploadRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "UploadRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "195338826"
+    },
+    "219775656": {
+      "source": "-19112576",
+      "target": "-1134487807",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "AuthModule" },
+      "id": "219775656"
+    },
+    "224988433": {
+      "source": "-1276187694",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "PostRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "PostRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "224988433"
+    },
+    "237184540": {
+      "source": "-175120038",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "237184540"
+    },
+    "241654674": {
+      "source": "-1026304274",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "241654674"
+    },
+    "254091268": {
+      "source": "863216333",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "254091268"
+    },
+    "275154499": {
+      "source": "411075377",
+      "target": "-2045439487",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PermissionModule",
+        "sourceClassName": "PermissionGuard",
+        "targetClassName": "UserService",
+        "sourceClassToken": "APP_GUARD (UUID: 1201125561)",
+        "targetModuleName": "UserModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "275154499"
+    },
+    "339370340": {
+      "source": "772659425",
+      "target": "-503631788",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "339370340"
+    },
+    "345897750": {
+      "source": "166481974",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MulterModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "345897750"
+    },
+    "353572985": {
+      "source": "1712628187",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "353572985"
+    },
+    "450524884": {
+      "source": "545846241",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "450524884"
+    },
+    "453148992": {
+      "source": "-2135742481",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "453148992"
+    },
+    "479724247": {
+      "source": "-207939746",
+      "target": "-430147679",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UserModule",
+        "sourceClassName": "UserController",
+        "targetClassName": "LoggerService",
+        "targetModuleName": "LoggerModule",
+        "keyOrIndex": "logger",
+        "injectionType": "property"
+      },
+      "id": "479724247"
+    },
+    "533050796": {
+      "source": "-19112576",
+      "target": "-1510098951",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "PostModule" },
+      "id": "533050796"
+    },
+    "536584716": {
+      "source": "-430147679",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LoggerModule",
+        "sourceClassName": "LoggerService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "536584716"
+    },
+    "546527626": {
+      "source": "271190106",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ResponseModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "546527626"
+    },
+    "549348290": {
+      "source": "433315939",
+      "target": "545846242",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "LogModule", "targetModuleName": "TypeOrmModule" },
+      "id": "549348290"
+    },
+    "577553516": {
+      "source": "-1056671983",
+      "target": "-430147679",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LoggerModule",
+        "sourceClassName": "LoggerInterceptor",
+        "targetClassName": "LoggerService",
+        "sourceClassToken": "APP_INTERCEPTOR (UUID: -1146749753)",
+        "targetModuleName": "LoggerModule",
+        "keyOrIndex": "logger",
+        "injectionType": "property"
+      },
+      "id": "577553516"
+    },
+    "584653416": {
+      "source": "1712628187",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "584653416"
+    },
+    "593652447": {
+      "source": "545846243",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "593652447"
+    },
+    "613680601": {
+      "source": "271190106",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ResponseModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "613680601"
+    },
+    "632258133": {
+      "source": "545846242",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "632258133"
+    },
+    "636494595": {
+      "source": "-536515674",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "636494595"
+    },
+    "677989064": {
+      "source": "-643397745",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "677989064"
+    },
+    "684555502": {
+      "source": "-1088720716",
+      "target": "-326832201",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "AbstractLoader",
+        "targetClassName": "HttpAdapterHost",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "684555502"
+    },
+    "773446965": {
+      "source": "-1488832441",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "UserRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "UserRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "773446965"
+    },
+    "780625477": {
+      "source": "-1645549745",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "RoleModule", "targetModuleName": "LoggerModule" },
+      "id": "780625477"
+    },
+    "784525888": {
+      "source": "-536515674",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "784525888"
+    },
+    "807697929": {
+      "source": "-19112576",
+      "target": "1528017428",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "DatabaseModule" },
+      "id": "807697929"
+    },
+    "810335446": {
+      "source": "261308225",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UploadModule",
+        "sourceClassName": "UploadService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "810335446"
+    },
+    "813991382": {
+      "source": "545846243",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "813991382"
+    },
+    "817756659": {
+      "source": "1424687304",
+      "target": "1923220193",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PostModule",
+        "sourceClassName": "PostController",
+        "targetClassName": "PostService",
+        "targetModuleName": "PostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "817756659"
+    },
+    "829398781": {
+      "source": "-1510098951",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PostModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "829398781"
+    },
+    "879231749": {
+      "source": "545846244",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "879231749"
+    },
+    "881453549": {
+      "source": "-1510098951",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "PostModule", "targetModuleName": "ConfigModule" },
+      "id": "881453549"
+    },
+    "920687522": {
+      "source": "-1134487807",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "920687522"
+    },
+    "978356204": {
+      "source": "-1134487807",
+      "target": "-536515674",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AuthModule", "targetModuleName": "JwtModule" },
+      "id": "978356204"
+    },
+    "995724631": {
+      "source": "545846244",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "995724631"
+    },
+    "1010561902": {
+      "source": "545846241",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1010561902"
+    },
+    "1011541149": {
+      "source": "545846245",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1011541149"
+    },
+    "1033762794": {
+      "source": "545846245",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1033762794"
+    },
+    "1056428433": {
+      "source": "-19112576",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1056428433"
+    },
+    "1086871970": {
+      "source": "1923220193",
+      "target": "-1276187694",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PostModule",
+        "sourceClassName": "PostService",
+        "targetClassName": "PostRepository",
+        "targetClassToken": "PostRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1086871970"
+    },
+    "1106379452": {
+      "source": "433315939",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LogModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1106379452"
+    },
+    "1122883688": {
+      "source": "1712628187",
+      "target": "863216333",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1122883688"
+    },
+    "1133904273": {
+      "source": "-207939746",
+      "target": "-2045439487",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UserModule",
+        "sourceClassName": "UserController",
+        "targetClassName": "UserService",
+        "targetModuleName": "UserModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1133904273"
+    },
+    "1134336077": {
+      "source": "-536515674",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1134336077"
+    },
+    "1157504841": {
+      "source": "-1537098012",
+      "target": "545846241",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "UserModule", "targetModuleName": "TypeOrmModule" },
+      "id": "1157504841"
+    },
+    "1159274449": {
+      "source": "-19112576",
+      "target": "-1645549745",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "RoleModule" },
+      "id": "1159274449"
+    },
+    "1175183130": {
+      "source": "1070370213",
+      "target": "-1900804336",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "JwtModule",
+        "sourceClassName": "JwtService",
+        "targetClassName": "JWT_MODULE_OPTIONS",
+        "targetClassToken": "JWT_MODULE_OPTIONS",
+        "targetModuleName": "JwtModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1175183130"
+    },
+    "1177457880": {
+      "source": "545846245",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1177457880"
+    },
+    "1193284246": {
+      "source": "-175120038",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1193284246"
+    },
+    "1197965769": {
+      "source": "433315939",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LogModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1197965769"
+    },
+    "1199091529": {
+      "source": "1923220193",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PostModule",
+        "sourceClassName": "PostService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "1199091529"
+    },
+    "1305650976": {
+      "source": "350824509",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "SERVE_STATIC_MODULE_OPTIONS",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "SERVE_STATIC_MODULE_OPTIONS",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1305650976"
+    },
+    "1330091140": {
+      "source": "271190106",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ResponseModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "1330091140"
+    },
+    "1359191129": {
+      "source": "545846246",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1359191129"
+    },
+    "1365245233": {
+      "source": "433315939",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "LogModule", "targetModuleName": "ConfigModule" },
+      "id": "1365245233"
+    },
+    "1400971266": {
+      "source": "-360459438",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ValidationModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "1400971266"
+    },
+    "1403154276": {
+      "source": "-19112576",
+      "target": "-1636783684",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ServeStaticModule"
+      },
+      "id": "1403154276"
+    },
+    "1414936007": {
+      "source": "-536515674",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "JwtModule", "targetModuleName": "ConfigModule" },
+      "id": "1414936007"
+    },
+    "1431808641": {
+      "source": "-1134487807",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1431808641"
+    },
+    "1448793499": {
+      "source": "-949539487",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "CacheModule", "targetModuleName": "LoggerModule" },
+      "id": "1448793499"
+    },
+    "1449074631": {
+      "source": "266839889",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "EntityManager",
+        "targetClassName": "DataSource",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1449074631"
+    },
+    "1450323722": {
+      "source": "-793915935",
+      "target": "1070370213",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthService",
+        "targetClassName": "JwtService",
+        "targetModuleName": "JwtModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "1450323722"
+    },
+    "1454288893": {
+      "source": "-2135742481",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1454288893"
+    },
+    "1459869080": {
+      "source": "-2045439487",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UserModule",
+        "sourceClassName": "UserService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "1459869080"
+    },
+    "1464213981": {
+      "source": "1285423550",
+      "target": "-675254561",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "LoginLogInterceptor",
+        "targetClassName": "LogService",
+        "targetModuleName": "LogModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1464213981"
+    },
+    "1479913159": {
+      "source": "-1537098012",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UserModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1479913159"
+    },
+    "1488040101": {
+      "source": "211572259",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1488040101"
+    },
+    "1502807457": {
+      "source": "-175120038",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "1502807457"
+    },
+    "1528882872": {
+      "source": "656974807",
+      "target": "-430147679",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ResponseModule",
+        "sourceClassName": "AllExecptionFilter",
+        "targetClassName": "LoggerService",
+        "sourceClassToken": "APP_FILTER (UUID: -277730442)",
+        "targetModuleName": "LoggerModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1528882872"
+    },
+    "1555020528": {
+      "source": "-949539487",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "CacheModule", "targetModuleName": "ConfigModule" },
+      "id": "1555020528"
+    },
+    "1556833522": {
+      "source": "1357421246",
+      "target": "-1871582906",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "CacheModule",
+        "sourceClassName": "CACHE_MANAGER",
+        "targetClassName": "CACHE_MODULE_OPTIONS",
+        "sourceClassToken": "CACHE_MANAGER",
+        "targetClassToken": "CACHE_MODULE_OPTIONS",
+        "targetModuleName": "CacheModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1556833522"
+    },
+    "1568909979": {
+      "source": "-1974377261",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1568909979"
+    },
+    "1571722311": {
+      "source": "433315939",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LogModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1571722311"
+    },
+    "1572458969": {
+      "source": "1404752088",
+      "target": "-793915935",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthController",
+        "targetClassName": "AuthService",
+        "targetModuleName": "AuthModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1572458969"
+    },
+    "1600555531": {
+      "source": "-949539487",
+      "target": "-1974377261",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "CacheModule", "targetModuleName": "CacheModule" },
+      "id": "1600555531"
+    },
+    "1602100572": {
+      "source": "166481974",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MulterModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1602100572"
+    },
+    "1620384511": {
+      "source": "-2034887918",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "JwtGuard",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "APP_GUARD (UUID: 1239237319)",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "1620384511"
+    },
+    "1635338963": {
+      "source": "-2135742481",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1635338963"
+    },
+    "1666113656": {
+      "source": "938844585",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LoggerModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1666113656"
+    },
+    "1679280928": {
+      "source": "-1134487807",
+      "target": "433315939",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AuthModule", "targetModuleName": "LogModule" },
+      "id": "1679280928"
+    },
+    "1690588001": {
+      "source": "-1134487807",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AuthModule", "targetModuleName": "ConfigModule" },
+      "id": "1690588001"
+    },
+    "1726443174": {
+      "source": "-1510098951",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PostModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1726443174"
+    },
+    "1744123909": {
+      "source": "-1026304274",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1744123909"
+    },
+    "1748142643": {
+      "source": "1528017428",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1748142643"
+    },
+    "1759398378": {
+      "source": "1528017428",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1759398378"
+    },
+    "1760173287": {
+      "source": "166481974",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MulterModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "1760173287"
+    },
+    "1773166660": {
+      "source": "545846243",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1773166660"
+    },
+    "1785602513": {
+      "source": "-1207404504",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "1785602513"
+    },
+    "1801916176": {
+      "source": "1528017428",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1801916176"
+    },
+    "1812266375": {
+      "source": "-1863124223",
+      "target": "1299116483",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PermissionModule",
+        "sourceClassName": "PermissionService",
+        "targetClassName": "PermissionRepository",
+        "targetClassToken": "PermissionRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1812266375"
+    },
+    "1860030344": {
+      "source": "-793915935",
+      "target": "-2045439487",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthService",
+        "targetClassName": "UserService",
+        "targetModuleName": "UserModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1860030344"
+    },
+    "1868391421": {
+      "source": "-19112576",
+      "target": "-175120038",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "UploadModule" },
+      "id": "1868391421"
+    },
+    "1877410993": {
+      "source": "-1636783684",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1877410993"
+    },
+    "1878328011": {
+      "source": "-1645549745",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RoleModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1878328011"
+    },
+    "1883069813": {
+      "source": "-1974377261",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1883069813"
+    },
+    "1901737855": {
+      "source": "863216333",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1901737855"
+    },
+    "1917606463": {
+      "source": "-743744433",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SerializationModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1917606463"
+    },
+    "1943802696": {
+      "source": "-1974377261",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "CacheModule", "targetModuleName": "LoggerModule" },
+      "id": "1943802696"
+    },
+    "1965553568": {
+      "source": "-1510098951",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "PostModule", "targetModuleName": "LoggerModule" },
+      "id": "1965553568"
+    },
+    "1976848738": {
+      "source": "1528017428",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1976848738"
+    },
+    "2008587751": {
+      "source": "805229344",
+      "target": "350824509",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "ServeStaticModule",
+        "targetClassName": "SERVE_STATIC_MODULE_OPTIONS",
+        "targetClassToken": "SERVE_STATIC_MODULE_OPTIONS",
+        "targetModuleName": "ServeStaticModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "2008587751"
+    },
+    "2040691132": {
+      "source": "-1645549745",
+      "target": "545846243",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "RoleModule", "targetModuleName": "TypeOrmModule" },
+      "id": "2040691132"
+    },
+    "2059742777": {
+      "source": "-1084317488",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "2059742777"
+    },
+    "2090103949": {
+      "source": "545846242",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "2090103949"
+    },
+    "2100140299": {
+      "source": "-19112576",
+      "target": "-949539487",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "CacheModule" },
+      "id": "2100140299"
+    },
+    "2104752696": {
+      "source": "-1645549745",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RoleModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "2104752696"
+    },
+    "2109546608": {
+      "source": "863216333",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "2109546608"
+    },
+    "2113304841": {
+      "source": "545846246",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "2113304841"
+    },
+    "-1759625292": {
+      "source": "-553129559",
+      "target": "-326832201",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "InternalCoreModule",
+        "sourceClassName": "HttpAdapterHost",
+        "targetClassName": "HttpAdapterHost",
+        "sourceClassToken": "HttpAdapterHost",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-1759625292"
+    },
+    "-221187751": {
+      "source": "400681591",
+      "target": "-26938366",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "DiscoveryModule",
+        "sourceClassName": "DiscoveryService",
+        "targetClassName": "ModulesContainer",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-221187751"
+    },
+    "-951393523": {
+      "source": "930519593",
+      "target": "1063746662",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigHostModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "CONFIGURATION_TOKEN",
+        "targetClassToken": "CONFIGURATION_TOKEN",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-951393523"
+    },
+    "-89619557": {
+      "source": "1431282625",
+      "target": "1434456218",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SerializationModule",
+        "sourceClassName": "ClassSerializerInterceptor",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "APP_INTERCEPTOR (UUID: 1780085433)",
+        "targetClassToken": "Reflector",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-89619557"
+    },
+    "-1851085465": {
+      "source": "-503631788",
+      "target": "930519593",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1851085465"
+    },
+    "-1185226767": {
+      "source": "-1871582906",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "CacheModule",
+        "sourceClassName": "CACHE_MODULE_OPTIONS",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "CACHE_MODULE_OPTIONS",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1185226767"
+    },
+    "-639657544": {
+      "source": "-1245985231",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ResponseModule",
+        "sourceClassName": "ResponseInterceptor",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "APP_INTERCEPTOR (UUID: 1780085434)",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-639657544"
+    },
+    "-1119831051": {
+      "source": "-1245985231",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ResponseModule",
+        "sourceClassName": "ResponseInterceptor",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "APP_INTERCEPTOR (UUID: 1780085434)",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "-1119831051"
+    },
+    "-716196792": {
+      "source": "2075644217",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "TypeOrmModuleOptions",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "TypeOrmModuleOptions",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-716196792"
+    },
+    "-944699247": {
+      "source": "-1900804336",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "JwtModule",
+        "sourceClassName": "JWT_MODULE_OPTIONS",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "JWT_MODULE_OPTIONS",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-944699247"
+    },
+    "-1858040926": {
+      "source": "2141638038",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "MulterModule",
+        "sourceClassName": "MULTER_MODULE_OPTIONS",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "MULTER_MODULE_OPTIONS",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1858040926"
+    },
+    "-1015557038": {
+      "source": "805229344",
+      "target": "-1088720716",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "ServeStaticModule",
+        "targetClassName": "AbstractLoader",
+        "targetModuleName": "ServeStaticModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor"
+      },
+      "id": "-1015557038"
+    },
+    "-276645328": {
+      "source": "805229344",
+      "target": "-326832201",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "ServeStaticModule",
+        "targetClassName": "HttpAdapterHost",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 2,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-276645328"
+    },
+    "-1537161641": {
+      "source": "731684192",
+      "target": "2075644217",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "TypeOrmCoreModule",
+        "targetClassName": "TypeOrmModuleOptions",
+        "targetClassToken": "TypeOrmModuleOptions",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1537161641"
+    },
+    "-1463782886": {
+      "source": "731684192",
+      "target": "1817334964",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "TypeOrmCoreModule",
+        "targetClassName": "ModuleRef",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-1463782886"
+    },
+    "-110797947": {
+      "source": "-2034887918",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "JwtGuard",
+        "targetClassName": "ConfigService",
+        "sourceClassToken": "APP_GUARD (UUID: 1239237319)",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": 2,
+        "injectionType": "constructor"
+      },
+      "id": "-110797947"
+    },
+    "-396094872": {
+      "source": "1359826331",
+      "target": "1357421246",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "CacheModule",
+        "sourceClassName": "CacheService",
+        "targetClassName": "CACHE_MANAGER",
+        "targetClassToken": "CACHE_MANAGER",
+        "targetModuleName": "CacheModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-396094872"
+    },
+    "-1065460886": {
+      "source": "1462674704",
+      "target": "1359826331",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "CacheModule",
+        "sourceClassName": "CacheController",
+        "targetClassName": "CacheService",
+        "targetModuleName": "CacheModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1065460886"
+    },
+    "-1408664212": {
+      "source": "-2103415210",
+      "target": "2075644217",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "DataSource",
+        "targetClassName": "TypeOrmModuleOptions",
+        "targetClassToken": "TypeOrmModuleOptions",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1408664212"
+    },
+    "-1840504093": {
+      "source": "1529900285",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "sourceClassName": "Connection",
+        "targetClassName": "DataSource",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1840504093"
+    },
+    "-427069174": {
+      "source": "851305207",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "LoginLogRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "LoginLogRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-427069174"
+    },
+    "-400645923": {
+      "source": "-987262148",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "RoleRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "RoleRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-400645923"
+    },
+    "-506600939": {
+      "source": "1299116483",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TypeOrmModule",
+        "sourceClassName": "PermissionRepository",
+        "targetClassName": "DataSource",
+        "sourceClassToken": "PermissionRepository",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-506600939"
+    },
+    "-1359734829": {
+      "source": "1852200970",
+      "target": "-2103415210",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "DatabaseModule",
+        "sourceClassName": "EntitySubscripber",
+        "targetClassName": "DataSource",
+        "targetModuleName": "TypeOrmCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1359734829"
+    },
+    "-324227588": {
+      "source": "1603023137",
+      "target": "-987262148",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RoleModule",
+        "sourceClassName": "RoleService",
+        "targetClassName": "RoleRepository",
+        "targetClassToken": "RoleRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-324227588"
+    },
+    "-1588846441": {
+      "source": "-2045439487",
+      "target": "-1488832441",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UserModule",
+        "sourceClassName": "UserService",
+        "targetClassName": "UserRepository",
+        "targetClassToken": "UserRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1588846441"
+    },
+    "-470241531": {
+      "source": "-675254561",
+      "target": "851305207",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogService",
+        "targetClassName": "LoginLogRepository",
+        "targetClassToken": "LoginLogRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-470241531"
+    },
+    "-878458149": {
+      "source": "-675254561",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogService",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "-878458149"
+    },
+    "-2140770764": {
+      "source": "261308225",
+      "target": "4751697",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UploadModule",
+        "sourceClassName": "UploadService",
+        "targetClassName": "UploadRepository",
+        "targetClassToken": "UploadRepository",
+        "targetModuleName": "TypeOrmModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-2140770764"
+    },
+    "-1726209556": {
+      "source": "-633548556",
+      "target": "1603023137",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RoleModule",
+        "sourceClassName": "RoleController",
+        "targetClassName": "RoleService",
+        "targetModuleName": "RoleModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1726209556"
+    },
+    "-363447472": {
+      "source": "411075377",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PermissionModule",
+        "sourceClassName": "PermissionGuard",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "APP_GUARD (UUID: 1201125561)",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-363447472"
+    },
+    "-1511591930": {
+      "source": "479536350",
+      "target": "2141638038",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UploadModule",
+        "sourceClassName": "dbe1ce7b12202d5d9eae8",
+        "targetClassName": "MULTER_MODULE_OPTIONS",
+        "targetClassToken": "MULTER_MODULE_OPTIONS",
+        "targetModuleName": "MulterModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1511591930"
+    },
+    "-478754080": {
+      "source": "-207939746",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UserModule",
+        "sourceClassName": "UserController",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "-478754080"
+    },
+    "-1432305759": {
+      "source": "1424687304",
+      "target": "772659425",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PostModule",
+        "sourceClassName": "PostController",
+        "targetClassName": "ConfigService",
+        "targetModuleName": "ConfigModule",
+        "keyOrIndex": "config",
+        "injectionType": "property"
+      },
+      "id": "-1432305759"
+    },
+    "-1245801226": {
+      "source": "1424687304",
+      "target": "-430147679",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PostModule",
+        "sourceClassName": "PostController",
+        "targetClassName": "LoggerService",
+        "targetModuleName": "LoggerModule",
+        "keyOrIndex": "logger",
+        "injectionType": "property"
+      },
+      "id": "-1245801226"
+    },
+    "-204115086": {
+      "source": "1094521382",
+      "target": "-1863124223",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "PermissionModule",
+        "sourceClassName": "PermissionController",
+        "targetClassName": "PermissionService",
+        "targetModuleName": "PermissionModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-204115086"
+    },
+    "-1323676788": {
+      "source": "2143056138",
+      "target": "261308225",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UploadModule",
+        "sourceClassName": "UploadController",
+        "targetClassName": "UploadService",
+        "targetModuleName": "UploadModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1323676788"
+    },
+    "-1040546469": {
+      "source": "-1084317488",
+      "target": "-675254561",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "LogService",
+        "targetModuleName": "LogModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1040546469"
+    },
+    "-1543728522": {
+      "source": "-1084317488",
+      "target": "-430147679",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "LoggerService",
+        "targetModuleName": "LoggerModule",
+        "keyOrIndex": "logger",
+        "injectionType": "property"
+      },
+      "id": "-1543728522"
+    },
+    "-844262897": {
+      "source": "-19112576",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "ConfigModule" },
+      "id": "-844262897"
+    },
+    "-1982204162": {
+      "source": "-19112576",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "LoggerModule" },
+      "id": "-1982204162"
+    },
+    "-1436008896": {
+      "source": "-19112576",
+      "target": "-743744433",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "SerializationModule"
+      },
+      "id": "-1436008896"
+    },
+    "-1526354864": {
+      "source": "-19112576",
+      "target": "271190106",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "ResponseModule" },
+      "id": "-1526354864"
+    },
+    "-783994786": {
+      "source": "-19112576",
+      "target": "-360459438",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ValidationModule"
+      },
+      "id": "-783994786"
+    },
+    "-1429799902": {
+      "source": "-19112576",
+      "target": "-1537098012",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AppModule", "targetModuleName": "UserModule" },
+      "id": "-1429799902"
+    },
+    "-888911971": {
+      "source": "-19112576",
+      "target": "-1207404504",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "PermissionModule"
+      },
+      "id": "-888911971"
+    },
+    "-458346601": {
+      "source": "-19112576",
+      "target": "-643397745",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "DiscoveryModule"
+      },
+      "id": "-458346601"
+    },
+    "-815553404": {
+      "source": "-19112576",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-815553404"
+    },
+    "-495517505": {
+      "source": "-19112576",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-495517505"
+    },
+    "-1755655437": {
+      "source": "1712628187",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-1755655437"
+    },
+    "-1766726454": {
+      "source": "1712628187",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1766726454"
+    },
+    "-1982558226": {
+      "source": "863216333",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1982558226"
+    },
+    "-412719879": {
+      "source": "863216333",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-412719879"
+    },
+    "-1995183955": {
+      "source": "211572259",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1995183955"
+    },
+    "-60954175": {
+      "source": "211572259",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-60954175"
+    },
+    "-1886170760": {
+      "source": "211572259",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-1886170760"
+    },
+    "-784146777": {
+      "source": "938844585",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LoggerModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-784146777"
+    },
+    "-1517259333": {
+      "source": "938844585",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LoggerModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-1517259333"
+    },
+    "-966851605": {
+      "source": "938844585",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "LoggerModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-966851605"
+    },
+    "-1995562322": {
+      "source": "-949539487",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1995562322"
+    },
+    "-431539039": {
+      "source": "-949539487",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-431539039"
+    },
+    "-1241389118": {
+      "source": "-949539487",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1241389118"
+    },
+    "-279563549": {
+      "source": "-1974377261",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "CacheModule", "targetModuleName": "ConfigModule" },
+      "id": "-279563549"
+    },
+    "-1066935346": {
+      "source": "-1974377261",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "CacheModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1066935346"
+    },
+    "-1269640393": {
+      "source": "-1636783684",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1269640393"
+    },
+    "-1340488022": {
+      "source": "-1636783684",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1340488022"
+    },
+    "-436872156": {
+      "source": "-1636783684",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-436872156"
+    },
+    "-1799022173": {
+      "source": "-743744433",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SerializationModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1799022173"
+    },
+    "-534471722": {
+      "source": "-743744433",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SerializationModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-534471722"
+    },
+    "-159590576": {
+      "source": "-743744433",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SerializationModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-159590576"
+    },
+    "-4811795": {
+      "source": "-743744433",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SerializationModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-4811795"
+    },
+    "-1723947271": {
+      "source": "271190106",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ResponseModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1723947271"
+    },
+    "-2072945241": {
+      "source": "271190106",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ResponseModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-2072945241"
+    },
+    "-1358223433": {
+      "source": "-360459438",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ValidationModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1358223433"
+    },
+    "-390582599": {
+      "source": "-360459438",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ValidationModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-390582599"
+    },
+    "-1703696888": {
+      "source": "-360459438",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ValidationModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1703696888"
+    },
+    "-956484965": {
+      "source": "-360459438",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ValidationModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-956484965"
+    },
+    "-1122599539": {
+      "source": "1528017428",
+      "target": "-2135742481",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-1122599539"
+    },
+    "-1906081363": {
+      "source": "1528017428",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DatabaseModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-1906081363"
+    },
+    "-1887218609": {
+      "source": "-2135742481",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-1887218609"
+    },
+    "-645931578": {
+      "source": "-2135742481",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-645931578"
+    },
+    "-485008942": {
+      "source": "-1026304274",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmCoreModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-485008942"
+    },
+    "-837325887": {
+      "source": "-1537098012",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "UserModule", "targetModuleName": "ConfigModule" },
+      "id": "-837325887"
+    },
+    "-1978422820": {
+      "source": "-1537098012",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UserModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1978422820"
+    },
+    "-1913766442": {
+      "source": "-1537098012",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "UserModule", "targetModuleName": "LoggerModule" },
+      "id": "-1913766442"
+    },
+    "-995460581": {
+      "source": "545846241",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-995460581"
+    },
+    "-733930814": {
+      "source": "545846241",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-733930814"
+    },
+    "-1556683678": {
+      "source": "-1134487807",
+      "target": "-1537098012",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AuthModule", "targetModuleName": "UserModule" },
+      "id": "-1556683678"
+    },
+    "-1377619055": {
+      "source": "-1134487807",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1377619055"
+    },
+    "-929891684": {
+      "source": "-1134487807",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "AuthModule", "targetModuleName": "LoggerModule" },
+      "id": "-929891684"
+    },
+    "-889179850": {
+      "source": "433315939",
+      "target": "938844585",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "LogModule", "targetModuleName": "LoggerModule" },
+      "id": "-889179850"
+    },
+    "-1762775552": {
+      "source": "545846242",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1762775552"
+    },
+    "-851050886": {
+      "source": "545846242",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-851050886"
+    },
+    "-1627865725": {
+      "source": "545846242",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1627865725"
+    },
+    "-208110470": {
+      "source": "-1645549745",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RoleModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-208110470"
+    },
+    "-1712840836": {
+      "source": "-1645549745",
+      "target": "1712628187",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "RoleModule", "targetModuleName": "ConfigModule" },
+      "id": "-1712840836"
+    },
+    "-1125321300": {
+      "source": "545846243",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1125321300"
+    },
+    "-706641191": {
+      "source": "545846243",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-706641191"
+    },
+    "-599459561": {
+      "source": "-1207404504",
+      "target": "-1537098012",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "UserModule"
+      },
+      "id": "-599459561"
+    },
+    "-862105018": {
+      "source": "-1207404504",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-862105018"
+    },
+    "-602678434": {
+      "source": "-1207404504",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-602678434"
+    },
+    "-1940051881": {
+      "source": "-1207404504",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1940051881"
+    },
+    "-1118218388": {
+      "source": "-1207404504",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PermissionModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1118218388"
+    },
+    "-45779253": {
+      "source": "545846244",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-45779253"
+    },
+    "-1344886850": {
+      "source": "545846244",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1344886850"
+    },
+    "-562231496": {
+      "source": "545846244",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-562231496"
+    },
+    "-832425694": {
+      "source": "-175120038",
+      "target": "545846245",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-832425694"
+    },
+    "-747580974": {
+      "source": "-175120038",
+      "target": "166481974",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "MulterModule"
+      },
+      "id": "-747580974"
+    },
+    "-276709270": {
+      "source": "-175120038",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-276709270"
+    },
+    "-982105049": {
+      "source": "-175120038",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "UploadModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-982105049"
+    },
+    "-417821801": {
+      "source": "545846245",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-417821801"
+    },
+    "-14703162": {
+      "source": "545846245",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-14703162"
+    },
+    "-1945234772": {
+      "source": "166481974",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MulterModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-1945234772"
+    },
+    "-1723578259": {
+      "source": "166481974",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MulterModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1723578259"
+    },
+    "-1439120572": {
+      "source": "-1510098951",
+      "target": "545846246",
+      "metadata": { "type": "module-to-module", "sourceModuleName": "PostModule", "targetModuleName": "TypeOrmModule" },
+      "id": "-1439120572"
+    },
+    "-140550763": {
+      "source": "-1510098951",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "PostModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-140550763"
+    },
+    "-926998148": {
+      "source": "545846246",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-926998148"
+    },
+    "-273412106": {
+      "source": "545846246",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-273412106"
+    },
+    "-908638073": {
+      "source": "545846246",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-908638073"
+    },
+    "-1107570771": {
+      "source": "-643397745",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1107570771"
+    },
+    "-29610329": {
+      "source": "-643397745",
+      "target": "938844585",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "LoggerModule"
+      },
+      "id": "-29610329"
+    },
+    "-1777027914": {
+      "source": "-643397745",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1777027914"
+    },
+    "-869554624": {
+      "source": "1404752088",
+      "target": "1285423550",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "AuthModule",
+        "sourceClassName": "AuthController",
+        "targetClassName": "LoginLogInterceptor",
+        "targetModuleName": "AuthModule",
+        "injectionType": "decorator"
+      },
+      "id": "-869554624"
+    },
+    "-1765341441": {
+      "source": "-1084317488",
+      "target": "-922259002",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "LogModule",
+        "sourceClassName": "LogController",
+        "targetClassName": "ParseIntPipe",
+        "targetModuleName": "LogModule",
+        "injectionType": "decorator"
+      },
+      "id": "-1765341441"
+    },
+    "-1124284421": {
+      "source": "2143056138",
+      "target": "479536350",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "UploadModule",
+        "sourceClassName": "UploadController",
+        "targetClassName": "dbe1ce7b12202d5d9eae8",
+        "targetModuleName": "UploadModule",
+        "injectionType": "decorator"
+      },
+      "id": "-1124284421"
+    }
+  },
+  "entrypoints": {
+    "90964321": [
+      {
+        "type": "middleware",
+        "methodName": "use",
+        "className": "RequestMiddleware",
+        "classNodeId": "90964321",
+        "metadata": { "key": "/*", "path": "/*", "requestMethod": "ALL" },
+        "id": "90964321_use"
+      }
+    ],
+    "1094521382": [
+      {
+        "type": "http-endpoint",
+        "methodName": "create",
+        "className": "PermissionController",
+        "classNodeId": "1094521382",
+        "metadata": {
+          "key": "/api/v1/permissions",
+          "path": "/api/v1/permissions",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "1094521382_create"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findAll",
+        "className": "PermissionController",
+        "classNodeId": "1094521382",
+        "metadata": {
+          "key": "/api/v1/permissions",
+          "path": "/api/v1/permissions",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "1094521382_findAll"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findOne",
+        "className": "PermissionController",
+        "classNodeId": "1094521382",
+        "metadata": {
+          "key": "/api/v1/permissions/:id",
+          "path": "/api/v1/permissions/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "1094521382_findOne"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "update",
+        "className": "PermissionController",
+        "classNodeId": "1094521382",
+        "metadata": {
+          "key": "/api/v1/permissions/:id",
+          "path": "/api/v1/permissions/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "1094521382_update"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "remove",
+        "className": "PermissionController",
+        "classNodeId": "1094521382",
+        "metadata": {
+          "key": "/api/v1/permissions/:id",
+          "path": "/api/v1/permissions/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "1094521382_remove"
+      }
+    ],
+    "1404752088": [
+      {
+        "type": "http-endpoint",
+        "methodName": "login",
+        "className": "AuthController",
+        "classNodeId": "1404752088",
+        "metadata": {
+          "key": "/api/v1/auth/login",
+          "path": "/api/v1/auth/login",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "1404752088_login"
+      }
+    ],
+    "1424687304": [
+      {
+        "type": "http-endpoint",
+        "methodName": "create",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts",
+          "path": "/api/v1/posts",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_create"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getTemplate",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts/template.xlsx",
+          "path": "/api/v1/posts/template.xlsx",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_getTemplate"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findAll",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts",
+          "path": "/api/v1/posts",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_findAll"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findOne",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts/:id",
+          "path": "/api/v1/posts/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_findOne"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "update",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts/:id",
+          "path": "/api/v1/posts/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_update"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "remove",
+        "className": "PostController",
+        "classNodeId": "1424687304",
+        "metadata": {
+          "key": "/api/v1/posts/:id",
+          "path": "/api/v1/posts/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "1424687304_remove"
+      }
+    ],
+    "2143056138": [
+      {
+        "type": "http-endpoint",
+        "methodName": "create",
+        "className": "UploadController",
+        "classNodeId": "2143056138",
+        "metadata": {
+          "key": "/api/v1/upload",
+          "path": "/api/v1/upload",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "2143056138_create"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findAll",
+        "className": "UploadController",
+        "classNodeId": "2143056138",
+        "metadata": {
+          "key": "/api/v1/upload",
+          "path": "/api/v1/upload",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "2143056138_findAll"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findOne",
+        "className": "UploadController",
+        "classNodeId": "2143056138",
+        "metadata": {
+          "key": "/api/v1/upload/:id",
+          "path": "/api/v1/upload/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "2143056138_findOne"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "update",
+        "className": "UploadController",
+        "classNodeId": "2143056138",
+        "metadata": {
+          "key": "/api/v1/upload/:id",
+          "path": "/api/v1/upload/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "2143056138_update"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "remove",
+        "className": "UploadController",
+        "classNodeId": "2143056138",
+        "metadata": {
+          "key": "/api/v1/upload/:id",
+          "path": "/api/v1/upload/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "2143056138_remove"
+      }
+    ],
+    "-207939746": [
+      {
+        "type": "http-endpoint",
+        "methodName": "addUser",
+        "className": "UserController",
+        "classNodeId": "-207939746",
+        "metadata": {
+          "key": "/api/v1/users",
+          "path": "/api/v1/users",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "-207939746_addUser"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getUsers",
+        "className": "UserController",
+        "classNodeId": "-207939746",
+        "metadata": {
+          "key": "/api/v1/users",
+          "path": "/api/v1/users",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-207939746_getUsers"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getUser",
+        "className": "UserController",
+        "classNodeId": "-207939746",
+        "metadata": {
+          "key": "/api/v1/users/:id",
+          "path": "/api/v1/users/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-207939746_getUser"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "updateUser",
+        "className": "UserController",
+        "classNodeId": "-207939746",
+        "metadata": {
+          "key": "/api/v1/users/:id",
+          "path": "/api/v1/users/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "-207939746_updateUser"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "delUser",
+        "className": "UserController",
+        "classNodeId": "-207939746",
+        "metadata": {
+          "key": "/api/v1/users/:id",
+          "path": "/api/v1/users/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "-207939746_delUser"
+      }
+    ],
+    "-1084317488": [
+      {
+        "type": "http-endpoint",
+        "methodName": "addLog",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": {
+          "key": "/api/v1/logs",
+          "path": "/api/v1/logs",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "-1084317488_addLog"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getLogs",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": { "key": "/api/v1/logs", "path": "/api/v1/logs", "requestMethod": "GET", "controllerVersion": "1" },
+        "id": "-1084317488_getLogs"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getLoginLogs",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": {
+          "key": "/api/v1/logs/login",
+          "path": "/api/v1/logs/login",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-1084317488_getLoginLogs"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "getLog",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": {
+          "key": "/api/v1/logs/:id",
+          "path": "/api/v1/logs/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-1084317488_getLog"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "updateLog",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": {
+          "key": "/api/v1/logs/:id",
+          "path": "/api/v1/logs/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "-1084317488_updateLog"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "delLog",
+        "className": "LogController",
+        "classNodeId": "-1084317488",
+        "metadata": {
+          "key": "/api/v1/logs/:id",
+          "path": "/api/v1/logs/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "-1084317488_delLog"
+      }
+    ],
+    "-633548556": [
+      {
+        "type": "http-endpoint",
+        "methodName": "create",
+        "className": "RoleController",
+        "classNodeId": "-633548556",
+        "metadata": {
+          "key": "/api/v1/roles",
+          "path": "/api/v1/roles",
+          "requestMethod": "POST",
+          "controllerVersion": "1"
+        },
+        "id": "-633548556_create"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findAll",
+        "className": "RoleController",
+        "classNodeId": "-633548556",
+        "metadata": {
+          "key": "/api/v1/roles",
+          "path": "/api/v1/roles",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-633548556_findAll"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "findOne",
+        "className": "RoleController",
+        "classNodeId": "-633548556",
+        "metadata": {
+          "key": "/api/v1/roles/:id",
+          "path": "/api/v1/roles/:id",
+          "requestMethod": "GET",
+          "controllerVersion": "1"
+        },
+        "id": "-633548556_findOne"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "update",
+        "className": "RoleController",
+        "classNodeId": "-633548556",
+        "metadata": {
+          "key": "/api/v1/roles/:id",
+          "path": "/api/v1/roles/:id",
+          "requestMethod": "PATCH",
+          "controllerVersion": "1"
+        },
+        "id": "-633548556_update"
+      },
+      {
+        "type": "http-endpoint",
+        "methodName": "remove",
+        "className": "RoleController",
+        "classNodeId": "-633548556",
+        "metadata": {
+          "key": "/api/v1/roles/:id",
+          "path": "/api/v1/roles/:id",
+          "requestMethod": "DELETE",
+          "controllerVersion": "1"
+        },
+        "id": "-633548556_remove"
+      }
+    ]
+  },
+  "extras": {
+    "orphanedEnhancers": [],
+    "attachedEnhancers": [
+      { "nodeId": "-1056671983" },
+      { "nodeId": "1431282625" },
+      { "nodeId": "656974807" },
+      { "nodeId": "1466641936" },
+      { "nodeId": "-1245985231" },
+      { "nodeId": "-110719625" },
+      { "nodeId": "-1638728329" },
+      { "nodeId": "-2034887918" },
+      { "nodeId": "411075377" }
+    ]
+  },
+  "status": "complete"
+}

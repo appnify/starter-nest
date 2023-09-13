@@ -13,9 +13,14 @@ import { UserModule } from '@/modules/user';
 import { ResponseModule } from '@/common/response';
 import { SerializationModule } from '@/common/serialization';
 import { CacheModule } from './common/cache';
+import { ScanModule } from './utils/scan.module';
 
 @Module({
   imports: [
+    /**
+     * 扫描模块
+     */
+    ScanModule.forRoot(),
     /**
      * 配置模块(全局)
      * @description 加载.env配置文件

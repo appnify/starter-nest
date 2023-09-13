@@ -10,6 +10,7 @@ declare module 'express' {
   interface Request {
     user?: {
       id: number;
+      token: string;
       username: string;
       nickname: string;
     };

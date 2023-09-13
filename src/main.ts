@@ -4,12 +4,13 @@ import { initSwagger } from '@/common/swagger';
 import { LoggerService } from '@/common/logger';
 import { ConfigService } from '@/config';
 import { AppModule } from './app.module';
+import { ScanModule } from './utils/scan.module';
 
 async function bootstrap() {
   /**
    * 创建应用
    */
-  const app = await NestFactory.create(AppModule, { bufferLogs: false });
+  const app = await NestFactory.create(AppModule, { bufferLogs: false, snapshot: ScanModule.enable });
   /**
    * 获取配置服务
    */
@@ -42,6 +43,10 @@ async function bootstrap() {
    * 监听端口
    */
   await app.listen(config.port, config.host);
+  /**
+   * 扫描应用
+   */
+  ScanModule.scan(app);
   /**
    * 输出项目运行URL
    */
