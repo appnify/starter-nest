@@ -11,7 +11,7 @@ on:
 
 env:
   docker_host: ${{ secrets.DOCKER_REGISTRY }}
-  docker_image: ${{ secrets.DOCKER_REGISTRY }}/${{ gitea.repository }}
+  docker_name: ${{ secrets.DOCKER_REGISTRY }}/${{ gitea.repository }}
   docker_user: ${{ secrets.DOCKER_USERNAME }}
   docker_pass: ${{ secrets.DOCKER_PASSWORD }}
   deploy_host: ${{ secrets.DEPLOY_HOSTNAME }}
@@ -29,23 +29,10 @@ jobs:
       - name: 检出代码
         id: checkout
         uses: https://gitea.com/actions/checkout@v3
-      
-      # - name: 设置环境
-      #   uses: https://gitea.com/actions/setup-node@v2
-
-      # - name: 安装依赖
-      #   run: |
-      #     npm install --registry https://registry.npmmirror.com/          
-    
-      # - name: 构建产物
-      #   run: npm run build
-
-      # - name: 打印目录
-      #   run: ls ./dist
 
       - name: 构建镜像
         run: |
-          docker build -t ${{ env.docker_image }}:latest .          
+          docker build -t ${{ env.docker_name }}:latest .          
       
       - name: 登陆镜像
         run: |
@@ -54,7 +41,7 @@ jobs:
       - name: 推送镜像
         shell: bash
         run: |
-          docker push ${{ env.docker_image }}:latest          
+          docker push ${{ env.docker_name }}:latest          
 
       - name: 更新服务
         uses: http://git.dev.juetan.cn/mirror/ssh-action@v1.0.0
@@ -65,4 +52,4 @@ jobs:
           password: ${{ env.deploy_pass }}
           script: |
             docker service ls | grep -q ${{ env.deploy_name }} || exit 0
-            docker service update --image ${{ env.docker_image }}:latest ${{ env.deploy_name }}            
+            docker service update --image ${{ env.docker_name }}:latest ${{ env.deploy_name }}            

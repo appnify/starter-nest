@@ -1,8 +1,8 @@
+import { LoggerService } from '@/common/logger';
+import { initSwagger } from '@/common/swagger';
+import { ConfigService } from '@/config';
 import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { initSwagger } from '@/common/swagger';
-import { LoggerService } from '@/common/logger';
-import { ConfigService } from '@/config';
 import { AppModule } from './app.module';
 import { ScanModule } from './utils/scan.module';
 
