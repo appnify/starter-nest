@@ -27,3 +27,17 @@
 - 权限模块
 - 上传模块
 - 文章模块
+
+## 部署
+
+目前基于 Gitea 和 Gitea Actions 实现，大致流程是这样的：提交代码到 Gitea 仓库后，触发流水线任务进行构建并打包成 Docker 镜像，推送到 Gitea 自带的软件包仓库，然后登陆生产服务器执行更新命令。
+
+使用 Github Actions 也是可以的，两者使用上是兼容的。本仓库有关部署的内容涉及三个地方，不需要的话可自行删除，如下：
+
+- Dockerfile 构建镜像的配置文件
+- .dockerignore 配置哪些文件应该被忽略掉
+- .gitea/workflows/depoy.yaml 流水线任务的配置文件，语法上与 Github Actions 一致
+
+## 最后
+
+如果你在使用过程中遇到问题，欢迎在 Issue 中提问。
