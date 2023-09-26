@@ -12,9 +12,9 @@ import { AuthModule } from '@/modules/auth';
 import { UserModule } from '@/modules/user';
 import { ResponseModule } from '@/common/response';
 import { SerializationModule } from '@/common/serialization';
-import { CacheModule } from './common/cache';
-import { ScanModule } from './utils/scan.module';
-import { ContentModule } from './content/content.module';
+import { CacheModule } from '@/storage/cache';
+import { ScanModule } from '@/utils/scan.module';
+import { ContentModule } from '@/content/content.module';
 
 @Module({
   imports: [
@@ -62,6 +62,8 @@ import { ContentModule } from './content/content.module';
      * @description 用于连接数据库
      */
     DatabaseModule,
+
+
     /**
      * 用户模块
      */
@@ -78,6 +80,8 @@ import { ContentModule } from './content/content.module';
      * 权限模块
      */
     PermissionModule,
+
+
     /**
      * 上传模块
      */

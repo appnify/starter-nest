@@ -27,7 +27,7 @@ export class EntitySubscripber implements EntitySubscriberInterface {
   }
 
   beforeSoftRemove(event: SoftRemoveEvent<any>): void | Promise<any> {
-    event.entity.deletedBy = this.getUser();
+    event.entity && (event.entity.deletedBy = this.getUser());
   }
 
   getUser() {
