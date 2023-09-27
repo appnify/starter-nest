@@ -1,5 +1,5 @@
 import { BaseEntity } from '@/database';
-import { Post } from '@/modules/post';
+import { Post } from '@/content/post';
 import { Role } from '@/modules/role';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';

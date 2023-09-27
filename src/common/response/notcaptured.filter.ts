@@ -22,7 +22,7 @@ export class AllExecptionFilter implements ExceptionFilter {
       return response.status(exception.status).json(
         Response.create({
           code: ResponseCode.ERROR,
-          message: '访问的路径不存在',
+          message: '路径不存在',
         }),
       );
     }
@@ -32,7 +32,7 @@ export class AllExecptionFilter implements ExceptionFilter {
       return response.status(HttpStatus.UNAUTHORIZED).json(
         Response.create({
           code: ResponseCode.TOKEN_EXPIRED,
-          message: '登陆已过期'
+          message: '登陆令牌已过期'
         })
       )
     }

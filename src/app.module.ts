@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PostModule } from '@/modules/post';
+import { PostModule } from '@/content/post';
 import { RoleModule } from '@/modules/role';
-import { UploadModule } from '@/modules/upload';
+import { UploadModule } from '@/storage/upload';
 import { PermissionModule } from '@/modules/permission';
 import { ConfigModule } from '@/config';
 import { LoggerModule } from '@/common/logger';
@@ -12,8 +12,9 @@ import { AuthModule } from '@/modules/auth';
 import { UserModule } from '@/modules/user';
 import { ResponseModule } from '@/common/response';
 import { SerializationModule } from '@/common/serialization';
-import { CacheModule } from './common/cache';
-import { ScanModule } from './utils/scan.module';
+import { CacheModule } from '@/storage/cache';
+import { ScanModule } from '@/utils/scan.module';
+import { ContentModule } from '@/content/content.module';
 
 @Module({
   imports: [
@@ -61,6 +62,8 @@ import { ScanModule } from './utils/scan.module';
      * @description 用于连接数据库
      */
     DatabaseModule,
+
+
     /**
      * 用户模块
      */
@@ -77,6 +80,8 @@ import { ScanModule } from './utils/scan.module';
      * 权限模块
      */
     PermissionModule,
+
+
     /**
      * 上传模块
      */
@@ -85,6 +90,7 @@ import { ScanModule } from './utils/scan.module';
      * 文章模块
      */
     PostModule,
+    ContentModule
   ],
 })
 export class AppModule {}

@@ -1,4 +1,6 @@
 FROM node:18-alpine As dev
+RUN apk update && apk add sqlite
+RUN apk add --no-cache --virtual .build-deps g++ gcc libgcc libstdc++ linux-headers make python3
 WORKDIR /app
 COPY package*.json .
 RUN npm install
@@ -16,4 +18,3 @@ COPY --from=dev /app/package.json ./
 
 EXPOSE 3030
 CMD [ "node", "./dist/main.js" ]
-

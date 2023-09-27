@@ -5,9 +5,9 @@ on:
     branches:
       - master
     paths-ignore:
-      - ".gitignore"
-      - "README.md"
-      - ".vscode/**"
+      - .gitignore
+      - .vscode/**
+      - README.md
 
 env:
   docker_host: ${{ secrets.DOCKER_REGISTRY }}
@@ -32,16 +32,16 @@ jobs:
 
       - name: 构建镜像
         run: |
-          docker build -t ${{ env.docker_name }}:latest .          
-      
+          docker build -t ${{ env.docker_name }}:latest .
+
       - name: 登陆镜像
         run: |
-          docker login -u "${{env.docker_user}}" -p "${{env.docker_pass}}" ${{env.docker_host}}          
+          docker login -u "${{env.docker_user}}" -p "${{env.docker_pass}}" ${{env.docker_host}}
 
       - name: 推送镜像
         shell: bash
         run: |
-          docker push ${{ env.docker_name }}:latest          
+          docker push ${{ env.docker_name }}:latest
 
       - name: 更新服务
         uses: http://git.dev.juetan.cn/mirror/ssh-action@v1.0.0
@@ -52,4 +52,4 @@ jobs:
           password: ${{ env.deploy_pass }}
           script: |
             docker service ls | grep -q ${{ env.deploy_name }} || exit 0
-            docker service update --image ${{ env.docker_name }}:latest ${{ env.deploy_name }}            
+            docker service update --image ${{ env.docker_name }}:latest ${{ env.deploy_name }}
