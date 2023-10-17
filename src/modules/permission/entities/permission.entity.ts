@@ -7,7 +7,7 @@ enum PermissionType {
   Api = 'api',
 }
 
-@Entity()
+@Entity({ orderBy: { id: 'DESC' } })
 export class Permission extends BaseEntity {
   /**
    * 权限名称

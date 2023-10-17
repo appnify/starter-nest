@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Request } from 'express';
-import { EntitySubscriberInterface, InsertEvent, DataSource, UpdateEvent, SoftRemoveEvent } from 'typeorm';
+import { DataSource, EntitySubscriberInterface, InsertEvent, SoftRemoveEvent, UpdateEvent } from 'typeorm';
 
 /**
  * 实体订阅器
@@ -19,15 +19,21 @@ export class EntitySubscripber implements EntitySubscriberInterface {
   }
 
   beforeInsert(event: InsertEvent<any>): void | Promise<any> {
-    event.entity.createdBy = this.getUser();
+    if (event.entity) {
+      event.entity.createdBy = this.getUser();
+    }
   }
 
   beforeUpdate(event: UpdateEvent<any>): void | Promise<any> {
-    event.entity.updatedBy = this.getUser();
+    if (event.entity) {
+      event.entity.updatedBy = this.getUser();
+    }
   }
 
   beforeSoftRemove(event: SoftRemoveEvent<any>): void | Promise<any> {
-    event.entity && (event.entity.deletedBy = this.getUser());
+    if (event.entity) {
+      event.entity.deletedBy = this.getUser();
+    }
   }
 
   getUser() {
@@ -35,6 +41,6 @@ export class EntitySubscripber implements EntitySubscriberInterface {
     if (!user) {
       return;
     }
-    return `${user.nickname}(${user.id})`;
+    return user.nickname;
   }
 }
