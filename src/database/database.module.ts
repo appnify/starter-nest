@@ -23,6 +23,17 @@ import { RequestMiddleware } from './suscribers/request.middleware';
           };
         }
         if (config.dbType === 'mysql') {
+          return {
+            type: config.dbType,
+            host: config.sqlHost,
+            port: config.sqlPort,
+            username: config.sqlUser,
+            password: config.sqlPass,
+            database: config.sqlDatabase,
+            synchronize: true,
+            autoLoadEntities: true,
+            namingStrategy: new SnakeNamingStrategy(),
+          };
         }
       },
       inject: [ConfigService],

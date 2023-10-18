@@ -37,20 +37,38 @@ export function addResponseWrapper(doc: OpenAPIObject) {
           continue;
         }
         const schema = json.schema;
+        // json.schema = {
+        //   allOf: [
+        //     {
+        //       $ref: '#/components/schemas/Response',
+        //     },
+        //     {
+        //       type: 'object',
+        //       properties: {
+        //         data: schema,
+        //       },
+        //       required: ['data'],
+        //     },
+        //   ],
+        // };
         json.schema = {
-          allOf: [
-            {
-              $ref: '#/components/schemas/Response',
+          type: 'object',
+          properties: {
+            code: {
+              type: 'integer',
+              description: '状态码',
+              example: 2000,
+              format: 'int32',
             },
-            {
-              type: 'object',
-              properties: {
-                data: schema,
-              },
-              required: ['data'],
+            message: {
+              type: 'string',
+              description: '提示信息',
+              example: '请求成功',
             },
-          ],
-        };
+            data: schema,
+          },
+          required: ['code', 'message'],
+        }
       }
     }
   }

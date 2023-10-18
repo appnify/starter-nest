@@ -91,6 +91,41 @@ export class ConfigService {
   }
 
   /**
+   * MySQL数据库主机
+   */
+  get sqlHost(): string {
+    return this.config.get('DB_MYSQL_HOST', 'localhost');
+  }
+
+  /**
+   * MySQL数据库端口
+   */
+  get sqlPort(): number {
+    return Number(this.config.get('DB_MYSQL_PORT', 3306));
+  }
+
+  /**
+   * MySQL数据库用户
+   */
+  get sqlUser(): string {
+    return this.config.get('DB_MYSQL_USERNAME', 'root');
+  }
+
+  /**
+   * MySQL数据库密码
+   */
+  get sqlPass(): string {
+    return this.config.get('DB_MYSQL_PASSWORD', '');
+  }
+
+  /**
+   * MySQL数据库名称
+   */
+  get sqlDatabase(): string {
+    return this.config.get('DB_MYSQL_DATABASE', 'appnify');
+  }
+
+  /**
    * SQLite数据库文件路径
    * @default './content/db.sqlite'
    */
