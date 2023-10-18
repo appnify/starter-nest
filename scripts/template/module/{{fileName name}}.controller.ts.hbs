@@ -15,45 +15,35 @@ export class {{upcaseName name}}Controller extends BaseController {
     super();
   }
 
-  /**
-   * 新增{{cnName}}
-   */
   @Post()
+  @ApiOperation({ description: '新增{{cnName}}', operationId: 'add{{upcaseName name}}' })
   add{{upcaseName name}}(@Body() create{{upcaseName name}}Dto: Create{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.create(create{{upcaseName name}}Dto);
   }
 
-  /**
-   * 根据分页/过滤参数查询{{cnName}}
-   */
   @Get()
   @Respond(RespondType.PAGINATION)
   @ApiOkResponse({ isArray: true, type: {{upcaseName name}} })
+  @ApiOperation({ description: '查询{{cnName}}', operationId: 'get{{upcaseName name}}s' })
   get{{upcaseName name}}s(@Query() query: Find{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.findMany(query);
   }
 
-  /**
-   * 根据ID查询{{cnName}}
-   */
   @Get(':id')
-  get{{upcaseName name}}(@Param('id', ParseIntPipe) id: number): Promise<{{upcaseName name}}> {
+  @ApiOperation({ description: '获取{{cnName}}', operationId: 'get{{upcaseName name}}' })
+  get{{upcaseName name}}(id: number): Promise<{{upcaseName name}}> {
     return this.{{lowcaseName name}}Service.findOne(id);
   }
 
-  /**
-   * 根据ID更新{{cnName}}
-   */
   @Patch(':id')
-  update{{upcaseName name}}(@Param('id', ParseIntPipe) id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
+  @ApiOperation({ description: '更新{{cnName}}', operationId: 'set{{upcaseName name}}' })
+  update{{upcaseName name}}(id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.update(+id, update{{upcaseName name}}Dto);
   }
 
-  /**
-   * 根据ID删除{{cnName}}
-   */
   @Delete(':id')
-  del{{upcaseName name}}(@Param('id', ParseIntPipe) id: number) {
+  @ApiOperation({ description: '删除{{cnName}}', operationId: 'del{{upcaseName name}}' })
+  del{{upcaseName name}}(id: number) {
     return this.{{lowcaseName name}}Service.remove(+id);
   }
 }

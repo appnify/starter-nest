@@ -6,8 +6,8 @@ import { CreateUploadDto } from './dto/create-upload.dto';
 import { UploadService } from './upload.service';
 import { Request } from 'express';
 
-@ApiTags('upload')
-@Controller('upload')
+@ApiTags('file')
+@Controller('file')
 export class UploadController {
   constructor(private readonly uploadService: UploadService) {}
 
@@ -22,7 +22,7 @@ export class UploadController {
 
   @Get()
   @Respond(RespondType.PAGINATION)
-  @ApiOperation({ description: '批量查询', operationId: 'getUploads' })
+  @ApiOperation({ description: '批量查询', operationId: 'getFiles' })
   findAll() {
     return this.uploadService.findAll();
   }
@@ -33,8 +33,14 @@ export class UploadController {
     return this.uploadService.findOne(+id);
   }
 
+  @Get('hash/:hash')
+  @ApiOperation({ description: '查询文件是否已存在', operationId: 'getFileByHash' })
+  isHashExists(@Param('hash') hash: string) {
+    return this.uploadService.isHashExists(hash);
+  }
+
   @Patch(':id')
-  @ApiOperation({ description: '更新', operationId: 'updateFile' })
+  @ApiOperation({ description: '更新', operationId: 'setFile' })
   update() {
     return this.uploadService.update();
   }

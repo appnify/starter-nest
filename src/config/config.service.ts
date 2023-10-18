@@ -111,7 +111,7 @@ export class ConfigService {
    * @default '/uploads'
    */
   get uploadPrefix(): string {
-    return this.config.get('UPLOAD_URL', '/uploads');
+    return this.config.get('UPLOAD_URL', '/upload');
   }
 
   /**

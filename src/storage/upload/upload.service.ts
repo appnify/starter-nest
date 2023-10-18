@@ -17,7 +17,7 @@ export class UploadService extends BaseService {
    * @returns
    */
   async create(file: Express.Multer.File) {
-    const path = relative(this.config.uploadDir, file.path).split(sep).join(posix.sep);
+    const path = relative(this.config.uploadDir, file.path).split(sep).join('/');
     const uploadPrefix = this.config.uploadPrefix;
     const uploadUrl = `${uploadPrefix}/${path}`;
     const upload = this.uploadRepository.create({
@@ -42,6 +42,16 @@ export class UploadService extends BaseService {
 
   update() {
     return `This action updates a #${1} upload`;
+  }
+
+  /**
+   * 根据哈希判断文件是否存在
+   * @param hash 哈希
+   * @returns
+   */
+  async isHashExists(hash: string) {
+    const count = await this.uploadRepository.count({ where: { hash } });
+    return count > 0;
   }
 
   remove(id: number) {

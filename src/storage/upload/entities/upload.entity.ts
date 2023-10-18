@@ -1,7 +1,7 @@
 import { BaseEntity } from '@/database';
 import { Column, Entity } from 'typeorm';
 
-@Entity()
+@Entity({ orderBy: { id: 'DESC' } })
 export class Upload extends BaseEntity {
   /**
    * 文件名
@@ -33,7 +33,7 @@ export class Upload extends BaseEntity {
 
   /**
    * 文件哈希
-   * @example "xxx"
+   * @example "2afb1f8b83ef0cc564f227d75d0b6914"
    */
   @Column({ comment: '文件哈希' })
   hash: string;
