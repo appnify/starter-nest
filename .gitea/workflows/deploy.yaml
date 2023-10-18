@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: 检出代码
         id: checkout
-        uses: https://gitea.com/actions/checkout@v3
+        uses: https://git.dev.juetan.cn/mirror/checkout@v3
 
       - name: 构建镜像
         run: |
@@ -44,7 +44,7 @@ jobs:
           docker push ${{ env.docker_name }}:latest
 
       - name: 更新服务
-        uses: http://git.dev.juetan.cn/mirror/ssh-action@v1.0.0
+        uses: https://git.dev.juetan.cn/mirror/ssh-action@v1.0.0
         with:
           host: ${{ env.deploy_host }}
           port: ${{ env.deploy_port }}
