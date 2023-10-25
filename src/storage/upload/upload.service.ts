@@ -29,7 +29,7 @@ export class UploadService extends BaseService {
       extension: extname(file.originalname),
     });
     await this.uploadRepository.save(upload);
-    return upload.id;
+    return upload;
   }
 
   findAll() {

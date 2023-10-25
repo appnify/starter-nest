@@ -38,6 +38,11 @@
 - .dockerignore 配置哪些文件应该被忽略掉
 - .gitea/workflows/depoy.yaml 流水线任务的配置文件，语法上与 Github Actions 一致
 
+## 笔记
+
+- createUserDto与User分开
+- 涉及关系时，先用 service 查出有效关系，避免存储不存在的关联ID
+
 ## 最后
 
 如果你在使用过程中遇到问题，欢迎在 Issue 中提问。

@@ -10,12 +10,11 @@ export class LoggerInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> | Promise<Observable<any>> {
     const { method, url } = context.switchToHttp().getRequest<Request>();
     const now = Date.now();
-    return next.handle().pipe(
-      tap(() => {
-        const ms = Date.now() - now;
-        const scope = [context.getClass().name, context.getHandler().name].join('.');
-        this.logger.log(`${method} ${url}(${ms} ms) +1`, scope);
-      }),
-    );
+    const handle = () => {
+      const ms = Date.now() - now;
+      const scope = [context.getClass().name, context.getHandler().name].join('.');
+      this.logger.log(`${method} ${url}(${ms} ms) +1`, scope);
+    };
+    return next.handle().pipe(tap({ next: handle, error: handle }));
   }
 }

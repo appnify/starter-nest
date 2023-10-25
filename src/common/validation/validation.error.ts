@@ -1,5 +1,5 @@
 export class ValidationError extends Error {
-  constructor(public messages: string[]) {
-    super('参数错误');
+  constructor(message: string) {
+    super(message);
   }
 }

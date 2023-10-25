@@ -39,4 +39,12 @@ export class PaginationDto {
   @Min(0)
   @Transform(({ value }) => Number(value))
   size?: number;
+
+  /**
+   * 创建起始事件
+   * @example '2020-02-02 02:02:02'
+   */
+  @IsOptional()
+  @IsString()
+  createdFrom?: string;
 }

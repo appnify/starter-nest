@@ -10,7 +10,6 @@ export class ValidationExecptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<Response>();
     const code = ResponseCode.PARAM_ERROR;
     const message = exception.message;
-    const data = exception.messages;
-    response.status(HttpStatus.BAD_REQUEST).json({ code, message, data });
+    response.status(HttpStatus.BAD_REQUEST).json({ code, message, data: undefined });
   }
 }

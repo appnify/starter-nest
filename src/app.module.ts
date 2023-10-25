@@ -1,20 +1,21 @@
 import { Module } from '@nestjs/common';
 import { PostModule } from '@/content/post';
-import { RoleModule } from '@/modules/role';
+import { RoleModule } from '@/system/role';
 import { UploadModule } from '@/storage/upload';
-import { PermissionModule } from '@/modules/permission';
+import { PermissionModule } from '@/system/permission';
 import { ConfigModule } from '@/config';
 import { LoggerModule } from '@/common/logger';
 import { ServeStaticModule } from '@/common/static';
 import { DatabaseModule } from '@/database';
 import { ValidationModule } from '@/common/validation';
-import { AuthModule } from '@/modules/auth';
-import { UserModule } from '@/modules/user';
+import { AuthModule } from '@/system/auth';
+import { UserModule } from '@/system/user';
 import { ResponseModule } from '@/common/response';
 import { SerializationModule } from '@/common/serialization';
 import { CacheModule } from '@/storage/cache';
 import { ScanModule } from '@/utils/scan.module';
 import { ContentModule } from '@/content/content.module';
+import { MenuModule } from './system/menu';
 
 @Module({
   imports: [
@@ -63,7 +64,6 @@ import { ContentModule } from '@/content/content.module';
      */
     DatabaseModule,
 
-
     /**
      * 用户模块
      */
@@ -81,7 +81,6 @@ import { ContentModule } from '@/content/content.module';
      */
     PermissionModule,
 
-
     /**
      * 上传模块
      */
@@ -90,7 +89,8 @@ import { ContentModule } from '@/content/content.module';
      * 文章模块
      */
     PostModule,
-    ContentModule
+    ContentModule,
+    MenuModule,
   ],
 })
 export class AppModule {}

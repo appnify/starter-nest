@@ -1,3 +1,4 @@
+import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
@@ -47,6 +48,7 @@ export class BaseEntity {
    * @example "2022-01-03 12:12:12"
    */
   @Exclude()
+  @ApiHideProperty()
   @DeleteDateColumn({ comment: '删除时间', select: false })
   deleteddAt: Date;
 
@@ -55,6 +57,7 @@ export class BaseEntity {
    * @example 1
    */
   @Exclude()
+  @ApiHideProperty()
   @Column({ comment: '删除人', nullable: true, select: false })
   deletedBy: string;
 }
