@@ -1,7 +1,7 @@
-import { PaginationDto } from '@/common/response';
+import { PaginationDto } from '@/middlewares/response';
 import { IntersectionType } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
-import { IsBoolean, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsOptional } from 'class-validator';
 
 export class FindMenuDto extends IntersectionType(PaginationDto) {
   /**

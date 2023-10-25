@@ -24,7 +24,7 @@ export class BaseEntity {
 
   /**
    * 创建人
-   * @example '绝弹(1)'
+   * @example '绝弹'
    */
   @Column({ comment: '创建人', nullable: true })
   createdBy: string;
@@ -38,7 +38,7 @@ export class BaseEntity {
 
   /**
    * 更新人
-   * @example '绝弹(1)'
+   * @example '绝弹'
    */
   @Column({ comment: '更新人', nullable: true })
   updatedBy: string;
@@ -53,8 +53,8 @@ export class BaseEntity {
   deleteddAt: Date;
 
   /**
-   * 删除人ID
-   * @example 1
+   * 删除人
+   * @example '绝弹'
    */
   @Exclude()
   @ApiHideProperty()

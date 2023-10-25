@@ -1,5 +1,5 @@
 import { BaseController } from '@/common/base';
-import { Respond, RespondType } from '@/common/response';
+import { Respond, RespondType } from '@/middlewares/response';
 import { Body, Controller, Delete, Get, Patch, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CategoryService } from './category.service';

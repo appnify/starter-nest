@@ -1,9 +1,9 @@
+import { BaseService } from '@/common/base';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { extname, posix, sep, relative } from 'path';
+import { extname, relative, sep } from 'path';
 import { Repository } from 'typeorm';
-import { Upload } from './entities/upload.entity';
-import { BaseService } from '@/common/base';
+import { Upload } from './entities/file.entity';
 
 @Injectable()
 export class UploadService extends BaseService {

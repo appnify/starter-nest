@@ -1,12 +1,12 @@
 import { BaseController } from '@/common/base';
-import { Respond, RespondType } from '@/common/response';
+import { Respond, RespondType } from '@/middlewares/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { UserService } from './user.service';
 import { User } from './entities/user.entity';
+import { UserService } from './user.service';
 
 @ApiTags('user')
 @Controller('users')

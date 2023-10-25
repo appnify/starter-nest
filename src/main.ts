@@ -1,10 +1,12 @@
-import { LoggerService } from '@/common/logger';
 import { initSwagger } from '@/common/swagger';
 import { ConfigService } from '@/config';
+import { LoggerService } from '@/monitor/logger';
 import { VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ScanModule } from './utils/scan.module';
+
+declare const module: any;
 
 async function bootstrap() {
   /**
@@ -55,6 +57,11 @@ async function bootstrap() {
    * 输出接口文档URL
    */
   logger.log(`OpenapiDocs is running at ${await app.getUrl()}${config.apiDocPrefix}`, 'NestApplication');
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 
 bootstrap();

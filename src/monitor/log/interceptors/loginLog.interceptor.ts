@@ -7,18 +7,17 @@ export class LoginLogInterceptor implements NestInterceptor {
   constructor(private logService: LogService) {}
 
   intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> | Promise<Observable<any>> {
-    const _this = this;
     return next.handle().pipe(
       tap({
-        next(data) {
-          const  status = true;
+        next: (data) => {
+          const status = true;
           const description = '登录成功';
-          _this.recordLoginLog(context, { status, description });
+          this.recordLoginLog(context, { status, description });
         },
-        error(err) {
+        error: (err) => {
           const status = false;
           const description = err?.message || '登录失败';
-          _this.recordLoginLog(context, { status, description });
+          this.recordLoginLog(context, { status, description });
         },
       }),
     );

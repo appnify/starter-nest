@@ -1,10 +1,10 @@
-import { Respond, RespondType } from '@/common/response';
+import { Respond, RespondType } from '@/middlewares/response';
 import { Controller, Delete, Get, Ip, Param, Patch, Post, Req, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { CreateUploadDto } from './dto/create-upload.dto';
-import { UploadService } from './upload.service';
 import { Request } from 'express';
+import { CreateUploadDto } from './dto/create-file.dto';
+import { UploadService } from './file.service';
 
 @ApiTags('file')
 @Controller('file')

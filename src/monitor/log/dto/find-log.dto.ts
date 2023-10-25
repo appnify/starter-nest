@@ -1,4 +1,4 @@
-import { PaginationDto } from '@/common/response';
+import { PaginationDto } from '@/middlewares/response';
 import { IntersectionType } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsOptional, IsString } from 'class-validator';

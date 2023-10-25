@@ -2,7 +2,7 @@ import { BaseEntity } from '@/database';
 import { User } from '@/system/user';
 import { Column, Entity, ManyToMany } from 'typeorm';
 
-@Entity()
+@Entity({ orderBy: { id: 'DESC' } })
 export class Post extends BaseEntity {
   /**
    * 文章标题

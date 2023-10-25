@@ -2,12 +2,12 @@ import { ConfigService } from '@/config';
 import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { diskStorage } from 'multer';
-import { Upload } from './entities/upload.entity';
-import { UploadController } from './upload.controller';
-import { UploadService } from './upload.service';
-import { extname, join } from 'path';
 import { existsSync, mkdirSync } from 'fs';
+import { diskStorage } from 'multer';
+import { extname, join } from 'path';
+import { Upload } from './entities/file.entity';
+import { UploadController } from './file.controller';
+import { UploadService } from './file.service';
 
 @Module({
   imports: [

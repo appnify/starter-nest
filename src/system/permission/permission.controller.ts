@@ -1,4 +1,4 @@
-import { Respond, RespondType } from '@/common/response';
+import { Respond, RespondType } from '@/middlewares/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreatePermissionDto } from './dto/create-permission.dto';

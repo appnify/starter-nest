@@ -1,5 +1,5 @@
-import { INestApplication } from '@nestjs/common';
 import { ConfigService } from '@/config';
+import { INestApplication } from '@nestjs/common';
 import { DocumentBuilder, SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
 import { addResponseWrapper } from './util';
 
@@ -17,9 +17,10 @@ export const initSwagger = (app: INestApplication) => {
     .addTag('user', '用户管理')
     .addTag('auth', '认证管理')
     .addTag('role', '角色管理')
-    .addTag('permission', '权限管理')
     .addTag('post', '文章管理')
-    .addTag('upload', '文件上传')
+    .addTag('file', '文件管理')
+    .addTag('menu', '菜单管理')
+    .addTag('permission', '权限管理')
     .addBearerAuth()
     .build();
   const options: SwaggerDocumentOptions = {

@@ -1,13 +1,13 @@
 import { BaseService } from '@/common/base';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import axios from 'axios';
 import { Like, Repository } from 'typeorm';
+import uaParser from 'ua-parser-js';
 import { CreateLogDto } from './dto/create-log.dto';
 import { FindLogDto } from './dto/find-log.dto';
 import { UpdateLogDto } from './dto/update-log.dto';
 import { LoginLog } from './entities/loginLog.entity';
-import uaParser from 'ua-parser-js';
-import axios from 'axios';
 
 @Injectable()
 export class LogService extends BaseService {
@@ -27,7 +27,7 @@ export class LogService extends BaseService {
   /**
    * 添加登陆日志
    */
-  async addLoginLog(log: { nickname: string; status: boolean, description: string; ip: string; userAgent: string }) {
+  async addLoginLog(log: { nickname: string; status: boolean; description: string; ip: string; userAgent: string }) {
     const { nickname, status, description, ip, userAgent } = log;
     const { browser, os } = this.parseUserAgent(userAgent);
     const { addr } = await this.parseUserIp(ip);
@@ -80,14 +80,15 @@ export class LogService extends BaseService {
    * 条件/分页查询
    */
   async findMany(findLogdto: FindLogDto) {
-    const { page, size, nickname  } = findLogdto;
+    const { page, size, nickname: nick } = findLogdto;
     const { skip, take } = this.formatPagination(page, size, true);
+    const nickname = nick ? Like(`%${nick}%`) : undefined;
     return this.loginLogRepository.findAndCount({
       skip,
       take,
       where: {
-        nickname: nickname ? Like(`%${nickname}%`) : undefined,
-      }
+        nickname,
+      },
     });
   }
 

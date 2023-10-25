@@ -1,20 +1,20 @@
-import { Module } from '@nestjs/common';
-import { PostModule } from '@/content/post';
-import { RoleModule } from '@/system/role';
-import { UploadModule } from '@/storage/upload';
-import { PermissionModule } from '@/system/permission';
-import { ConfigModule } from '@/config';
-import { LoggerModule } from '@/common/logger';
 import { ServeStaticModule } from '@/common/static';
-import { DatabaseModule } from '@/database';
-import { ValidationModule } from '@/common/validation';
-import { AuthModule } from '@/system/auth';
-import { UserModule } from '@/system/user';
-import { ResponseModule } from '@/common/response';
-import { SerializationModule } from '@/common/serialization';
-import { CacheModule } from '@/storage/cache';
-import { ScanModule } from '@/utils/scan.module';
+import { ConfigModule } from '@/config';
 import { ContentModule } from '@/content/content.module';
+import { PostModule } from '@/content/post';
+import { DatabaseModule } from '@/database';
+import { ResponseModule } from '@/middlewares/response';
+import { SerializationModule } from '@/middlewares/serialization';
+import { ValidationModule } from '@/middlewares/validation';
+import { LoggerModule } from '@/monitor/logger';
+import { CacheModule } from '@/storage/cache';
+import { UploadModule } from '@/storage/file';
+import { AuthModule } from '@/system/auth';
+import { PermissionModule } from '@/system/permission';
+import { RoleModule } from '@/system/role';
+import { UserModule } from '@/system/user';
+import { ScanModule } from '@/utils/scan.module';
+import { Module } from '@nestjs/common';
 import { MenuModule } from './system/menu';
 
 @Module({

@@ -1,6 +1,6 @@
 import { BaseController } from '@/common/base';
-import { Respond, RespondType } from '@/common/response';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, ParseIntPipe } from '@nestjs/common';
+import { Respond, RespondType } from '@/middlewares/response';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateLogDto } from './dto/create-log.dto';
 import { FindLogDto } from './dto/find-log.dto';

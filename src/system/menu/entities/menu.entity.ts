@@ -1,10 +1,10 @@
 import { BaseEntity } from '@/database';
 import { Role } from '@/system/role';
 import { ApiHideProperty } from '@nestjs/swagger';
-import { Column, Entity, JoinColumn, ManyToMany, Tree, TreeChildren, TreeParent } from 'typeorm';
+import { Column, Entity, ManyToMany, Tree, TreeChildren, TreeParent } from 'typeorm';
 
-@Entity({ orderBy: { id: 'DESC' } })
 @Tree('materialized-path')
+@Entity({ orderBy: { id: 'DESC' } })
 export class Menu extends BaseEntity {
   /**
    * 菜单名称

@@ -1,4 +1,4 @@
-import { Respond, RespondType } from '@/common/response';
+import { Respond, RespondType } from '@/middlewares/response';
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateRoleDto } from './dto/create-role.dto';
@@ -18,7 +18,7 @@ export class RoleController {
 
   @Get()
   @Respond(RespondType.PAGINATION)
-  @ApiOperation({ description: '批量查询角色', operationId: 'getRoles' })
+  @ApiOperation({ description: '分页查询角色', operationId: 'getRoles' })
   findAll() {
     return this.roleService.findAll();
   }

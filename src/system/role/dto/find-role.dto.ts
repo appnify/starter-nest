@@ -1,4 +1,4 @@
-import { PaginationDto } from '@/common/response';
+import { PaginationDto } from '@/middlewares/response';
 import { IsBoolean, IsOptional } from 'class-validator';
 
 export class FindMenuDto extends PaginationDto {

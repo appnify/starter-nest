@@ -1,6 +1,6 @@
-import { Inject } from '@nestjs/common';
-import { LoggerService } from '../logger';
 import { ConfigService } from '@/config';
+import { Inject } from '@nestjs/common';
+import { LoggerService } from '../../monitor/logger';
 
 /**
  * 控制器基类
