@@ -24,6 +24,7 @@ export class MenuService extends BaseService {
       const parent = await this.menuRepository.findOne({ where: { id: parentId } });
       menu.parent = parent;
     }
+    delete menu.parentId;
     await this.menuRepository.save(menu);
     return menu;
   }

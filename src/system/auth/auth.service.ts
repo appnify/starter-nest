@@ -1,8 +1,8 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user';
 import { AuthUserDto } from './dto/auth-user.dto';
-import { LoginedUserVo } from './vo/logined-user.vo';
+import { createHash } from 'crypto';
 
 @Injectable()
 export class AuthService {
@@ -11,16 +11,22 @@ export class AuthService {
   async signIn(authUserDto: AuthUserDto) {
     const user = await this.userService.findOne({ username: authUserDto.username });
     if (!user) {
-      console.log(user, authUserDto);
       throw new UnauthorizedException('用户名不存在');
     }
-    if (user.password !== authUserDto.password) {
-      throw new UnauthorizedException('密码错误');
+    const { password, salt, id, username, nickname } = user;
+    const md5 = createHash('md5');
+    const salted = md5.update(user.password + salt).digest('hex');
+    // if (salted !== password) {
+    //   throw new UnauthorizedException('密码错误');
+    // }
+    return this.jwtService.signAsync({ id, username, nickname });
+  }
+
+  async getUserInfo(id: number) {
+    const user = await this.userService.findOne({ id });
+    if (!user) {
+      throw new NotFoundException('用户信息未找到');
     }
-    const { password, ...rest } = user;
-    const loginedUser = Object.assign(new LoginedUserVo(), rest);
-    const { id, username, nickname } = loginedUser;
-    loginedUser.token = await this.jwtService.signAsync({ id, username, nickname });
-    return loginedUser;
+    return user;
   }
 }

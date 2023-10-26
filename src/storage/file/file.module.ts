@@ -8,33 +8,30 @@ import { extname, join } from 'path';
 import { Upload } from './entities/file.entity';
 import { UploadController } from './file.controller';
 import { UploadService } from './file.service';
+import { dayjs } from '@/libraries';
+
+const MulteredModule = MulterModule.registerAsync({
+  useFactory: (config: ConfigService) => {
+    return {
+      storage: diskStorage({
+        destination: (req, file, next) => {
+          const dest = join(config.uploadDir, dayjs().format(dayjs.DATE));
+          if (!existsSync(dest)) {
+            mkdirSync(dest, { recursive: true });
+          }
+          next(null, dest);
+        },
+        filename: (req, file, next) => {
+          next(null, Date.now() + extname(file.originalname));
+        },
+      }),
+    };
+  },
+  inject: [ConfigService],
+});
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Upload]),
-    MulterModule.registerAsync({
-      useFactory: (config: ConfigService) => {
-        return {
-          storage: diskStorage({
-            destination: (req, file, next) => {
-              const date = new Date();
-              const year = date.getFullYear();
-              const month = date.getMonth() + 1;
-              const dest = join(config.uploadDir, year.toString(), month.toString().padStart(2, '0'));
-              if (!existsSync(dest)) {
-                mkdirSync(dest, { recursive: true });
-              }
-              next(null, dest);
-            },
-            filename: (req, file, next) => {
-              next(null, Date.now() + extname(file.originalname));
-            },
-          }),
-        };
-      },
-      inject: [ConfigService],
-    }),
-  ],
+  imports: [TypeOrmModule.forFeature([Upload]), MulteredModule],
   controllers: [UploadController],
   providers: [UploadService],
 })

@@ -1,5 +1,5 @@
 import { Injectable, ConsoleLogger } from '@nestjs/common';
-import { dayjs } from '@/libs';
+import { dayjs } from '@/libraries';
 import { ConfigService } from '@/config';
 import { Logger, createLogger, format, transports } from 'winston';
 import 'winston-daily-rotate-file';

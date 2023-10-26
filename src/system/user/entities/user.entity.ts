@@ -23,6 +23,15 @@ export class User extends BaseEntity {
   password: string;
 
   /**
+   * 加密盐
+   * @example 'xx'
+   */
+  @Exclude()
+  @ApiHideProperty()
+  @Column({ comment: '加密盐', nullable: true })
+  salt: string;
+
+  /**
    * 用户昵称
    * @example '绝弹'
    */

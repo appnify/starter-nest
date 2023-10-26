@@ -43,7 +43,7 @@ export class MenuController extends BaseController {
 
   @Delete(':id')
   @ApiOperation({ description: '删除菜单', operationId: 'delMenu' })
-  delMenu(id: number) {
+  delMenu(@Param('id') id: number) {
     return this.menuService.remove(+id);
   }
 }

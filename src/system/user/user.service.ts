@@ -7,6 +7,8 @@ import { FindUserDto } from './dto/find-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { RoleService } from '../role';
+import { uuid } from '@/libraries';
+import { createHash } from 'crypto';
 
 @Injectable()
 export class UserService extends BaseService {
@@ -20,6 +22,14 @@ export class UserService extends BaseService {
   async create(createUserDto: CreateUserDto) {
     const user = this.userRepository.create(createUserDto);
     user.roles = await this.roleService.findByIds(user.roleIds ?? []);
+    const { password } = createUserDto;
+    if (password) {
+      const salt = uuid();
+      const md5 = createHash('md5');
+      const pass = md5.update(password + salt).digest('hex');
+      user.salt = salt;
+      user.password = pass;
+    }
     await this.userRepository.save(user);
     return user.id;
   }

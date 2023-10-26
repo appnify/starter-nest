@@ -46,7 +46,7 @@ export class Menu extends BaseEntity {
   @TreeParent()
   parent: Menu;
 
-  @Column({ comment: '父级ID', nullable: true, default: 0 })
+  @Column({ comment: '父级ID', nullable: true })
   parentId: number;
 
   @ApiHideProperty()
