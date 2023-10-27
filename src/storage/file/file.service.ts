@@ -3,41 +3,42 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { extname, relative, sep } from 'path';
 import { Repository } from 'typeorm';
-import { Upload } from './entities/file.entity';
+import { File } from './entities/file.entity';
 
 @Injectable()
 export class UploadService extends BaseService {
-  constructor(@InjectRepository(Upload) private readonly uploadRepository: Repository<Upload>) {
+  constructor(@InjectRepository(File) private readonly repository: Repository<File>) {
     super();
   }
 
   /**
    * 保存文件信息
-   * @param file 文件信息
+   * @param uploadFile 文件信息
    * @returns
    */
-  async create(file: Express.Multer.File) {
-    const path = relative(this.config.uploadDir, file.path).split(sep).join('/');
-    const uploadPrefix = this.config.uploadPrefix;
-    const uploadUrl = `${uploadPrefix}/${path}`;
-    const upload = this.uploadRepository.create({
-      name: file.originalname,
-      mimetype: file.mimetype,
-      size: file.size,
-      hash: file.filename,
-      path: uploadUrl,
-      extension: extname(file.originalname),
+  async create(uploadFile: Express.Multer.File) {
+    const { originalname: name, mimetype, size, path: hash } = uploadFile;
+    const relativePath = relative(this.config.uploadDir, uploadFile.path).split(sep).join('/');
+    const path = `${this.config.uploadPrefix}/${relativePath}`;
+    const extension = extname(uploadFile.originalname);
+    const file = this.repository.create({
+      name,
+      mimetype,
+      size,
+      hash,
+      path,
+      extension,
     });
-    await this.uploadRepository.save(upload);
-    return upload;
+    await this.repository.save(file);
+    return file.id;
   }
 
   findAll() {
-    return this.uploadRepository.findAndCount();
+    return this.repository.findAndCount();
   }
 
   findOne(id: number) {
-    return this.uploadRepository.findOne({ where: { id } });
+    return this.repository.findOne({ where: { id } });
   }
 
   update() {
@@ -49,12 +50,11 @@ export class UploadService extends BaseService {
    * @param hash 哈希
    * @returns
    */
-  async isHashExists(hash: string) {
-    const count = await this.uploadRepository.count({ where: { hash } });
-    return count > 0;
+  async getByHash(hash: string) {
+    return this.repository.findOneBy({ hash });
   }
 
   remove(id: number) {
-    return this.uploadRepository.softDelete(id);
+    return this.repository.softDelete(id);
   }
 }

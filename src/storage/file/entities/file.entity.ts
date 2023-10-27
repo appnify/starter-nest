@@ -2,13 +2,20 @@ import { BaseEntity } from '@/database';
 import { Column, Entity } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
-export class Upload extends BaseEntity {
+export class File extends BaseEntity {
   /**
    * 文件名
-   * @example "xxx.jpg"
+   * @example "头像.jpg"
    */
   @Column({ comment: '文件名' })
   name: string;
+
+  /**
+   * 描述
+   * @example '一段很长的描述'
+   */
+  @Column({ comment: '描述' })
+  description: string;
 
   /**
    * 文件大小

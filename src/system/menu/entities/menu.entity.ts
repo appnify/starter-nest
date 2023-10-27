@@ -42,17 +42,28 @@ export class Menu extends BaseEntity {
   @Column({ comment: '类型(1: 目录, 2: 页面, 3: 按钮)' })
   type: number;
 
+  /**
+   * 父级菜单
+   */
   @ApiHideProperty()
   @TreeParent()
   parent: Menu;
 
+  /**
+   * 父级ID
+   */
   @Column({ comment: '父级ID', nullable: true })
   parentId: number;
 
-  @ApiHideProperty()
+  /**
+   * 子项数组
+   */
   @TreeChildren()
   children: Menu[];
 
+  /**
+   * 关联角色
+   */
   @ApiHideProperty()
   @ManyToMany(() => Role, (role) => role.menus)
   roles: Role[];

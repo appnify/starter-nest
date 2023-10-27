@@ -10,12 +10,12 @@ import { LoggerModule } from '@/monitor/logger';
 import { CacheModule } from '@/storage/cache';
 import { UploadModule } from '@/storage/file';
 import { AuthModule } from '@/system/auth';
-import { PermissionModule } from '@/system/permission';
 import { RoleModule } from '@/system/role';
 import { UserModule } from '@/system/user';
 import { ScanModule } from '@/utils/scan.module';
 import { Module } from '@nestjs/common';
 import { MenuModule } from './system/menu';
+import { DictModule, DictTypeModule } from './system/dict';
 
 @Module({
   imports: [
@@ -76,10 +76,6 @@ import { MenuModule } from './system/menu';
      * 角色模块
      */
     RoleModule,
-    /**
-     * 权限模块
-     */
-    PermissionModule,
 
     /**
      * 上传模块
@@ -91,6 +87,8 @@ import { MenuModule } from './system/menu';
     PostModule,
     ContentModule,
     MenuModule,
+    DictTypeModule,
+    DictModule,
   ],
 })
 export class AppModule {}

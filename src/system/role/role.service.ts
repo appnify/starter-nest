@@ -11,9 +11,6 @@ export class RoleService {
 
   async create(createRoleDto: CreateRoleDto) {
     const role = this.roleRepository.create(createRoleDto);
-    if (createRoleDto.permissions) {
-      role.permissions = createRoleDto.permissions.map((id) => ({ id })) as any;
-    }
     await this.roleRepository.save(role);
     return role.id;
   }
@@ -30,11 +27,6 @@ export class RoleService {
     const role = this.roleRepository.findOne({ where: { id } });
     if (!role) {
       throw new NotFoundException('角色不存在');
-    }
-    if (updateRoleDto.permissionIds) {
-      const permissions = updateRoleDto.permissionIds.map((id) => ({ id }));
-      await this.roleRepository.save({ id, permissions });
-      delete updateRoleDto.permissionIds;
     }
     return this.roleRepository.update(id, updateRoleDto);
   }

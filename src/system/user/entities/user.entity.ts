@@ -60,7 +60,7 @@ export class User extends BaseEntity {
   email: string;
 
   /**
-   * 用户文章
+   * 关联文章
    */
   @ApiHideProperty()
   @ManyToMany(() => Post, (post) => post.author)
@@ -68,7 +68,7 @@ export class User extends BaseEntity {
   posts: Post[];
 
   /**
-   * 用户角色
+   * 关联角色
    */
   @ApiHideProperty()
   @ManyToMany(() => Role, (role) => role.user, { cascade: true })
@@ -76,7 +76,7 @@ export class User extends BaseEntity {
   roles: Role[];
 
   /**
-   * 用户角色ID
+   * 角色ID数组
    */
   @RelationId('roles')
   roleIds: number[];

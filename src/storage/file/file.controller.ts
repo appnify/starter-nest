@@ -34,9 +34,9 @@ export class UploadController {
   }
 
   @Get('hash/:hash')
-  @ApiOperation({ description: '查询文件是否已存在', operationId: 'getFileByHash' })
-  isHashExists(@Param('hash') hash: string) {
-    return this.uploadService.isHashExists(hash);
+  @ApiOperation({ description: '根据哈希查询', operationId: 'getFileByHash' })
+  getByHash(@Param('hash') hash: string) {
+    return this.uploadService.getByHash(hash);
   }
 
   @Patch(':id')

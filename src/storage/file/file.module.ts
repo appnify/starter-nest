@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { existsSync, mkdirSync } from 'fs';
 import { diskStorage } from 'multer';
 import { extname, join } from 'path';
-import { Upload } from './entities/file.entity';
+import { File } from './entities/file.entity';
 import { UploadController } from './file.controller';
 import { UploadService } from './file.service';
 import { dayjs } from '@/libraries';
@@ -31,7 +31,7 @@ const MulteredModule = MulterModule.registerAsync({
 });
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Upload]), MulteredModule],
+  imports: [TypeOrmModule.forFeature([File]), MulteredModule],
   controllers: [UploadController],
   providers: [UploadService],
 })

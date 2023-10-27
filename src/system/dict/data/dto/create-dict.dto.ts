@@ -1,0 +1,32 @@
+import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+
+export class CreateDictDto {
+  /**
+   * 字典类型
+   * @example 1
+   */
+  @IsNumber()
+  typeId: number;
+
+  /**
+   * 类型名称
+   * @example '性别'
+   */
+  @IsString()
+  name: string;
+
+  /**
+   * 标识
+   * @example 'gender'
+   */
+  @IsString()
+  code: string;
+
+  /**
+   * 描述
+   * @examle '一段很长的描述'
+   */
+  @IsOptional()
+  @IsString()
+  description: string;
+}

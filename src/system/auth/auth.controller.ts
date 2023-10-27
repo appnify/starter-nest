@@ -11,7 +11,7 @@ import {
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { AuthUserDto } from './dto/auth-user.dto';
-import { Public } from './jwt';
+import { Public } from './jwt/jwt-decorator';
 import { LoginLogInterceptor } from '@/monitor/log';
 import { Request } from 'express';
 

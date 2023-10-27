@@ -15,11 +15,11 @@ export class LoggerInterceptor implements NestInterceptor {
       tap({
         next: () => {
           const ms = Date.now() - now;
-          this.logger.log(`[Suuccess] ${method} ${url}(${ms} ms) +1`, scope);
+          this.logger.log(`[成功] ${method} ${url}(${ms} ms) +1`, scope);
         },
         error: () => {
           const ms = Date.now() - now;
-          this.logger.log(`[Fail] ${method} ${url}(${ms} ms) +1`, scope);
+          this.logger.error(`[失败] ${method} ${url}(${ms} ms) +1`, scope);
         },
       }),
     );

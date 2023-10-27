@@ -88,11 +88,11 @@ export class UserService extends BaseService {
   async findUserPermissions(id: number) {
     const user = await this.userRepository.findOne({
       where: { id },
-      relations: ['roles', 'roles.permissions'],
+      relations: ['roles'],
     });
     if (user) {
-      const permissions = user.roles.flatMap((role) => role.permissions);
-      return [...new Set(permissions.map((i) => i.slug))];
+      const permissions = user.roles.flatMap((role) => role.menuIds);
+      return [...new Set(permissions.map((i) => i))];
     }
     return [];
   }

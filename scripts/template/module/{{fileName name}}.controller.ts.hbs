@@ -1,7 +1,7 @@
 import { BaseController } from '@/common/base';
-import { Respond, RespondType } from '@/common/response';
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, ParseIntPipe } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { Respond, RespondType } from '@/middlewares/response';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Create{{upcaseName name}}Dto } from './dto/create-{{fileName name}}.dto';
 import { Find{{upcaseName name}}Dto } from './dto/find-{{fileName name}}.dto';
 import { Update{{upcaseName name}}Dto } from './dto/update-{{fileName name}}.dto';
@@ -31,19 +31,19 @@ export class {{upcaseName name}}Controller extends BaseController {
 
   @Get(':id')
   @ApiOperation({ description: '获取{{cnName}}', operationId: 'get{{upcaseName name}}' })
-  get{{upcaseName name}}(id: number): Promise<{{upcaseName name}}> {
+  get{{upcaseName name}}(@Param('id') id: number): Promise<{{upcaseName name}}> {
     return this.{{lowcaseName name}}Service.findOne(id);
   }
 
   @Patch(':id')
   @ApiOperation({ description: '更新{{cnName}}', operationId: 'set{{upcaseName name}}' })
-  update{{upcaseName name}}(id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
+  update{{upcaseName name}}(@Param('id') id: number, @Body() update{{upcaseName name}}Dto: Update{{upcaseName name}}Dto) {
     return this.{{lowcaseName name}}Service.update(+id, update{{upcaseName name}}Dto);
   }
 
   @Delete(':id')
   @ApiOperation({ description: '删除{{cnName}}', operationId: 'del{{upcaseName name}}' })
-  del{{upcaseName name}}(id: number) {
+  del{{upcaseName name}}(@Param('id') id: number) {
     return this.{{lowcaseName name}}Service.remove(+id);
   }
 }

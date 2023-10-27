@@ -1,6 +1,5 @@
 import { BaseEntity } from '@/database';
 import { Menu } from '@/system/menu';
-import { Permission } from '@/system/permission/entities/permission.entity';
 import { User } from '@/system/user';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Column, Entity, JoinTable, ManyToMany, RelationId } from 'typeorm';
@@ -28,20 +27,23 @@ export class Role extends BaseEntity {
   @Column({ comment: '角色描述', nullable: true })
   description: string;
 
+  /**
+   * 关联用户
+   */
   @ApiHideProperty()
   @ManyToMany(() => User, (user) => user.roles)
   user: User;
 
-  @ApiHideProperty()
-  @JoinTable()
-  @ManyToMany(() => Permission, (permission) => permission.roles)
-  permissions: Permission[];
-
-  @ApiHideProperty()
-  @RelationId('permissions')
-  permissionIds: number[];
-
+  /**
+   * 关联菜单
+   */
   @ApiHideProperty()
   @ManyToMany(() => Menu, (menu) => menu.roles)
   menus: Menu[];
+
+  /**
+   * 菜单ID数组
+   */
+  @RelationId('menus')
+  menuIds: number[];
 }
