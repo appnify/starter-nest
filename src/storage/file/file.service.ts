@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { extname, relative, sep } from 'path';
 import { Repository } from 'typeorm';
+import { UpdateFileDto } from './dto/update-file.dto';
 import { File } from './entities/file.entity';
 
 @Injectable()
@@ -21,6 +22,7 @@ export class UploadService extends BaseService {
     const relativePath = relative(this.config.uploadDir, uploadFile.path).split(sep).join('/');
     const path = `${this.config.uploadPrefix}/${relativePath}`;
     const extension = extname(uploadFile.originalname);
+    const description = '';
     const file = this.repository.create({
       name,
       mimetype,
@@ -28,6 +30,7 @@ export class UploadService extends BaseService {
       hash,
       path,
       extension,
+      description,
     });
     await this.repository.save(file);
     return file.id;
@@ -41,8 +44,14 @@ export class UploadService extends BaseService {
     return this.repository.findOne({ where: { id } });
   }
 
-  update() {
-    return `This action updates a #${1} upload`;
+  /**
+   * 更新文件信息
+   * @param id 文件ID
+   * @param updateFileDto 更新信息
+   * @returns 
+   */
+  update(id: number, updateFileDto: UpdateFileDto) {
+    return this.repository.update(id, updateFileDto);
   }
 
   /**

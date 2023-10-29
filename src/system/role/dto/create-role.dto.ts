@@ -13,7 +13,7 @@ export class CreateRoleDto {
    * @example 'admin'
    */
   @IsString()
-  slug: string;
+  code: string;
 
   /**
    * 角色描述

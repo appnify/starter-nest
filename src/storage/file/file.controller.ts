@@ -1,9 +1,22 @@
 import { Respond, RespondType } from '@/middlewares/response';
-import { Controller, Delete, Get, Ip, Param, Patch, Post, Req, UploadedFile, UseInterceptors } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Ip,
+  Param,
+  Patch,
+  Post,
+  Req,
+  UploadedFile,
+  UseInterceptors,
+} from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
-import { CreateUploadDto } from './dto/create-file.dto';
+import { CreateFileDto } from './dto/create-file.dto';
+import { UpdateFileDto } from './dto/update-file.dto';
 import { UploadService } from './file.service';
 
 @ApiTags('file')
@@ -14,7 +27,7 @@ export class UploadController {
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   @ApiConsumes('multipart/form-data')
-  @ApiBody({ description: '要上传的文件', type: CreateUploadDto })
+  @ApiBody({ description: '要上传的文件', type: CreateFileDto })
   @ApiOperation({ description: '上传文件', operationId: 'addFile' })
   create(@UploadedFile() file: Express.Multer.File, @Req() req: Request, @Ip() ip: string) {
     return this.uploadService.create(file);
@@ -41,8 +54,8 @@ export class UploadController {
 
   @Patch(':id')
   @ApiOperation({ description: '更新', operationId: 'setFile' })
-  update() {
-    return this.uploadService.update();
+  update(@Param('id') id: number, @Body() updateFileDto: UpdateFileDto) {
+    return this.uploadService.update(id, updateFileDto);
   }
 
   @Delete(':id')

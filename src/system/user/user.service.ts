@@ -1,14 +1,14 @@
 import { BaseService } from '@/common/base';
+import { uuid } from '@/libraries';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { createHash } from 'crypto';
 import { Like, Repository } from 'typeorm';
+import { RoleService } from '../role';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
-import { RoleService } from '../role';
-import { uuid } from '@/libraries';
-import { createHash } from 'crypto';
 
 @Injectable()
 export class UserService extends BaseService {
@@ -57,12 +57,12 @@ export class UserService extends BaseService {
    */
   async update(id: number, updateUserDto: UpdateUserDto) {
     const user = await this.userRepository.findOne({ where: { id } });
+    const { roleIds } = updateUserDto;
     if (!user) {
       throw new NotFoundException('用户不存在');
     }
-    if (updateUserDto.roleIds) {
-      const roles = updateUserDto.roleIds.map((id) => ({ id }));
-      await this.userRepository.save({ id, roles });
+    if (roleIds) {
+      user.roles = await this.roleService.findByIds(roleIds);
       delete updateUserDto.roleIds;
     }
     return this.userRepository.update(id, updateUserDto);

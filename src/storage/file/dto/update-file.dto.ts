@@ -1,4 +1,18 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateUploadDto } from './create-file.dto';
+import { IsOptional, IsString } from 'class-validator';
 
-export class UpdateUploadDto extends PartialType(CreateUploadDto) {}
+export class UpdateFileDto {
+  /**
+   * 文件名
+   * @example "头像.jpg"
+   */
+  @IsString()
+  name: string;
+
+  /**
+   * 描述
+   * @example '一段很长的描述'
+   */
+  @IsOptional()
+  @IsString()
+  description?: string;
+}
