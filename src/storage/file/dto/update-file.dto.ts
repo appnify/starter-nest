@@ -1,12 +1,13 @@
-import { IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateFileDto {
   /**
    * 文件名
    * @example "头像.jpg"
    */
+  @IsOptional()
   @IsString()
-  name: string;
+  name?: string;
 
   /**
    * 描述
@@ -15,4 +16,12 @@ export class UpdateFileDto {
   @IsOptional()
   @IsString()
   description?: string;
+
+  /**
+   * 分类ID
+   * @example 1
+   */
+  @IsOptional()
+  @IsNumber()
+  categoryId?: number;
 }

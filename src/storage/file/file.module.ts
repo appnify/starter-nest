@@ -1,14 +1,15 @@
 import { ConfigService } from '@/config';
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { existsSync, mkdirSync } from 'fs';
 import { diskStorage } from 'multer';
 import { extname, join } from 'path';
 import { File } from './entities/file.entity';
-import { UploadController } from './file.controller';
-import { UploadService } from './file.service';
+import { FileController } from './file.controller';
+import { FileService } from './file.service';
 import { dayjs } from '@/libraries';
+import { FileCategoryModule } from '../fileCategory';
 
 const MulteredModule = MulterModule.registerAsync({
   useFactory: (config: ConfigService) => {
@@ -31,8 +32,8 @@ const MulteredModule = MulterModule.registerAsync({
 });
 
 @Module({
-  imports: [TypeOrmModule.forFeature([File]), MulteredModule],
-  controllers: [UploadController],
-  providers: [UploadService],
+  imports: [TypeOrmModule.forFeature([File]), MulteredModule, forwardRef(() => FileCategoryModule)],
+  controllers: [FileController],
+  providers: [FileService],
 })
-export class UploadModule {}
+export class FileModule {}

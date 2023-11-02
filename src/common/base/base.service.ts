@@ -1,5 +1,14 @@
 import { ConfigService } from '@/config';
+import { BaseEntity } from '@/database';
 import { Inject } from '@nestjs/common';
+import { Between, FindManyOptions } from 'typeorm';
+
+interface Params {
+  page: number;
+  size: number;
+  startDateTime: string;
+  endDateTime: string;
+}
 
 /**
  * 服务基类
@@ -40,6 +49,21 @@ export class BaseService {
           [field]: order,
         };
       }),
+    };
+  }
+
+  mergeCommonParams(params: Params): FindManyOptions<BaseEntity> {
+    const { page, size, startDateTime, endDateTime } = params;
+    const skip = (page - 1) * size;
+    const take = size === 0 ? this.config.defaultPageSize : size;
+    const fromDate = new Date(startDateTime);
+    const endDate = new Date(endDateTime);
+    return {
+      skip,
+      take,
+      where: {
+        createdAt: Between(fromDate, endDate),
+      },
     };
   }
 }

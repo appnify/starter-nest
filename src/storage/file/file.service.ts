@@ -2,13 +2,18 @@ import { BaseService } from '@/common/base';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { extname, relative, sep } from 'path';
-import { Repository } from 'typeorm';
+import { FindOptionsWhere, Like, Repository } from 'typeorm';
 import { UpdateFileDto } from './dto/update-file.dto';
 import { File } from './entities/file.entity';
+import { FindFileDto } from './dto/find-file.dto';
+import { FileCategoryService } from '../fileCategory';
 
 @Injectable()
-export class UploadService extends BaseService {
-  constructor(@InjectRepository(File) private readonly repository: Repository<File>) {
+export class FileService extends BaseService {
+  constructor(
+    @InjectRepository(File) private readonly repository: Repository<File>,
+    private fileCategoryService: FileCategoryService,
+  ) {
     super();
   }
 
@@ -36,8 +41,17 @@ export class UploadService extends BaseService {
     return file.id;
   }
 
-  findAll() {
-    return this.repository.findAndCount();
+  findMany(findFileDto: FindFileDto) {
+    const { page, size, name, categoryId } = findFileDto;
+    const { skip, take } = this.formatPagination(page, size, true);
+    const where: FindOptionsWhere<File> = {};
+    if (name) {
+      where.name = Like(`%${name}%`);
+    }
+    if (categoryId) {
+      where.categoryId = categoryId;
+    }
+    return this.repository.findAndCount({ skip, take, where });
   }
 
   findOne(id: number) {
@@ -48,10 +62,16 @@ export class UploadService extends BaseService {
    * 更新文件信息
    * @param id 文件ID
    * @param updateFileDto 更新信息
-   * @returns 
+   * @returns
    */
-  update(id: number, updateFileDto: UpdateFileDto) {
-    return this.repository.update(id, updateFileDto);
+  async update(id: number, updateFileDto: UpdateFileDto) {
+    const { categoryId, ...rest } = updateFileDto;
+    let category;
+    if (categoryId) {
+      category = await this.fileCategoryService.findOne(categoryId);
+    }
+    console.log(category);
+    return this.repository.update(id, { ...rest, category });
   }
 
   /**
@@ -65,5 +85,14 @@ export class UploadService extends BaseService {
 
   remove(id: number) {
     return this.repository.softDelete(id);
+  }
+
+  /**
+   * 批量删除文件
+   * @param ids ID数组
+   * @returns
+   */
+  removeMany(ids: number[]) {
+    return this.repository.softDelete(ids);
   }
 }

@@ -8,6 +8,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   Req,
   UploadedFile,
   UseInterceptors,
@@ -17,12 +18,13 @@ import { ApiBody, ApiConsumes, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
 import { CreateFileDto } from './dto/create-file.dto';
 import { UpdateFileDto } from './dto/update-file.dto';
-import { UploadService } from './file.service';
+import { FileService } from './file.service';
+import { FindFileDto } from './dto/find-file.dto';
 
 @ApiTags('file')
 @Controller('file')
-export class UploadController {
-  constructor(private readonly uploadService: UploadService) {}
+export class FileController {
+  constructor(private readonly fileService: FileService) {}
 
   @Post()
   @UseInterceptors(FileInterceptor('file'))
@@ -30,37 +32,43 @@ export class UploadController {
   @ApiBody({ description: '要上传的文件', type: CreateFileDto })
   @ApiOperation({ description: '上传文件', operationId: 'addFile' })
   create(@UploadedFile() file: Express.Multer.File, @Req() req: Request, @Ip() ip: string) {
-    return this.uploadService.create(file);
+    return this.fileService.create(file);
   }
 
   @Get()
   @Respond(RespondType.PAGINATION)
   @ApiOperation({ description: '批量查询', operationId: 'getFiles' })
-  findAll() {
-    return this.uploadService.findAll();
+  findMany(@Query() findFileDto: FindFileDto) {
+    return this.fileService.findMany(findFileDto);
   }
 
   @Get(':id')
   @ApiOperation({ description: '查询', operationId: 'getFile' })
   findOne(@Param('id') id: number) {
-    return this.uploadService.findOne(+id);
+    return this.fileService.findOne(+id);
   }
 
   @Get('hash/:hash')
   @ApiOperation({ description: '根据哈希查询', operationId: 'getFileByHash' })
   getByHash(@Param('hash') hash: string) {
-    return this.uploadService.getByHash(hash);
+    return this.fileService.getByHash(hash);
   }
 
   @Patch(':id')
   @ApiOperation({ description: '更新', operationId: 'setFile' })
   update(@Param('id') id: number, @Body() updateFileDto: UpdateFileDto) {
-    return this.uploadService.update(id, updateFileDto);
+    return this.fileService.update(id, updateFileDto);
   }
 
   @Delete(':id')
   @ApiOperation({ description: '删除', operationId: 'delFile' })
   remove(@Param('id') id: number) {
-    return this.uploadService.remove(+id);
+    return this.fileService.remove(+id);
+  }
+
+  @Delete()
+  @ApiOperation({ description: '批量删除文件', operationId: 'delFiles' })
+  removeMany(@Body() ids: number[]) {
+    return this.fileService.removeMany(ids);
   }
 }

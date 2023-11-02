@@ -1,5 +1,7 @@
 import { BaseEntity } from '@/database';
-import { Column, Entity } from 'typeorm';
+import { FileCategory } from '@/storage/fileCategory';
+import { ApiHideProperty } from '@nestjs/swagger';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
 export class File extends BaseEntity {
@@ -33,7 +35,7 @@ export class File extends BaseEntity {
 
   /**
    * 文件路径
-   * @example "/upload/2021/10/01/xxx.jpg"
+   * @example "/upload/2021-10-01/xxx.jpg"
    */
   @Column({ comment: '文件路径' })
   path: string;
@@ -51,4 +53,19 @@ export class File extends BaseEntity {
    */
   @Column({ comment: '文件后缀' })
   extension: string;
+
+  /**
+   * 分类
+   */
+  @ApiHideProperty()
+  @ManyToOne(() => FileCategory, (category) => category.files)
+  @JoinColumn()
+  category: FileCategory;
+
+  /**
+   * 分类ID
+   * @example 0
+   */
+  @Column({ comment: '分类ID', nullable: true })
+  categoryId: number;
 }

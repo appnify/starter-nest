@@ -8,7 +8,7 @@ import { SerializationModule } from '@/middlewares/serialization';
 import { ValidationModule } from '@/middlewares/validation';
 import { LoggerModule } from '@/monitor/logger';
 import { CacheModule } from '@/storage/cache';
-import { UploadModule } from '@/storage/file';
+import { FileModule } from '@/storage/file';
 import { AuthModule } from '@/system/auth';
 import { RoleModule } from '@/system/role';
 import { UserModule } from '@/system/user';
@@ -16,6 +16,7 @@ import { ScanModule } from '@/utils/scan.module';
 import { Module } from '@nestjs/common';
 import { MenuModule } from './system/menu';
 import { DictModule, DictTypeModule } from './system/dict';
+import { FileCategoryModule } from './storage/fileCategory';
 
 @Module({
   imports: [
@@ -80,7 +81,11 @@ import { DictModule, DictTypeModule } from './system/dict';
     /**
      * 上传模块
      */
-    UploadModule,
+    FileModule,
+    /**
+     * 文件分类
+     */
+    FileCategoryModule,
     /**
      * 文章模块
      */
