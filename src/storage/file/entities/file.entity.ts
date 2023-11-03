@@ -1,6 +1,7 @@
 import { BaseEntity } from '@/database';
 import { FileCategory } from '@/storage/fileCategory';
 import { ApiHideProperty } from '@nestjs/swagger';
+import { Exclude } from 'class-transformer';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
@@ -55,6 +56,13 @@ export class File extends BaseEntity {
   extension: string;
 
   /**
+   * 文件类型
+   * @example 1
+   */
+  @Column({ comment: '类型(1: 文本，2: 图片，3: 音频，4: 视频，5: 其他)', nullable: true })
+  type: number;
+
+  /**
    * 分类
    */
   @ApiHideProperty()
@@ -66,6 +74,8 @@ export class File extends BaseEntity {
    * 分类ID
    * @example 0
    */
+  @Exclude()
+  @ApiHideProperty()
   @Column({ comment: '分类ID', nullable: true })
   categoryId: number;
 }

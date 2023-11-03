@@ -7,6 +7,9 @@ import { UpdateFileDto } from './dto/update-file.dto';
 import { File } from './entities/file.entity';
 import { FindFileDto } from './dto/find-file.dto';
 import { FileCategoryService } from '../fileCategory';
+import { createReadStream } from 'fs';
+import { createHash } from 'crypto';
+import { getTypeByMimetype } from './util';
 
 @Injectable()
 export class FileService extends BaseService {
@@ -23,13 +26,17 @@ export class FileService extends BaseService {
    * @returns
    */
   async create(uploadFile: Express.Multer.File) {
-    const { originalname: name, mimetype, size, path: hash } = uploadFile;
-    const relativePath = relative(this.config.uploadDir, uploadFile.path).split(sep).join('/');
-    const path = `${this.config.uploadPrefix}/${relativePath}`;
+    const { originalname: name, mimetype, size } = uploadFile;
+    const { uploadDir, uploadPrefix } = this.config;
+    const relativePath = relative(uploadDir, uploadFile.path).split(sep).join('/');
+    const path = `${uploadPrefix}/${relativePath}`;
     const extension = extname(uploadFile.originalname);
     const description = '';
+    const hash = await this.hashByFilePath(uploadFile.path);
+    const type = getTypeByMimetype(mimetype)
     const file = this.repository.create({
       name,
+      type,
       mimetype,
       size,
       hash,
@@ -41,7 +48,28 @@ export class FileService extends BaseService {
     return file.id;
   }
 
-  findMany(findFileDto: FindFileDto) {
+  /**
+   * 从文件路径读取流，进行MD5哈希
+   * @param path 文件路径
+   * @returns
+   */
+  hashByFilePath(path: string): Promise<string> {
+    const hash = createHash('md5');
+    const stream = createReadStream(path);
+    return new Promise((res, rej) => {
+      stream.on('data', (chunk) => {
+        hash.update(chunk);
+      });
+      stream.on('end', () => {
+        res(hash.digest('hex'));
+      });
+      stream.on('error', () => {
+        rej('获取文件哈希值失败');
+      });
+    });
+  }
+
+  async findMany(findFileDto: FindFileDto) {
     const { page, size, name, categoryId } = findFileDto;
     const { skip, take } = this.formatPagination(page, size, true);
     const where: FindOptionsWhere<File> = {};
@@ -51,7 +79,20 @@ export class FileService extends BaseService {
     if (categoryId) {
       where.categoryId = categoryId;
     }
-    return this.repository.findAndCount({ skip, take, where });
+    return this.repository.findAndCount({
+      skip,
+      take,
+      where,
+      relations: {
+        category: true,
+      },
+      select: {
+        category: {
+          id: true,
+          name: true,
+        },
+      },
+    });
   }
 
   findOne(id: number) {

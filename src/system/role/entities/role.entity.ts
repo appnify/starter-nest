@@ -43,6 +43,7 @@ export class Role extends BaseEntity {
 
   /**
    * 菜单ID数组
+   * @example [1]
    */
   @RelationId('menus')
   menuIds: number[];

@@ -38,6 +38,11 @@
 - .dockerignore 配置哪些文件应该被忽略掉
 - .gitea/workflows/depoy.yaml 流水线任务的配置文件，语法上与 Github Actions 一致
 
+## 计划
+- 双token无感刷新
+- session/cookie，jwt，sso单点登陆
+- 大文件上传，断点续传
+
 ## 笔记
 
 - createUserDto与User分开

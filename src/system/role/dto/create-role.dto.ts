@@ -29,5 +29,5 @@ export class CreateRoleDto {
    */
   @IsOptional()
   @IsInt({ each: true })
-  menuIds: number[];
+  menuIds?: number[];
 }
