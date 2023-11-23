@@ -11,12 +11,12 @@ export class LoginLogInterceptor implements NestInterceptor {
       tap({
         next: (data) => {
           const status = true;
-          const description = '登录成功';
+          const description = '用户登录成功';
           this.recordLoginLog(context, { status, description });
         },
         error: (err) => {
           const status = false;
-          const description = err?.message || '登录失败';
+          const description = err?.message || '用户登录失败';
           this.recordLoginLog(context, { status, description });
         },
       }),
