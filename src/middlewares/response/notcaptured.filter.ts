@@ -22,7 +22,7 @@ export class AllExecptionFilter implements ExceptionFilter {
       return response.status(exception.status).json(
         Response.create({
           code: ResponseCode.ERROR,
-          message: '路径不存在',
+          message: '访问路径不存在',
         }),
       );
     }

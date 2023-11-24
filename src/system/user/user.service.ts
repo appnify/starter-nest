@@ -3,7 +3,7 @@ import { uuid } from '@/libraries';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { createHash } from 'crypto';
-import { Like, Repository } from 'typeorm';
+import { In, Like, Repository } from 'typeorm';
 import { RoleService } from '../role';
 import { CreateUserDto } from './dto/create-user.dto';
 import { FindUserDto } from './dto/find-user.dto';
@@ -47,9 +47,13 @@ export class UserService extends BaseService {
   /**
    * 根据id查找用户
    */
-  findOne(idOrOptions: number | Partial<User>) {
+  async findOne(idOrOptions: number | Partial<User>) {
     const where = typeof idOrOptions === 'number' ? { id: idOrOptions } : (idOrOptions as any);
-    return this.userRepository.findOne({ where });
+    const user = await this.userRepository.findOne({ where });
+    if (!user) {
+      throw new NotFoundException('用户不存在');
+    }
+    return user;
   }
 
   /**
@@ -91,9 +95,17 @@ export class UserService extends BaseService {
       relations: ['roles'],
     });
     if (user) {
-      const permissions = user.roles.flatMap((role) => role.menuIds);
+      const permissions = user.roles.flatMap((role) => 1);
       return [...new Set(permissions.map((i) => i))];
     }
     return [];
+  }
+
+  async removeMany(ids: number[]) {
+    if (!ids.length) {
+      return 0;
+    }
+    const res = await this.userRepository.softDelete(ids);
+    return res.affected;
   }
 }

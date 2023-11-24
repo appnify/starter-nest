@@ -1,7 +1,7 @@
 import { BaseEntity } from '@/database';
 import { FileCategory } from '@/storage/fileCategory';
 import { ApiHideProperty } from '@nestjs/swagger';
-import { Exclude } from 'class-transformer';
+import { Exclude, Transform } from 'class-transformer';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })
@@ -39,13 +39,14 @@ export class File extends BaseEntity {
    * @example "/upload/2021-10-01/xxx.jpg"
    */
   @Column({ comment: '文件路径' })
+  @Transform(({ value }) => (process.env.SERVER_URL ?? '') + value)
   path: string;
 
   /**
-   * 文件哈希
+   * MD5哈希
    * @example "2afb1f8b83ef0cc564f227d75d0b6914"
    */
-  @Column({ comment: '文件哈希' })
+  @Column({ comment: 'MD5哈希' })
   hash: string;
 
   /**

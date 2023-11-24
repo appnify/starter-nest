@@ -4,7 +4,7 @@ import { User } from '@/system/user';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Column, Entity, ManyToMany, RelationId } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'system_role' })
 export class Role extends BaseEntity {
   /**
    * 角色名称
@@ -40,11 +40,4 @@ export class Role extends BaseEntity {
   @ApiHideProperty()
   @ManyToMany(() => Menu, (menu) => menu.roles)
   menus: Menu[];
-
-  /**
-   * 菜单ID数组
-   * @example [1]
-   */
-  @RelationId('menus')
-  menuIds: number[];
 }
