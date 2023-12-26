@@ -7,14 +7,14 @@ export class MailService {
   /**
    * NodeMailer实例
    */
-  protected mailer: nodemailer.Transporter;
+  protected instance: nodemailer.Transporter;
 
   /**
    * 构造函数
    */
   constructor(private config: ConfigService) {
     const { host, port, user, pass } = this.config.smtp;
-    this.mailer = nodemailer.createTransport({
+    this.instance = nodemailer.createTransport({
       host,
       port,
       auth: { user, pass },
@@ -28,7 +28,7 @@ export class MailService {
    * @param html 内容
    */
   sendMail(to: string, subject: string, html: string) {
-    return this.mailer.sendMail({
+    return this.instance.sendMail({
       from: `${this.config.title} <${this.config.smtp.user}>`,
       to,
       subject,

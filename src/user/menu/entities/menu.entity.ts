@@ -1,5 +1,5 @@
 import { BaseEntity } from '@/database';
-import { Role } from '@/system/role';
+import { Role } from '@/user/role';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Column, Entity, ManyToMany, Tree, TreeChildren, TreeParent } from 'typeorm';
 

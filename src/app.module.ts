@@ -9,19 +9,21 @@ import { ValidationModule } from '@/middlewares/validation';
 import { LoggerModule } from '@/monitor/logger';
 import { CacheModule } from '@/storage/cache';
 import { FileModule } from '@/storage/file';
-import { AuthModule } from '@/system/auth';
-import { RoleModule } from '@/system/role';
-import { UserModule } from '@/system/user';
+import { AuthModule } from '@/user/auth';
+import { RoleModule } from '@/user/role';
+import { UserModule } from '@/user/user';
 import { ScanModule } from '@/utils/scan.module';
 import { Module } from '@nestjs/common';
-import { MenuModule } from './system/menu';
-import { DictModule, DictTypeModule } from './system/dict';
+import { MenuModule } from './user/menu';
+import { DictModule } from '@/system/dict';
+import { DictTypeModule } from '@/system/dictType';
 import { FileCategoryModule } from './storage/fileCategory';
+import { OptionModule } from './system/option';
 
 @Module({
   imports: [
     /**
-     * 扫描模块
+     * 扫描模块(开发模式下)
      */
     ScanModule.forRoot(),
     /**
@@ -94,6 +96,7 @@ import { FileCategoryModule } from './storage/fileCategory';
     MenuModule,
     DictTypeModule,
     DictModule,
+    OptionModule,
   ],
 })
 export class AppModule {}

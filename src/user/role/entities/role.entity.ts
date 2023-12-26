@@ -1,6 +1,6 @@
 import { BaseEntity } from '@/database';
-import { Menu } from '@/system/menu';
-import { User } from '@/system/user';
+import { Menu } from '@/user/menu';
+import { User } from '@/user/user';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Column, Entity, ManyToMany, RelationId } from 'typeorm';
 

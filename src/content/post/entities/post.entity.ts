@@ -1,5 +1,5 @@
 import { BaseEntity } from '@/database';
-import { User } from '@/system/user';
+import { User } from '@/user/user';
 import { Column, Entity, ManyToMany } from 'typeorm';
 
 @Entity({ orderBy: { id: 'DESC' } })

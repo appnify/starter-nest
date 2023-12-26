@@ -1,6 +1,6 @@
 import { BaseEntity } from '@/database';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
-import { DictType } from '../../dictType';
+import { DictType } from '@/system/dictType';
 
 @Entity({ orderBy: { id: 'DESC' } })
 export class Dict extends BaseEntity {

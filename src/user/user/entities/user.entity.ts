@@ -1,6 +1,6 @@
 import { BaseEntity } from '@/database';
 import { Post } from '@/content/post';
-import { Role } from '@/system/role';
+import { Role } from '@/user/role';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { Column, Entity, JoinTable, ManyToMany, RelationId } from 'typeorm';
