@@ -20,15 +20,19 @@ export class UserService extends BaseService {
    * 创建用户
    */
   async create(createUserDto: CreateUserDto) {
-    const user = this.userRepository.create(createUserDto);
-    user.roles = await this.roleService.findByIds(user.roleIds ?? []);
     const { password } = createUserDto;
+    const user = this.userRepository.create(createUserDto);
+    if (user.roles?.length) {
+      user.roles = await this.roleService.findByIds(user.roleIds ?? []);
+    }
     if (password) {
-      const salt = uuid();
       const md5 = createHash('md5');
-      const pass = md5.update(password + salt).digest('hex');
-      user.salt = salt;
-      user.password = pass;
+      user.salt = uuid();
+      user.password = md5.update(password + user.salt).digest('hex');
+    }
+    const existed = await this.userRepository.findOne({ where: { username: user.username } });
+    if (existed) {
+      throw new Error('用户名已存在');
     }
     await this.userRepository.save(user);
     return user.id;

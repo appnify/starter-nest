@@ -22,7 +22,7 @@ export class OptionService extends BaseService {
   }
 
   /**
-   * 条件/分页查询
+   * 查询全部
    */
   async findMany() {
     return this.optionRepository.find();

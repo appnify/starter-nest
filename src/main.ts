@@ -6,8 +6,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ScanModule } from './utils/scan.module';
 
-declare const module: any;
-
 async function bootstrap() {
   /**
    * 创建应用
@@ -57,13 +55,6 @@ async function bootstrap() {
    * 输出接口文档URL
    */
   logger.log(`OpenapiDocs is running at ${await app.getUrl()}${config.apiDocPrefix}`, 'NestApplication');
-  /**
-   * Webpack热更新
-   */
-  if (module.hot) {
-    module.hot.accept();
-    module.hot.dispose(() => app.close());
-  }
 }
 
 bootstrap();

@@ -29,7 +29,7 @@ export class AuthController {
   @UseInterceptors(LoginLogInterceptor)
   @ApiOperation({ description: '登陆', operationId: 'login' })
   login(@Body() user: AuthUserDto) {
-    return this.authService.signIn(user);
+    return this.authService.validateUser(user);
   }
 
   /**

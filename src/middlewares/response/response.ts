@@ -48,7 +48,7 @@ export class Response<T = any> {
   /**
    * 创建失败响应结果
    */
-  static error(data = null, message = '操作失败') {
+  static error(data = undefined, message = '操作失败') {
     return this.create({ code: ResponseCode.ERROR, message, data });
   }
 
@@ -57,7 +57,6 @@ export class Response<T = any> {
    */
   static create<T>(result: Response<T>) {
     const response = new Response();
-    const data = Object.assign(response, result);
-    return data;
+    return Object.assign(response, { data: undefined, ...result });
   }
 }

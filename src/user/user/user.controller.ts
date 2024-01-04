@@ -8,6 +8,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { UserService } from './user.service';
 import { IntArrayPipe } from './intArrayPipe';
+import { Public } from '@/user/auth';
 
 @ApiTags('user')
 @Controller('users')
@@ -17,6 +18,7 @@ export class UserController extends BaseController {
   }
 
   @Post()
+  @Public()
   @ApiOperation({ description: '添加用户', operationId: 'addUser' })
   addUser(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
@@ -50,7 +52,7 @@ export class UserController extends BaseController {
 
   @Delete()
   @ApiOperation({ description: '批量删除用户', operationId: 'delUsers' })
-  delUsers(@Query('ids', new IntArrayPipe) ids: number[]) {
-    return this.userService.removeMany(ids)
+  delUsers(@Query('ids', new IntArrayPipe()) ids: number[]) {
+    return this.userService.removeMany(ids);
   }
 }

@@ -11,7 +11,7 @@ export class User extends BaseEntity {
    * 登录账号
    * @example 'juetan'
    */
-  @Column({ length: 48 })
+  @Column({ length: 48, unique: true })
   username: string;
 
   /**

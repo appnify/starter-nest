@@ -9,7 +9,7 @@ import { ValidationModule } from '@/middlewares/validation';
 import { LoggerModule } from '@/monitor/logger';
 import { CacheModule } from '@/storage/cache';
 import { FileModule } from '@/storage/file';
-import { AuthModule } from '@/user/auth';
+import { AuthModule } from '@/user/auth/auth.module';
 import { RoleModule } from '@/user/role';
 import { UserModule } from '@/user/user';
 import { ScanModule } from '@/utils/scan.module';
