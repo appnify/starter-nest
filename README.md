@@ -1,6 +1,6 @@
 ## 介绍
 
-一个NestJS起始模板，正在优化中。
+一个NestJS起始模板。
 
 ## 功能
 - Swagger接口文档
@@ -21,6 +21,7 @@
 - 模板快速生成(业务型模板，非NestJS脚手架的模板)
 
 ## 模块
+
 - 用户模块
 - 登陆模块
 - 角色模块
@@ -37,16 +38,6 @@
 - Dockerfile 构建镜像的配置文件
 - .dockerignore 配置哪些文件应该被忽略掉
 - .gitea/workflows/depoy.yaml 流水线任务的配置文件，语法上与 Github Actions 一致
-
-## 计划
-- 双token无感刷新
-- session/cookie，jwt，sso单点登陆
-- 大文件上传，断点续传
-
-## 笔记
-
-- createUserDto与User分开
-- 涉及关系时，先用 service 查出有效关系，避免存储不存在的关联ID
 
 ## 最后
 
